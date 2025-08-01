@@ -24,11 +24,14 @@ COPY packages/shadcn/src/ ./packages/shadcn/src/
 COPY packages/shadcn/tsup.config.ts ./packages/shadcn/
 COPY packages/shadcn/tsconfig.json ./packages/shadcn/
 
-# Install build dependencies for shadcn package
-RUN pnpm install --frozen-lockfile --filter=shadcn
+# Install build dependencies for shadcn package (including devDependencies)
+RUN pnpm install --frozen-lockfile --filter=shadcn --include=dev
 
 # Build shadcn package to create dist/index.js before installing all dependencies
 RUN pnpm --filter=shadcn build
+
+# Verify the build was successful by checking if dist/index.js exists
+RUN ls -la /app/packages/shadcn/dist/ && test -f /app/packages/shadcn/dist/index.js
 
 # Copy necessary config files for fumadocs-mdx postinstall
 COPY apps/v4/next.config.mjs ./apps/v4/
@@ -60,15 +63,15 @@ COPY --from=deps /app/packages/shadcn/dist ./packages/shadcn/dist
 COPY . .
 
 # Build the v4 Next.js application
-ENV NEXT_TELEMETRY_DISABLED 1
+ENV NEXT_TELEMETRY_DISABLED=1
 RUN pnpm --filter=v4 build
 
 # Production image, copy all the files and run next
 FROM base AS runner
 WORKDIR /app
 
-ENV NODE_ENV production
-ENV NEXT_TELEMETRY_DISABLED 1
+ENV NODE_ENV=production
+ENV NEXT_TELEMETRY_DISABLED=1
 
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
@@ -92,8 +95,8 @@ USER nextjs
 
 EXPOSE 4000
 
-ENV PORT 4000
-ENV HOSTNAME "0.0.0.0"
+ENV PORT=4000
+ENV HOSTNAME="0.0.0.0"
 
 # Server.js is created by next build from the standalone output
 # https://nextjs.org/docs/pages/api-reference/next-config-js/output
