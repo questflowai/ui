@@ -18,6 +18,18 @@ COPY package.json pnpm-lock.yaml pnpm-workspace.yaml* ./
 COPY apps/v4/package.json ./apps/v4/
 COPY packages/shadcn/package.json ./packages/shadcn/ 
 
+# Copy root tsconfig.json and shadcn package source code and build config
+COPY tsconfig.json ./
+COPY packages/shadcn/src/ ./packages/shadcn/src/
+COPY packages/shadcn/tsup.config.ts ./packages/shadcn/
+COPY packages/shadcn/tsconfig.json ./packages/shadcn/
+
+# Install build dependencies for shadcn package
+RUN pnpm install --frozen-lockfile --filter=shadcn
+
+# Build shadcn package to create dist/index.js before installing all dependencies
+RUN pnpm --filter=shadcn build
+
 # Copy necessary config files for fumadocs-mdx postinstall
 COPY apps/v4/next.config.mjs ./apps/v4/
 COPY apps/v4/source.config.ts ./apps/v4/
@@ -26,7 +38,7 @@ COPY apps/v4/mdx-components.tsx ./apps/v4/
 COPY apps/v4/content/ ./apps/v4/content/
 COPY apps/v4/lib/ ./apps/v4/lib/
 
-# Install dependencies based on the preferred package manager
+# Install all dependencies now that shadcn package is built
 RUN pnpm install --frozen-lockfile
 
 # Rebuild the source code only when needed
@@ -38,19 +50,14 @@ RUN npm install -g pnpm@9.0.6 && \
     npm cache clean --force && \
     pnpm config set store-dir ~/.pnpm-store
 
-# Copy dependencies from deps stage
+# Copy dependencies and built shadcn package from deps stage
 COPY --from=deps /app/node_modules ./node_modules
 COPY --from=deps /app/apps/v4/node_modules ./apps/v4/node_modules
 COPY --from=deps /app/packages/shadcn/node_modules ./packages/shadcn/node_modules
+COPY --from=deps /app/packages/shadcn/dist ./packages/shadcn/dist
 
 # Copy all source code
 COPY . .
-
-# Build shadcn package first
-RUN pnpm --filter=shadcn build
-
-# Update workspace links to ensure built shadcn package is accessible
-RUN pnpm install --frozen-lockfile
 
 # Build the v4 Next.js application
 ENV NEXT_TELEMETRY_DISABLED 1
