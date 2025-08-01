@@ -49,6 +49,9 @@ COPY . .
 # Build shadcn package first
 RUN pnpm --filter=shadcn build
 
+# Update workspace links to ensure built shadcn package is accessible
+RUN pnpm install --frozen-lockfile
+
 # Build the v4 Next.js application
 ENV NEXT_TELEMETRY_DISABLED 1
 RUN pnpm --filter=v4 build
