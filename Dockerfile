@@ -1,103 +1,71 @@
-# Use multi-stage build for optimal image size
-FROM node:20.5.1-alpine AS base
+# Multi-stage build for Next.js app with pnpm workspace
 
-# Install dependencies only when needed
+# Stage 1: Base image with Node.js and pnpm
+FROM node:20-alpine AS base
+
+# Install pnpm
+RUN npm install -g pnpm@9.0.6
+
+# Set working directory
+WORKDIR /app
+
+# Stage 2: Dependencies installation
 FROM base AS deps
-# Check https://github.com/nodejs/docker-node/tree/b4117f9333da4138b03a546ec926ef50a31506c3#nodealpine to understand why libc6-compat might be needed.
-RUN apk add --no-cache libc6-compat
 
-# Install pnpm and clear npm cache to ensure clean state
-RUN npm install -g pnpm@9.0.6 && \
-    npm cache clean --force && \
-    pnpm config set store-dir ~/.pnpm-store
+# Copy root package files for pnpm workspace
+COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
 
-WORKDIR /app
-
-# Copy package.json files and pnpm workspace configuration
-COPY package.json pnpm-lock.yaml pnpm-workspace.yaml* ./
+# Copy package.json files for all workspaces
+COPY packages/shadcn/package.json ./packages/shadcn/
 COPY apps/v4/package.json ./apps/v4/
-COPY packages/shadcn/package.json ./packages/shadcn/ 
 
-# Copy root tsconfig.json and shadcn package source code and build config
-COPY tsconfig.json ./
-COPY packages/shadcn/src/ ./packages/shadcn/src/
-COPY packages/shadcn/tsup.config.ts ./packages/shadcn/
-COPY packages/shadcn/tsconfig.json ./packages/shadcn/
+# Install dependencies
+RUN pnpm install --frozen-lockfile
 
-# Install build dependencies for shadcn package (including devDependencies)
-RUN pnpm install --filter=shadcn --include=dev
-
-# Build shadcn package to create dist/index.js before installing all dependencies
-RUN pnpm --filter=shadcn build
-
-# Verify the build was successful by checking if dist/index.js exists
-RUN ls -la /app/packages/shadcn/dist/ && test -f /app/packages/shadcn/dist/index.js
-
-# Copy necessary config files for fumadocs-mdx postinstall
-COPY apps/v4/next.config.mjs ./apps/v4/
-COPY apps/v4/source.config.ts ./apps/v4/
-COPY apps/v4/tsconfig.json ./apps/v4/
-COPY apps/v4/mdx-components.tsx ./apps/v4/
-COPY apps/v4/content/ ./apps/v4/content/
-COPY apps/v4/lib/ ./apps/v4/lib/
-
-# Install all dependencies now that shadcn package is built
-RUN pnpm install
-
-# Rebuild the source code only when needed
+# Stage 3: Build stage
 FROM base AS builder
-WORKDIR /app
 
-# Install pnpm and clear npm cache to ensure clean state
-RUN npm install -g pnpm@9.0.6 && \
-    npm cache clean --force && \
-    pnpm config set store-dir ~/.pnpm-store
-
-# Copy dependencies and built shadcn package from deps stage
+# Copy installed dependencies from deps stage
 COPY --from=deps /app/node_modules ./node_modules
-COPY --from=deps /app/apps/v4/node_modules ./apps/v4/node_modules
 COPY --from=deps /app/packages/shadcn/node_modules ./packages/shadcn/node_modules
-COPY --from=deps /app/packages/shadcn/dist ./packages/shadcn/dist
+COPY --from=deps /app/apps/v4/node_modules ./apps/v4/node_modules
 
-# Copy all source code
+# Copy source code
 COPY . .
 
-# Build the v4 Next.js application
-ENV NEXT_TELEMETRY_DISABLED=1
+# Build shadcn package first (required dependency for v4)
+RUN pnpm --filter=shadcn build
+
+# Build v4 application
 RUN pnpm --filter=v4 build
 
-# Production image, copy all the files and run next
-FROM base AS runner
-WORKDIR /app
+# Stage 4: Production runtime
+FROM node:20-alpine AS runner
 
+# Set NODE_ENV
 ENV NODE_ENV=production
-ENV NEXT_TELEMETRY_DISABLED=1
 
+# Create non-root user
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
 
-# Copy the built application
-COPY --from=builder /app/apps/v4/public ./apps/v4/public
+# Set working directory
+WORKDIR /app
 
-# Set the correct permission for prerender cache
-RUN mkdir -p ./apps/v4/.next
-RUN chown nextjs:nodejs ./apps/v4/.next
-
-# Automatically leverage output traces to reduce image size
-# https://nextjs.org/docs/advanced-features/output-file-tracing
+# Copy the standalone output from Next.js build
 COPY --from=builder --chown=nextjs:nodejs /app/apps/v4/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/apps/v4/.next/static ./apps/v4/.next/static
+COPY --from=builder --chown=nextjs:nodejs /app/apps/v4/public ./apps/v4/public
 
-# Copy built shadcn package
-COPY --from=builder /app/packages/shadcn/dist ./packages/shadcn/dist
-
+# Switch to non-root user
 USER nextjs
 
+# Expose port
 EXPOSE 4000
 
+# Set environment variables
 ENV PORT=4000
 ENV HOSTNAME="0.0.0.0"
 
-# Server.js is created by next build from the standalone output
-# https://nextjs.org/docs/pages/api-reference/next-config-js/output
+# Start the application
 CMD ["node", "apps/v4/server.js"]
