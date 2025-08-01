@@ -25,7 +25,7 @@ COPY packages/shadcn/tsup.config.ts ./packages/shadcn/
 COPY packages/shadcn/tsconfig.json ./packages/shadcn/
 
 # Install build dependencies for shadcn package (including devDependencies)
-RUN pnpm install --frozen-lockfile --filter=shadcn --include=dev
+RUN pnpm install --filter=shadcn --include=dev
 
 # Build shadcn package to create dist/index.js before installing all dependencies
 RUN pnpm --filter=shadcn build
@@ -42,7 +42,7 @@ COPY apps/v4/content/ ./apps/v4/content/
 COPY apps/v4/lib/ ./apps/v4/lib/
 
 # Install all dependencies now that shadcn package is built
-RUN pnpm install --frozen-lockfile
+RUN pnpm install
 
 # Rebuild the source code only when needed
 FROM base AS builder
