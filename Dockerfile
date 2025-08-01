@@ -1,20 +1,29 @@
 # Use multi-stage build for optimal image size
-FROM node:18-alpine AS base
+FROM node:20.5.1-alpine AS base
 
 # Install dependencies only when needed
 FROM base AS deps
 # Check https://github.com/nodejs/docker-node/tree/b4117f9333da4138b03a546ec926ef50a31506c3#nodealpine to understand why libc6-compat might be needed.
 RUN apk add --no-cache libc6-compat
 
-# Install pnpm
-RUN npm install -g pnpm@9.0.6
+# Install pnpm and clear npm cache to ensure clean state
+RUN npm install -g pnpm@9.0.6 && \
+    npm cache clean --force && \
+    pnpm config set store-dir ~/.pnpm-store
 
 WORKDIR /app
 
 # Copy package.json files and pnpm workspace configuration
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml* ./
 COPY apps/v4/package.json ./apps/v4/
-# COPY packages/shadcn/package.json ./packages/shadcn/
+
+# Copy necessary config files for fumadocs-mdx postinstall
+COPY apps/v4/next.config.mjs ./apps/v4/
+COPY apps/v4/source.config.ts ./apps/v4/
+COPY apps/v4/tsconfig.json ./apps/v4/
+COPY apps/v4/mdx-components.tsx ./apps/v4/
+COPY apps/v4/content/ ./apps/v4/content/
+COPY apps/v4/lib/ ./apps/v4/lib/
 
 # Install dependencies based on the preferred package manager
 RUN pnpm install --frozen-lockfile
@@ -23,15 +32,16 @@ RUN pnpm install --frozen-lockfile
 FROM base AS builder
 WORKDIR /app
 
-# Install pnpm
-RUN npm install -g pnpm@9.0.6
+# Install pnpm and clear npm cache to ensure clean state
+RUN npm install -g pnpm@9.0.6 && \
+    npm cache clean --force && \
+    pnpm config set store-dir ~/.pnpm-store
 
 # Copy dependencies from deps stage
 COPY --from=deps /app/node_modules ./node_modules
 COPY --from=deps /app/apps/v4/node_modules ./apps/v4/node_modules
-# COPY --from=deps /app/packages/shadcn/node_modules ./packages/shadcn/node_modules
 
-# Copy source code
+# Copy all source code
 COPY . .
 
 # Build shadcn package first
