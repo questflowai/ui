@@ -2,7 +2,7 @@
 services:
   v4-app:
     build:
-      context: ../../  # Build from the root to include monorepo structure
+      context: ../..  # Build from ui root directory
       dockerfile: apps/v4/Dockerfile
     ports:
       - "4000:4000"
