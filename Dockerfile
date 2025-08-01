@@ -21,17 +21,20 @@ COPY apps/v4/package.json ./apps/v4/
 COPY packages/shadcn/package.json ./packages/shadcn/
 COPY packages/tests/package.json ./packages/tests/
 
-# Install dependencies without running postinstall scripts to avoid fumadocs-mdx error
+# Install dependencies without running postinstall scripts
 RUN pnpm install --frozen-lockfile --production=false --ignore-scripts
 
-# Copy shadcn source and build it
+# Copy shadcn source code first
 COPY packages/shadcn ./packages/shadcn/
+
+# Build shadcn package to create dist/index.js for bin linking
 RUN pnpm --filter=shadcn build
 
-# Copy v4 app source and config files  
-COPY apps/v4 ./apps/v4/
+# Copy remaining source files after shadcn is built
+COPY apps ./apps/
+COPY packages/tests ./packages/tests/
 
-# Run postinstall scripts now that all files are in place
+# Now install with postinstall scripts - shadcn dist files exist
 RUN pnpm install --frozen-lockfile --production=false
 
 # Build the v4 application
