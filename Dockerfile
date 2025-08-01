@@ -14,7 +14,7 @@ WORKDIR /app
 # Copy package.json files and pnpm workspace configuration
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml* ./
 COPY apps/v4/package.json ./apps/v4/
-COPY packages/shadcn/package.json ./packages/shadcn/
+# COPY packages/shadcn/package.json ./packages/shadcn/
 
 # Install dependencies based on the preferred package manager
 RUN pnpm install --frozen-lockfile
@@ -29,13 +29,13 @@ RUN npm install -g pnpm@9.0.6
 # Copy dependencies from deps stage
 COPY --from=deps /app/node_modules ./node_modules
 COPY --from=deps /app/apps/v4/node_modules ./apps/v4/node_modules
-COPY --from=deps /app/packages/shadcn/node_modules ./packages/shadcn/node_modules
+# COPY --from=deps /app/packages/shadcn/node_modules ./packages/shadcn/node_modules
 
 # Copy source code
 COPY . .
 
 # Build shadcn package first
-RUN pnpm --filter=shadcn build
+# RUN pnpm --filter=shadcn build
 
 # Build the v4 Next.js application
 ENV NEXT_TELEMETRY_DISABLED 1
@@ -64,7 +64,7 @@ COPY --from=builder --chown=nextjs:nodejs /app/apps/v4/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/apps/v4/.next/static ./apps/v4/.next/static
 
 # Copy built shadcn package
-COPY --from=builder /app/packages/shadcn/dist ./packages/shadcn/dist
+# COPY --from=builder /app/packages/shadcn/dist ./packages/shadcn/dist
 
 USER nextjs
 
