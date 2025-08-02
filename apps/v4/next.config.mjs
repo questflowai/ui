@@ -11,20 +11,31 @@ const nextConfig = {
     "/*": ["./registry/**/*"],
   },
   webpack: (config, { webpack }) => {
-    // Suppress critical dependency warnings for cosmiconfig
+    // Suppress critical dependency warnings and webpack compatibility issues
     config.ignoreWarnings = [
       {
         module: /node_modules\/cosmiconfig/,
         message: /Critical dependency/,
       },
+      {
+        module: /node_modules\/tsconfig-paths/,
+        message: /Critical dependency/,
+      },
+      {
+        module: /node_modules\/tsconfig-paths/,
+        message: /require\.extensions is not supported by webpack/,
+      },
     ]
     
-    // Handle dynamic imports properly
+    // Handle dynamic imports and Node.js modules properly
     config.resolve.fallback = {
       ...config.resolve.fallback,
       fs: false,
       path: false,
       os: false,
+      crypto: false,
+      stream: false,
+      util: false,
     }
 
     return config
