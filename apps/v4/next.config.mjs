@@ -10,6 +10,25 @@ const nextConfig = {
   outputFileTracingIncludes: {
     "/*": ["./registry/**/*"],
   },
+  webpack: (config, { webpack }) => {
+    // Suppress critical dependency warnings for cosmiconfig
+    config.ignoreWarnings = [
+      {
+        module: /node_modules\/cosmiconfig/,
+        message: /Critical dependency/,
+      },
+    ]
+    
+    // Handle dynamic imports properly
+    config.resolve.fallback = {
+      ...config.resolve.fallback,
+      fs: false,
+      path: false,
+      os: false,
+    }
+
+    return config
+  },
   images: {
     remotePatterns: [
       {

@@ -58,6 +58,7 @@ WORKDIR /app
 
 # Set production environment
 ENV NODE_ENV=production
+ENV NEXT_PUBLIC_APP_URL=http://localhost:4000
 ENV NEXT_TELEMETRY_DISABLED=1
 ENV HOSTNAME="0.0.0.0"
 ENV PORT=4000

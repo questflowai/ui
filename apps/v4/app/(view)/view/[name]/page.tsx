@@ -61,21 +61,26 @@ export async function generateMetadata({
 }
 
 export async function generateStaticParams() {
-  const { Index } = await import("@/registry/__index__")
-  const index = z.record(registryItemSchema).parse(Index)
+  try {
+    const { Index } = await import("@/registry/__index__")
+    const index = z.record(registryItemSchema).parse(Index)
 
-  return Object.values(index)
-    .filter((block) =>
-      [
-        "registry:block",
-        "registry:component",
-        "registry:example",
-        "registry:internal",
-      ].includes(block.type)
-    )
-    .map((block) => ({
-      name: block.name,
-    }))
+    return Object.values(index)
+      .filter((block) =>
+        [
+          "registry:block",
+          "registry:component",
+          "registry:example",
+          "registry:internal",
+        ].includes(block.type)
+      )
+      .map((block) => ({
+        name: block.name,
+      }))
+  } catch (error) {
+    console.warn("Failed to generate static params for view pages:", error)
+    return []
+  }
 }
 
 export default async function BlockPage({

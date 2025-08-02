@@ -34,8 +34,12 @@ COPY apps/v4 ./apps/v4/
 # Run postinstall scripts now that all files are in place
 RUN pnpm install --frozen-lockfile --production=false
 
-# Build the v4 application
+# Set environment variables for build
 ENV NODE_ENV=production
+ENV NEXT_PUBLIC_APP_URL=http://localhost:4000
+ENV NEXT_TELEMETRY_DISABLED=1
+
+# Build the v4 application
 RUN pnpm --filter=v4 build
 
 
@@ -56,6 +60,7 @@ WORKDIR /app
 # Set production environment
 ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED=1
+ENV NEXT_PUBLIC_APP_URL=http://localhost:4000
 ENV HOSTNAME="0.0.0.0"
 ENV PORT=4000
 
