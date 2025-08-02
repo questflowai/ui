@@ -33,8 +33,9 @@ export default defineConfig({
 export const docs = defineDocs({
   dir: "content/docs",
   docs: {
-    // @ts-expect-error - TODO: fix the type.
-    schema: frontmatterSchema.extend({
+    schema: z.object({
+      title: z.string(),
+      description: z.string(),
       links: z
         .object({
           doc: z.string().optional(),
