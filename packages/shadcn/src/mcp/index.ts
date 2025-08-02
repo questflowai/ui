@@ -71,7 +71,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       throw new Error("Arguments are required")
     }
 
-    const REGISTRY_URL = "http://localhost:4000/r" // process.env.REGISTRY_URL
+    const REGISTRY_URL = "https://ui.intra-tls2.dctx.link/r" // process.env.REGISTRY_URL
 
     if (!REGISTRY_URL) {
       throw new Error("REGISTRY_URL is not set")

@@ -9,7 +9,7 @@ const TEMP_DIR = path.join(__dirname, "../../temp")
 const SHADCN_CLI_PATH = path.join(__dirname, "../../../shadcn/dist/index.js")
 
 export function getRegistryUrl() {
-  return process.env.REGISTRY_URL || "http://localhost:4000/r"
+  return process.env.REGISTRY_URL || "https://ui.intra-tls2.dctx.link/r"
 }
 
 export async function createFixtureTestDirectory(fixtureName: string) {

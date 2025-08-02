@@ -22,7 +22,8 @@ import {
   stylesSchema,
 } from "./schema"
 
-const REGISTRY_URL = "http://localhost:4000/r" // process.env.REGISTRY_URL ?? "http://localhost:4000"
+// const REGISTRY_URL = "http://localhost:4000/r" // process.env.REGISTRY_URL ?? "http://localhost:4000"
+const REGISTRY_URL = "https://ui.intra-tls2.dctx.link/r" // process.env.REGISTRY_URL ?? "http://localhost:4000"
 
 const agent = process.env.https_proxy
   ? new HttpsProxyAgent(process.env.https_proxy)
