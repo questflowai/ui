@@ -1,12 +1,20 @@
 {
-  "name": "qf-next-ui",
+  "name": "@questflowai/ui",
   "version": "1.0.0",
   "description": "Add components to your apps.",
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/",
-    "access": "public"
+    "@questflowai:registry": "https://npm.pkg.github.com"
   },
   "license": "MIT",
+  "author": {
+    "name": "Questflow",
+    "url": "https://x.com/questflow"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/questflowai/ui.git",
+    "directory": "packages/ui"
+  },
   "files": [
     "dist"
   ],
@@ -14,7 +22,8 @@
     "components",
     "ui",
     "tailwind",
-    "radix-ui"
+    "radix-ui",
+    "shadcn"
   ],
   "type": "module",
   "exports": {
