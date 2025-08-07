@@ -2292,6 +2292,23 @@
       ]
     },
     {
+      "name": "hello-world",
+      "type": "registry:block",
+      "description": "A simple hello world block",
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/hello-world/hello-world.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": [
+        "hello-world"
+      ]
+    },
+    {
       "name": "chart-area-axes",
       "type": "registry:block",
       "registryDependencies": [

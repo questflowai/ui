@@ -2100,6 +2100,24 @@ export const Index: Record<string, any> = {
     categories: ["calendar","date"],
     meta: {"iframeHeight":"600px","container":"w-full bg-surface min-h-svh flex px-6 py-12 items-start md:pt-20 justify-center min-w-0 xl:py-24","mobile":"component"},
   },
+  "hello-world": {
+    name: "hello-world",
+    description: "A simple hello world block",
+    type: "registry:block",
+    registryDependencies: ["button"],
+    files: [{
+      path: "registry/new-york-v4/blocks/hello-world/hello-world.tsx",
+      type: "registry:component",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/blocks/hello-world/hello-world.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["hello-world"],
+    meta: undefined,
+  },
   "chart-area-axes": {
     name: "chart-area-axes",
     description: "",

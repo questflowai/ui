@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hello-world",
+  "type": "registry:block",
+  "description": "A simple hello world block",
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/hello-world/hello-world.tsx",
+      "content": "import { Button } from \"@/registry/new-york-v4/ui/button\"\n\nexport function HelloWorld() {\n  return <Button>Hello World</Button>\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "categories": [
+    "hello-world"
+  ]
+}

@@ -268,5 +268,10 @@
     "name": "calendar-32",
     "description": "Date picker in a drawer",
     "categories": ["calendar", "date"]
+  },
+  {
+    "name": "hello-world",
+    "description": "A simple hello world block",
+    "categories": ["hello-world"]
   }
 ]

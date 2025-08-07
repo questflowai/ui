@@ -1315,4 +1315,17 @@ export const blocks: Registry["items"] = [
       mobile: "component",
     },
   },
+  {
+    name: "hello-world",
+    description: "A simple hello world block",
+    type: "registry:block",
+    registryDependencies: ["button"],
+    files: [
+      {
+        path: "blocks/hello-world/hello-world.tsx",
+        type: "registry:component",
+      },
+    ],
+    categories: ["hello-world"],
+  },
 ]
