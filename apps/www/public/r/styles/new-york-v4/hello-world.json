@@ -9,10 +9,15 @@
   "files": [
     {
       "path": "registry/new-york-v4/blocks/hello-world/hello-world.tsx",
-      "content": "import { Button } from \"@/registry/new-york-v4/ui/button\"\n\nexport function HelloWorld() {\n  return <Button>Hello World</Button>\n}\n",
+      "content": "import { Button } from \"@/registry/new-york-v4/ui/button\"\n\nfunction HelloWorld() {\n  return <Button>Hello World</Button>\n}\n\nexport default function Page() {\n  return (\n    <div className=\"flex min-h-svh w-full items-center justify-center p-6 md:p-10\">\n      <div className=\"w-full max-w-sm\">\n        <HelloWorld />\n      </div>\n    </div>\n  )\n}\n",
       "type": "registry:component"
     }
   ],
+  "meta": {
+    "iframeHeight": "600px",
+    "container": "w-full bg-surface min-h-svh flex px-6 py-12 items-start md:pt-20 justify-center min-w-0 xl:py-24",
+    "mobile": "component"
+  },
   "categories": [
     "hello-world"
   ]
