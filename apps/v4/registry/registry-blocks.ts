@@ -1327,5 +1327,11 @@ export const blocks: Registry["items"] = [
       },
     ],
     categories: ["hello-world"],
+    meta: {
+      iframeHeight: "600px",
+      container:
+        "w-full bg-surface min-h-svh flex px-6 py-12 items-start md:pt-20 justify-center min-w-0 xl:py-24",
+      mobile: "component",
+    },
   },
 ]
