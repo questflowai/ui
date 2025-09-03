@@ -13,6 +13,8 @@ import { absoluteUrl } from "@/lib/utils"
 import { DocsCopyPage } from "@/components/docs-copy-page"
 import { DocsTableOfContents } from "@/components/docs-toc"
 import { OpenInV0Cta } from "@/components/open-in-v0-cta"
+import { Button } from "@/registry/new-york-v4/ui/button"
+
 
 export const revalidate = false
 export const dynamic = "force-static"
@@ -130,11 +132,31 @@ export default async function Page(props: {
               </div>
             </div>
           )}
-                     <DocsCopyPage 
-             // @ts-expect-error - revisit fumadocs types.
-             page={doc.content}
-             url={absoluteUrl(page.url || '/docs')}
-           />
+          {neighbours.next && (
+            <Button
+              variant="secondary"
+              size="sm"
+              className="ml-auto shadow-none"
+              asChild
+            >
+              <Link href={neighbours.next.url}>
+                {neighbours.next.name} <IconArrowRight />
+              </Link>
+            </Button>
+          )}
+        </div>
+      </div>
+      <div className="sticky top-[calc(var(--header-height)+1px)] z-30 ml-auto hidden h-[calc(100svh-var(--footer-height)+2rem)] w-72 flex-col gap-4 overflow-hidden overscroll-none pb-8 xl:flex">
+        <div className="h-(--top-spacing) shrink-0" />
+        {/* @ts-expect-error - revisit fumadocs types. */}
+        {doc.toc?.length ? (
+          <div className="no-scrollbar overflow-y-auto px-8">
+            {/* @ts-expect-error - revisit fumadocs types. */}
+            <DocsTableOfContents toc={doc.toc} />
+            <div className="h-12" />
+          </div>
+        ) : null}
+        <div className="flex flex-1 flex-col gap-12 px-6">
           <OpenInV0Cta />
           <div className="mt-12 flex flex-row items-center justify-between">
             {neighbours.previous ? (

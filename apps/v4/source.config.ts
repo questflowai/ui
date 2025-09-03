@@ -33,9 +33,7 @@ export default defineConfig({
 export const docs = defineDocs({
   dir: "content/docs",
   docs: {
-    schema: z.object({
-      title: z.string(),
-      description: z.string(),
+    schema: frontmatterSchema.extend({
       links: z
         .object({
           doc: z.string().optional(),
