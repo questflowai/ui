@@ -16,7 +16,7 @@ RUN corepack enable
 RUN corepack prepare pnpm@9.0.6 --activate
 
 # Copy all necessary files for the workspace
-COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
+COPY package.json pnpm-lock.yaml pnpm-workspace.yaml tsconfig.json ./
 COPY apps/v4/package.json ./apps/v4/
 COPY packages/shadcn/package.json ./packages/shadcn/
 COPY packages/tests/package.json ./packages/tests/
