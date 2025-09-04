@@ -1631,4 +1631,14 @@ export const examples: Registry["items"] = [
       mobile: "component",
     },
   },
+  {
+    name: "test-ui-demo",
+    type: "registry:example",
+    files: [
+      {
+        path: "examples/test-ui-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
 ]

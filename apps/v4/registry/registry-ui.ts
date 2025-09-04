@@ -610,4 +610,14 @@ export const ui: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "test-ui",
+    type: "registry:ui",
+    files: [
+      {
+        path: "ui/test-ui.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
 ]

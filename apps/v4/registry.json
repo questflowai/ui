@@ -698,6 +698,16 @@
       ]
     },
     {
+      "name": "test-ui",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "registry/new-york-v4/ui/test-ui.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "dashboard-01",
       "type": "registry:block",
       "description": "A dashboard with sidebar, charts and data table.",
@@ -5854,6 +5864,16 @@
       "categories": [
         "calendar",
         "date"
+      ]
+    },
+    {
+      "name": "test-ui-demo",
+      "type": "registry:example",
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/test-ui-demo.tsx",
+          "type": "registry:example"
+        }
       ]
     },
     {
