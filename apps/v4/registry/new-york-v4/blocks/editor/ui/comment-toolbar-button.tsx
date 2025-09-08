@@ -1,0 +1,25 @@
+"use client"
+
+import * as React from "react"
+import { MessageSquareTextIcon } from "lucide-react"
+import { useEditorRef } from "platejs/react"
+
+import { commentPlugin } from "@/registry/new-york-v4/blocks/editor/components/editor/plugins/comment-kit"
+
+import { ToolbarButton } from "./toolbar"
+
+export function CommentToolbarButton() {
+  const editor = useEditorRef()
+
+  return (
+    <ToolbarButton
+      onClick={() => {
+        editor.getTransforms(commentPlugin).comment.setDraft()
+      }}
+      data-plate-prevent-overlay
+      tooltip="Comment"
+    >
+      <MessageSquareTextIcon />
+    </ToolbarButton>
+  )
+}

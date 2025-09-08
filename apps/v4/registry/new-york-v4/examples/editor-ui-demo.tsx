@@ -1,6 +1,6 @@
 "use client"
 
-import Editor from "@/registry/new-york-v4/ui/editor/index"
+import Editor from "@/registry/new-york-v4/blocks/editor/index"
 
 export default function EditorUiDemo() {
   const initialValue = [
