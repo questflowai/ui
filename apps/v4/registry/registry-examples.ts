@@ -1641,4 +1641,14 @@ export const examples: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "editor-ui-demo",
+    type: "registry:example",
+    files: [
+      {
+        path: "examples/editor-ui-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
 ]

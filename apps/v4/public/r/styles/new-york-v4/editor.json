@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "editor",
+  "type": "registry:ui",
+  "dependencies": [
+    "platejs",
+    "@platejs/basic-nodes",
+    "@radix-ui/react-toolbar",
+    "@platejs/ai",
+    "@platejs/autoformat"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/ui/editor/index.tsx",
+      "content": "\"use client\"\n\nimport React, { useEffect } from \"react\"\nimport { type Value } from \"platejs\"\nimport {\n  Plate,\n  PlateContent,\n  PlateEditor,\n  PlatePlugin,\n  usePlateEditor,\n} from \"platejs/react\"\n\nimport { cn } from \"@/lib/utils\"\n\nimport QFPlugins from \"./components/editor\"\n\nexport default function Editor({\n  className,\n  editorCls,\n  value,\n  plugins,\n  onChange,\n  disabledPluginKeys,\n}: {\n  value: Value\n  editorCls?: string\n  className?: string\n  plugins?: PlatePlugin[]\n  onChange?: (x: { editor: PlateEditor; value: Value }) => void\n  disabledPluginKeys?: string[]\n}) {\n  // 合并所有插件\n  const allPlugins = [...QFPlugins, ...(plugins || [])]\n  // 过滤禁用插件\n  const enabledPlugins =\n    Array.isArray(disabledPluginKeys) && disabledPluginKeys.length > 0\n      ? allPlugins.filter((plugin) => !disabledPluginKeys.includes(plugin?.key))\n      : allPlugins\n\n  const editor = usePlateEditor({\n    plugins: enabledPlugins,\n    value: value,\n  })\n\n  useEffect(() => {\n    editor.tf.setValue(value)\n  }, [value])\n\n  return (\n    <div className={className}>\n      <Plate\n        editor={editor}\n        onChange={(editorEvent) => {\n          onChange && onChange(editorEvent)\n        }}\n      >\n        <PlateContent\n          className={cn(\n            \"h-full min-h-1 w-full p-2 focus:outline-none\",\n            editorCls\n          )}\n          placeholder=\"Type your amazing content here...\"\n        />\n      </Plate>\n    </div>\n  )\n}\n",
+      "type": "registry:ui"
+    }
+  ]
+}

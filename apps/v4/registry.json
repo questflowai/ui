@@ -708,6 +708,23 @@
       ]
     },
     {
+      "name": "editor",
+      "type": "registry:ui",
+      "dependencies": [
+        "platejs",
+        "@platejs/basic-nodes",
+        "@radix-ui/react-toolbar",
+        "@platejs/ai",
+        "@platejs/autoformat"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/ui/editor/index.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "dashboard-01",
       "type": "registry:block",
       "description": "A dashboard with sidebar, charts and data table.",
@@ -5872,6 +5889,16 @@
       "files": [
         {
           "path": "registry/new-york-v4/examples/test-ui-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "editor-ui-demo",
+      "type": "registry:example",
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/editor-ui-demo.tsx",
           "type": "registry:example"
         }
       ]

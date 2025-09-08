@@ -1,0 +1,27 @@
+
+@import "tw-animate-css";
+
+@plugin "tailwind-scrollbar-hide";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --highlight: oklch(0.852 0.199 91.936);
+}
+
+.dark {
+  --highlight: oklch(0.852 0.199 91.936);
+}
+
+@theme inline {
+  --color-highlight: var(--highlight);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}

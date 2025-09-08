@@ -620,4 +620,21 @@ export const ui: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "editor",
+    type: "registry:ui",
+    dependencies: [
+      "platejs",
+      "@platejs/basic-nodes",
+      "@radix-ui/react-toolbar",
+      "@platejs/ai",
+      "@platejs/autoformat",
+    ],
+    files: [
+      {
+        path: "ui/editor/index.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
 ]
