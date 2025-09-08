@@ -3,7 +3,12 @@
   "name": "navigation-menu",
   "type": "registry:ui",
   "dependencies": [
-    "@radix-ui/react-navigation-menu"
+    "@radix-ui/react-navigation-menu",
+    "class-variance-authority",
+    "clsx",
+    "lucide-react",
+    "react",
+    "tailwind-merge"
   ],
   "files": [
     {

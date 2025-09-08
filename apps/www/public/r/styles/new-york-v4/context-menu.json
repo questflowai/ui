@@ -3,7 +3,11 @@
   "name": "context-menu",
   "type": "registry:ui",
   "dependencies": [
-    "@radix-ui/react-context-menu"
+    "@radix-ui/react-context-menu",
+    "clsx",
+    "lucide-react",
+    "react",
+    "tailwind-merge"
   ],
   "files": [
     {
