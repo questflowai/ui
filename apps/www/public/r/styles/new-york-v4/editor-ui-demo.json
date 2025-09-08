@@ -5,7 +5,7 @@
   "files": [
     {
       "path": "registry/new-york-v4/examples/editor-ui-demo.tsx",
-      "content": "\"use client\"\n\nimport Editor from \"@/registry/new-york-v4/ui/editor/index\"\n\nexport default function EditorUiDemo() {\n  const initialValue = [\n    {\n      children: [{ text: \"Title\" }],\n      type: \"h3\",\n    },\n    {\n      children: [{ text: \"This is a quote.\" }],\n      type: \"blockquote\",\n    },\n    {\n      children: [\n        { text: \"With some \" },\n        { bold: true, text: \"bold\" },\n        { text: \" text for emphasis!\" },\n      ],\n      type: \"p\",\n    },\n  ]\n\n  return (\n    <div className=\"flex h-screen w-screen items-center justify-center\">\n      <Editor className=\"h-1/2 w-1/2\" value={initialValue} />\n    </div>\n  )\n}\n",
+      "content": "\"use client\"\r\n\r\nimport Editor from \"@/registry/new-york-v4/ui/editor/index\"\r\n\r\nexport default function EditorUiDemo() {\r\n  const initialValue = [\r\n    {\r\n      children: [{ text: \"Title\" }],\r\n      type: \"h3\",\r\n    },\r\n    {\r\n      children: [{ text: \"This is a quote.\" }],\r\n      type: \"blockquote\",\r\n    },\r\n    {\r\n      children: [\r\n        { text: \"With some \" },\r\n        { bold: true, text: \"bold\" },\r\n        { text: \" text for emphasis!\" },\r\n      ],\r\n      type: \"p\",\r\n    },\r\n  ]\r\n\r\n  return (\r\n    <div className=\"flex h-screen w-screen items-center justify-center\">\r\n      <Editor className=\"h-1/2 w-1/2\" value={initialValue} />\r\n    </div>\r\n  )\r\n}\r\n",
       "type": "registry:example"
     }
   ]
