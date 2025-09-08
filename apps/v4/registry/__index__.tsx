@@ -312,24 +312,6 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
-  "content-editor": {
-    name: "content-editor",
-    description: "",
-    type: "registry:ui",
-    registryDependencies: undefined,
-    files: [{
-      path: "registry/new-york-v4/ui/content-editor.tsx",
-      type: "registry:ui",
-      target: ""
-    }],
-    component: React.lazy(async () => {
-      const mod = await import("@/registry/new-york-v4/ui/content-editor.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
-      return { default: mod.default || mod[exportName] }
-    }),
-    categories: undefined,
-    meta: undefined,
-  },
   "context-menu": {
     name: "context-menu",
     description: "",
@@ -1946,24 +1928,6 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/new-york-v4/blocks/calendar-32.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
-      return { default: mod.default || mod[exportName] }
-    }),
-    categories: undefined,
-    meta: undefined,
-  },
-  "content-editor": {
-    name: "content-editor",
-    description: "",
-    type: "registry:block",
-    registryDependencies: undefined,
-    files: [{
-      path: "registry/new-york-v4/blocks/content-editor/index.tsx",
-      type: "registry:block",
-      target: ""
-    }],
-    component: React.lazy(async () => {
-      const mod = await import("@/registry/new-york-v4/blocks/content-editor/index.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
       return { default: mod.default || mod[exportName] }
     }),

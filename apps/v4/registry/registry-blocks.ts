@@ -1088,16 +1088,6 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "calendar", "drawer", "label"],
   },
   {
-    name: "content-editor",
-    type: "registry:block",
-    files: [
-      {
-        path: "blocks/content-editor/index.tsx",
-        type: "registry:block",
-      },
-    ],
-  },
-  {
     name: "editor",
     type: "registry:block",
     files: [

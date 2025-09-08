@@ -311,16 +311,6 @@
       ]
     },
     {
-      "name": "content-editor",
-      "type": "registry:ui",
-      "files": [
-        {
-          "path": "registry/new-york-v4/ui/content-editor.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
       "name": "context-menu",
       "type": "registry:ui",
       "dependencies": [
@@ -2123,16 +2113,6 @@
         },
         {
           "path": "registry/new-york-v4/ui/label.tsx",
-          "type": "registry:block"
-        }
-      ]
-    },
-    {
-      "name": "content-editor",
-      "type": "registry:block",
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/content-editor/index.tsx",
           "type": "registry:block"
         }
       ]

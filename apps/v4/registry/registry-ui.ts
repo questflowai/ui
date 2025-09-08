@@ -252,16 +252,6 @@ export const ui: Registry["items"] = [
     registryDependencies: ["dialog"],
   },
   {
-    name: "content-editor",
-    type: "registry:ui",
-    files: [
-      {
-        path: "ui/content-editor.tsx",
-        type: "registry:ui",
-      },
-    ],
-  },
-  {
     name: "context-menu",
     type: "registry:ui",
     files: [
