@@ -1,0 +1,12 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "content-editor",
+  "type": "registry:block",
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/content-editor/index.tsx",
+      "content": "",
+      "type": "registry:block"
+    }
+  ]
+}

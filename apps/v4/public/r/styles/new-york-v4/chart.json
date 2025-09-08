@@ -3,11 +3,10 @@
   "name": "chart",
   "type": "registry:ui",
   "dependencies": [
-    "recharts@2.15.4",
-    "lucide-react"
-  ],
-  "registryDependencies": [
-    "card"
+    "clsx",
+    "react",
+    "recharts",
+    "tailwind-merge"
   ],
   "files": [
     {
