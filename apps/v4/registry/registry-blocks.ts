@@ -11,7 +11,7 @@ export const blocks: Registry["items"] = [
       },
       {
         path: "blocks/hello-world/components/hello.tsx",
-        type: "registry:block",
+        type: "registry:component",
       },
       {
         path: "blocks/hello-world/components/world.tsx",
