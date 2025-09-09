@@ -94,6 +94,31 @@ type DepGraph = {
   registryDependencies: string[]
 }
 
+// 规范化依赖：如果已经同时存在根包与其子路径（例如 @platejs/ai 与 @platejs/ai/react），只保留根包。
+function normalizeDependencies(deps: string[]) {
+  // 强收敛：无论是否引用子路径，一律折叠为根包：
+  // @scope/name/anything -> @scope/name
+  // package/sub/path -> package
+  const roots = new Set<string>()
+  deps.forEach((dep) => {
+    if (!dep) return
+    if (dep.startsWith("@")) {
+      const parts = dep.split("/")
+      // 至少 @scope/name
+      if (parts.length >= 3) {
+        roots.add(parts.slice(0, 2).join("/"))
+      } else {
+        roots.add(dep)
+      }
+    } else {
+      // 普通包：取第一段
+      const root = dep.split("/")[0]
+      roots.add(root)
+    }
+  })
+  return Array.from(roots).sort()
+}
+
 // 递归收集：本地 ts/tsx 文件（包括未注册的）、聚合外部依赖和 registry 依赖
 async function collectDependencyGraph(entryAbsFile: string): Promise<DepGraph> {
   const visited = new Set<string>()
@@ -263,7 +288,7 @@ async function generateRegistry(
       type,
       files: relFiles,
       dependencies: graph.dependencies.length
-        ? [...graph.dependencies].sort()
+        ? normalizeDependencies(graph.dependencies)
         : undefined,
       registryDependencies: finalRegistryDeps.length
         ? finalRegistryDeps
