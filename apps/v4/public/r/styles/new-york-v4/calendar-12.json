@@ -10,7 +10,6 @@
     "lucide-react",
     "react",
     "react-day-picker",
-    "react-day-picker/locale",
     "tailwind-merge"
   ],
   "registryDependencies": [
