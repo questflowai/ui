@@ -66,7 +66,7 @@ export const Index: Record<string, any> = {
     name: "alert-dialog",
     description: "",
     type: "registry:ui",
-    registryDependencies: ["button"],
+    registryDependencies: undefined,
     files: [{
       path: "registry/new-york-v4/ui/alert-dialog.tsx",
       type: "registry:ui",
@@ -178,7 +178,7 @@ export const Index: Record<string, any> = {
     name: "calendar",
     description: "",
     type: "registry:ui",
-    registryDependencies: ["button"],
+    registryDependencies: undefined,
     files: [{
       path: "registry/new-york-v4/ui/calendar.tsx",
       type: "registry:ui",
@@ -218,7 +218,7 @@ export const Index: Record<string, any> = {
     name: "carousel",
     description: "",
     type: "registry:ui",
-    registryDependencies: ["button"],
+    registryDependencies: undefined,
     files: [{
       path: "registry/new-york-v4/ui/carousel.tsx",
       type: "registry:ui",
@@ -294,7 +294,7 @@ export const Index: Record<string, any> = {
     name: "command",
     description: "",
     type: "registry:ui",
-    registryDependencies: ["dialog"],
+    registryDependencies: undefined,
     files: [{
       path: "registry/new-york-v4/ui/command.tsx",
       type: "registry:ui",
@@ -384,29 +384,11 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
-  "editor": {
-    name: "editor",
-    description: "",
-    type: "registry:ui",
-    registryDependencies: undefined,
-    files: [{
-      path: "registry/new-york-v4/ui/editor/index.tsx",
-      type: "registry:ui",
-      target: ""
-    }],
-    component: React.lazy(async () => {
-      const mod = await import("@/registry/new-york-v4/ui/editor/index.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
-      return { default: mod.default || mod[exportName] }
-    }),
-    categories: undefined,
-    meta: undefined,
-  },
   "form": {
     name: "form",
     description: "",
     type: "registry:ui",
-    registryDependencies: ["label"],
+    registryDependencies: undefined,
     files: [{
       path: "registry/new-york-v4/ui/form.tsx",
       type: "registry:ui",
@@ -536,7 +518,7 @@ export const Index: Record<string, any> = {
     name: "pagination",
     description: "",
     type: "registry:ui",
-    registryDependencies: ["button"],
+    registryDependencies: undefined,
     files: [{
       path: "registry/new-york-v4/ui/pagination.tsx",
       type: "registry:ui",
@@ -702,7 +684,7 @@ export const Index: Record<string, any> = {
     name: "sidebar",
     description: "",
     type: "registry:ui",
-    registryDependencies: ["button","input","separator","sheet","skeleton","tooltip"],
+    registryDependencies: undefined,
     files: [{
       path: "registry/new-york-v4/ui/sidebar.tsx",
       type: "registry:ui",
@@ -906,7 +888,7 @@ export const Index: Record<string, any> = {
     name: "toggle-group",
     description: "",
     type: "registry:ui",
-    registryDependencies: ["toggle"],
+    registryDependencies: undefined,
     files: [{
       path: "registry/new-york-v4/ui/toggle-group.tsx",
       type: "registry:ui",
@@ -997,14 +979,6 @@ export const Index: Record<string, any> = {
       path: "registry/new-york-v4/blocks/calendar-01.tsx",
       type: "registry:block",
       target: ""
-    },{
-      path: "registry/new-york-v4/ui/calendar.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/button.tsx",
-      type: "registry:block",
-      target: ""
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/new-york-v4/blocks/calendar-01.tsx")
@@ -1021,14 +995,6 @@ export const Index: Record<string, any> = {
     registryDependencies: ["button","calendar"],
     files: [{
       path: "registry/new-york-v4/blocks/calendar-02.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/calendar.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/button.tsx",
       type: "registry:block",
       target: ""
     }],
@@ -1049,14 +1015,6 @@ export const Index: Record<string, any> = {
       path: "registry/new-york-v4/blocks/calendar-03.tsx",
       type: "registry:block",
       target: ""
-    },{
-      path: "registry/new-york-v4/ui/calendar.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/button.tsx",
-      type: "registry:block",
-      target: ""
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/new-york-v4/blocks/calendar-03.tsx")
@@ -1073,14 +1031,6 @@ export const Index: Record<string, any> = {
     registryDependencies: ["button","calendar"],
     files: [{
       path: "registry/new-york-v4/blocks/calendar-04.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/calendar.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/button.tsx",
       type: "registry:block",
       target: ""
     }],
@@ -1101,14 +1051,6 @@ export const Index: Record<string, any> = {
       path: "registry/new-york-v4/blocks/calendar-05.tsx",
       type: "registry:block",
       target: ""
-    },{
-      path: "registry/new-york-v4/ui/calendar.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/button.tsx",
-      type: "registry:block",
-      target: ""
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/new-york-v4/blocks/calendar-05.tsx")
@@ -1125,14 +1067,6 @@ export const Index: Record<string, any> = {
     registryDependencies: ["button","calendar"],
     files: [{
       path: "registry/new-york-v4/blocks/calendar-06.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/calendar.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/button.tsx",
       type: "registry:block",
       target: ""
     }],
@@ -1153,14 +1087,6 @@ export const Index: Record<string, any> = {
       path: "registry/new-york-v4/blocks/calendar-07.tsx",
       type: "registry:block",
       target: ""
-    },{
-      path: "registry/new-york-v4/ui/calendar.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/button.tsx",
-      type: "registry:block",
-      target: ""
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/new-york-v4/blocks/calendar-07.tsx")
@@ -1177,14 +1103,6 @@ export const Index: Record<string, any> = {
     registryDependencies: ["button","calendar"],
     files: [{
       path: "registry/new-york-v4/blocks/calendar-08.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/calendar.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/button.tsx",
       type: "registry:block",
       target: ""
     }],
@@ -1205,14 +1123,6 @@ export const Index: Record<string, any> = {
       path: "registry/new-york-v4/blocks/calendar-09.tsx",
       type: "registry:block",
       target: ""
-    },{
-      path: "registry/new-york-v4/ui/calendar.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/button.tsx",
-      type: "registry:block",
-      target: ""
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/new-york-v4/blocks/calendar-09.tsx")
@@ -1229,18 +1139,6 @@ export const Index: Record<string, any> = {
     registryDependencies: ["button","calendar","card"],
     files: [{
       path: "registry/new-york-v4/blocks/calendar-10.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/button.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/calendar.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/card.tsx",
       type: "registry:block",
       target: ""
     }],
@@ -1261,14 +1159,6 @@ export const Index: Record<string, any> = {
       path: "registry/new-york-v4/blocks/calendar-11.tsx",
       type: "registry:block",
       target: ""
-    },{
-      path: "registry/new-york-v4/ui/calendar.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/button.tsx",
-      type: "registry:block",
-      target: ""
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/new-york-v4/blocks/calendar-11.tsx")
@@ -1285,22 +1175,6 @@ export const Index: Record<string, any> = {
     registryDependencies: ["button","calendar","card","select"],
     files: [{
       path: "registry/new-york-v4/blocks/calendar-12.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/calendar.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/card.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/select.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/button.tsx",
       type: "registry:block",
       target: ""
     }],
@@ -1321,22 +1195,6 @@ export const Index: Record<string, any> = {
       path: "registry/new-york-v4/blocks/calendar-13.tsx",
       type: "registry:block",
       target: ""
-    },{
-      path: "registry/new-york-v4/ui/calendar.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/label.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/select.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/button.tsx",
-      type: "registry:block",
-      target: ""
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/new-york-v4/blocks/calendar-13.tsx")
@@ -1353,14 +1211,6 @@ export const Index: Record<string, any> = {
     registryDependencies: ["button","calendar"],
     files: [{
       path: "registry/new-york-v4/blocks/calendar-14.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/calendar.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/button.tsx",
       type: "registry:block",
       target: ""
     }],
@@ -1381,14 +1231,6 @@ export const Index: Record<string, any> = {
       path: "registry/new-york-v4/blocks/calendar-15.tsx",
       type: "registry:block",
       target: ""
-    },{
-      path: "registry/new-york-v4/ui/calendar.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/button.tsx",
-      type: "registry:block",
-      target: ""
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/new-york-v4/blocks/calendar-15.tsx")
@@ -1405,26 +1247,6 @@ export const Index: Record<string, any> = {
     registryDependencies: ["button","calendar","card","input","label"],
     files: [{
       path: "registry/new-york-v4/blocks/calendar-16.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/calendar.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/card.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/input.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/label.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/button.tsx",
       type: "registry:block",
       target: ""
     }],
@@ -1445,26 +1267,6 @@ export const Index: Record<string, any> = {
       path: "registry/new-york-v4/blocks/calendar-17.tsx",
       type: "registry:block",
       target: ""
-    },{
-      path: "registry/new-york-v4/ui/calendar.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/card.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/input.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/label.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/button.tsx",
-      type: "registry:block",
-      target: ""
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/new-york-v4/blocks/calendar-17.tsx")
@@ -1481,14 +1283,6 @@ export const Index: Record<string, any> = {
     registryDependencies: ["button","calendar"],
     files: [{
       path: "registry/new-york-v4/blocks/calendar-18.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/calendar.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/button.tsx",
       type: "registry:block",
       target: ""
     }],
@@ -1509,18 +1303,6 @@ export const Index: Record<string, any> = {
       path: "registry/new-york-v4/blocks/calendar-19.tsx",
       type: "registry:block",
       target: ""
-    },{
-      path: "registry/new-york-v4/ui/button.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/calendar.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/card.tsx",
-      type: "registry:block",
-      target: ""
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/new-york-v4/blocks/calendar-19.tsx")
@@ -1537,18 +1319,6 @@ export const Index: Record<string, any> = {
     registryDependencies: ["button","calendar","card"],
     files: [{
       path: "registry/new-york-v4/blocks/calendar-20.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/button.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/calendar.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/card.tsx",
       type: "registry:block",
       target: ""
     }],
@@ -1569,14 +1339,6 @@ export const Index: Record<string, any> = {
       path: "registry/new-york-v4/blocks/calendar-21.tsx",
       type: "registry:block",
       target: ""
-    },{
-      path: "registry/new-york-v4/ui/calendar.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/button.tsx",
-      type: "registry:block",
-      target: ""
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/new-york-v4/blocks/calendar-21.tsx")
@@ -1593,22 +1355,6 @@ export const Index: Record<string, any> = {
     registryDependencies: ["button","calendar","label","popover"],
     files: [{
       path: "registry/new-york-v4/blocks/calendar-22.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/button.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/calendar.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/label.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/popover.tsx",
       type: "registry:block",
       target: ""
     }],
@@ -1629,22 +1375,6 @@ export const Index: Record<string, any> = {
       path: "registry/new-york-v4/blocks/calendar-23.tsx",
       type: "registry:block",
       target: ""
-    },{
-      path: "registry/new-york-v4/ui/button.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/calendar.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/label.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/popover.tsx",
-      type: "registry:block",
-      target: ""
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/new-york-v4/blocks/calendar-23.tsx")
@@ -1661,26 +1391,6 @@ export const Index: Record<string, any> = {
     registryDependencies: ["button","calendar","input","label","popover"],
     files: [{
       path: "registry/new-york-v4/blocks/calendar-24.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/button.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/calendar.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/input.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/label.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/popover.tsx",
       type: "registry:block",
       target: ""
     }],
@@ -1701,26 +1411,6 @@ export const Index: Record<string, any> = {
       path: "registry/new-york-v4/blocks/calendar-25.tsx",
       type: "registry:block",
       target: ""
-    },{
-      path: "registry/new-york-v4/ui/button.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/calendar.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/input.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/label.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/popover.tsx",
-      type: "registry:block",
-      target: ""
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/new-york-v4/blocks/calendar-25.tsx")
@@ -1737,26 +1427,6 @@ export const Index: Record<string, any> = {
     registryDependencies: ["button","calendar","input","label","popover"],
     files: [{
       path: "registry/new-york-v4/blocks/calendar-26.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/button.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/calendar.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/input.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/label.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/popover.tsx",
       type: "registry:block",
       target: ""
     }],
@@ -1777,26 +1447,6 @@ export const Index: Record<string, any> = {
       path: "registry/new-york-v4/blocks/calendar-27.tsx",
       type: "registry:block",
       target: ""
-    },{
-      path: "registry/new-york-v4/ui/button.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/calendar.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/card.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/chart.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/popover.tsx",
-      type: "registry:block",
-      target: ""
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/new-york-v4/blocks/calendar-27.tsx")
@@ -1813,26 +1463,6 @@ export const Index: Record<string, any> = {
     registryDependencies: ["button","calendar","input","label","popover"],
     files: [{
       path: "registry/new-york-v4/blocks/calendar-28.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/button.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/calendar.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/input.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/label.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/popover.tsx",
       type: "registry:block",
       target: ""
     }],
@@ -1853,26 +1483,6 @@ export const Index: Record<string, any> = {
       path: "registry/new-york-v4/blocks/calendar-29.tsx",
       type: "registry:block",
       target: ""
-    },{
-      path: "registry/new-york-v4/ui/button.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/calendar.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/input.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/label.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/popover.tsx",
-      type: "registry:block",
-      target: ""
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/new-york-v4/blocks/calendar-29.tsx")
@@ -1889,22 +1499,6 @@ export const Index: Record<string, any> = {
     registryDependencies: ["button","calendar","label","popover"],
     files: [{
       path: "registry/new-york-v4/blocks/calendar-30.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/button.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/calendar.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/label.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/popover.tsx",
       type: "registry:block",
       target: ""
     }],
@@ -1925,18 +1519,6 @@ export const Index: Record<string, any> = {
       path: "registry/new-york-v4/blocks/calendar-31.tsx",
       type: "registry:block",
       target: ""
-    },{
-      path: "registry/new-york-v4/ui/button.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/calendar.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/card.tsx",
-      type: "registry:block",
-      target: ""
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/new-york-v4/blocks/calendar-31.tsx")
@@ -1955,22 +1537,6 @@ export const Index: Record<string, any> = {
       path: "registry/new-york-v4/blocks/calendar-32.tsx",
       type: "registry:block",
       target: ""
-    },{
-      path: "registry/new-york-v4/ui/button.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/calendar.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/drawer.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/label.tsx",
-      type: "registry:block",
-      target: ""
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/new-york-v4/blocks/calendar-32.tsx")
@@ -1984,7 +1550,7 @@ export const Index: Record<string, any> = {
     name: "editor",
     description: "",
     type: "registry:block",
-    registryDependencies: ["ai-kit","ai-menu","ai-node","alert-dialog","avatar","basic-marks-kit","block-context-menu","block-discussion","block-draggable","block-list","block-list-static","block-selection","block-suggestion","blockquote-node","blockquote-node-static","button","calendar","callout-node","callout-node-static","checkbox","code-block-node","code-block-node-static","code-node","code-node-static","column-node","column-node-static","command","comment","comment-kit","comment-node","comment-node-static","context-menu","cursor-overlay","date-node","date-node-static","dialog","discussion-kit","dropdown-menu","editor-base-kit","editor-kit","emoji-node","equation-node","equation-node-static","fixed-toolbar","fixed-toolbar-buttons","floating-toolbar","floating-toolbar-buttons","heading-node","heading-node-static","highlight-node","highlight-node-static","hr-node","hr-node-static","indent-base-kit","indent-kit","input","kbd-node","kbd-node-static","link-node","link-node-static","link-toolbar","media-audio-node","media-audio-node-static","media-embed-node","media-file-node","media-file-node-static","media-image-node","media-image-node-static","media-placeholder-node","media-preview-dialog","media-upload-toast","media-video-node","media-video-node-static","mention-node","mention-node-static","paragraph-node","paragraph-node-static","popover","separator","slash-node","suggestion-kit","suggestion-node","suggestion-node-static","table-node","table-node-static","toc-node","toc-node-static","toggle-node","toggle-node-static","tooltip","transforms","use-chat","use-debounce","use-mounted"],
+    registryDependencies: ["alert-dialog","avatar","button","calendar","checkbox","dialog","dropdown-menu","input","popover","separator","tooltip"],
     files: [{
       path: "registry/new-york-v4/blocks/editor/index.tsx",
       type: "registry:block",
@@ -2318,15 +1884,11 @@ export const Index: Record<string, any> = {
       type: "registry:block",
       target: ""
     },{
-      path: "registry/new-york-v4/ui/button.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/popover.tsx",
-      type: "registry:block",
-      target: ""
-    },{
       path: "registry/new-york-v4/blocks/editor/ui/ai-chat-editor.tsx",
+      type: "registry:block",
+      target: ""
+    },{
+      path: "registry/new-york-v4/blocks/editor/hooks/use-is-touch-device.ts",
       type: "registry:block",
       target: ""
     },{
@@ -2339,30 +1901,6 @@ export const Index: Record<string, any> = {
       target: ""
     },{
       path: "registry/new-york-v4/blocks/editor/ui/emoji-toolbar-button.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/command.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/separator.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/tooltip.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/calendar.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/avatar.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/dropdown-menu.tsx",
       type: "registry:block",
       target: ""
     },{
@@ -2470,10 +2008,6 @@ export const Index: Record<string, any> = {
       type: "registry:block",
       target: ""
     },{
-      path: "registry/new-york-v4/ui/checkbox.tsx",
-      type: "registry:block",
-      target: ""
-    },{
       path: "registry/new-york-v4/blocks/editor/ui/caption.tsx",
       type: "registry:block",
       target: ""
@@ -2483,6 +2017,10 @@ export const Index: Record<string, any> = {
       target: ""
     },{
       path: "registry/new-york-v4/blocks/editor/ui/resize-handle.tsx",
+      type: "registry:block",
+      target: ""
+    },{
+      path: "registry/new-york-v4/blocks/editor/hooks/use-upload-file.ts",
       type: "registry:block",
       target: ""
     },{
@@ -2498,23 +2036,11 @@ export const Index: Record<string, any> = {
       type: "registry:block",
       target: ""
     },{
-      path: "registry/new-york-v4/ui/dialog.tsx",
-      type: "registry:block",
-      target: ""
-    },{
       path: "registry/new-york-v4/blocks/editor/components/editor/editor-base-kit.tsx",
       type: "registry:block",
       target: ""
     },{
       path: "registry/new-york-v4/blocks/editor/ui/editor-static.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/alert-dialog.tsx",
-      type: "registry:block",
-      target: ""
-    },{
-      path: "registry/new-york-v4/ui/input.tsx",
       type: "registry:block",
       target: ""
     },{

@@ -1,9 +1,5 @@
 [
   {
-    "name": "editor",
-    "description": ""
-  },
-  {
     "name": "hello-world",
     "description": ""
   },
@@ -133,6 +129,10 @@
   },
   {
     "name": "calendar-32",
+    "description": ""
+  },
+  {
+    "name": "editor",
     "description": ""
   }
 ]

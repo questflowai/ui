@@ -10,9 +10,6 @@
     "react-hook-form",
     "tailwind-merge"
   ],
-  "registryDependencies": [
-    "label"
-  ],
   "files": [
     {
       "path": "registry/new-york-v4/ui/form.tsx",
