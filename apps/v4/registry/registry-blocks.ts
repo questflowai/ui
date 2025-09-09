@@ -51,6 +51,7 @@ export const blocks: Registry["items"] = [
       {
         path: "blocks/calendar-01.tsx",
         type: "registry:block",
+        target: "components/calendar-01/calendar-01.tsx",
       },
     ],
     dependencies: [
@@ -71,6 +72,7 @@ export const blocks: Registry["items"] = [
       {
         path: "blocks/calendar-02.tsx",
         type: "registry:block",
+        target: "components/calendar-02/calendar-02.tsx",
       },
     ],
     dependencies: [
@@ -91,6 +93,7 @@ export const blocks: Registry["items"] = [
       {
         path: "blocks/calendar-03.tsx",
         type: "registry:block",
+        target: "components/calendar-03/calendar-03.tsx",
       },
     ],
     dependencies: [
@@ -111,6 +114,7 @@ export const blocks: Registry["items"] = [
       {
         path: "blocks/calendar-04.tsx",
         type: "registry:block",
+        target: "components/calendar-04/calendar-04.tsx",
       },
     ],
     dependencies: [
@@ -131,6 +135,7 @@ export const blocks: Registry["items"] = [
       {
         path: "blocks/calendar-05.tsx",
         type: "registry:block",
+        target: "components/calendar-05/calendar-05.tsx",
       },
     ],
     dependencies: [
@@ -151,6 +156,7 @@ export const blocks: Registry["items"] = [
       {
         path: "blocks/calendar-06.tsx",
         type: "registry:block",
+        target: "components/calendar-06/calendar-06.tsx",
       },
     ],
     dependencies: [
@@ -171,6 +177,7 @@ export const blocks: Registry["items"] = [
       {
         path: "blocks/calendar-07.tsx",
         type: "registry:block",
+        target: "components/calendar-07/calendar-07.tsx",
       },
     ],
     dependencies: [
@@ -191,6 +198,7 @@ export const blocks: Registry["items"] = [
       {
         path: "blocks/calendar-08.tsx",
         type: "registry:block",
+        target: "components/calendar-08/calendar-08.tsx",
       },
     ],
     dependencies: [
@@ -211,6 +219,7 @@ export const blocks: Registry["items"] = [
       {
         path: "blocks/calendar-09.tsx",
         type: "registry:block",
+        target: "components/calendar-09/calendar-09.tsx",
       },
     ],
     dependencies: [
@@ -231,6 +240,7 @@ export const blocks: Registry["items"] = [
       {
         path: "blocks/calendar-10.tsx",
         type: "registry:block",
+        target: "components/calendar-10/calendar-10.tsx",
       },
     ],
     dependencies: [
@@ -251,6 +261,7 @@ export const blocks: Registry["items"] = [
       {
         path: "blocks/calendar-11.tsx",
         type: "registry:block",
+        target: "components/calendar-11/calendar-11.tsx",
       },
     ],
     dependencies: [
@@ -271,6 +282,7 @@ export const blocks: Registry["items"] = [
       {
         path: "blocks/calendar-12.tsx",
         type: "registry:block",
+        target: "components/calendar-12/calendar-12.tsx",
       },
     ],
     dependencies: [
@@ -292,6 +304,7 @@ export const blocks: Registry["items"] = [
       {
         path: "blocks/calendar-13.tsx",
         type: "registry:block",
+        target: "components/calendar-13/calendar-13.tsx",
       },
     ],
     dependencies: [
@@ -314,6 +327,7 @@ export const blocks: Registry["items"] = [
       {
         path: "blocks/calendar-14.tsx",
         type: "registry:block",
+        target: "components/calendar-14/calendar-14.tsx",
       },
     ],
     dependencies: [
@@ -334,6 +348,7 @@ export const blocks: Registry["items"] = [
       {
         path: "blocks/calendar-15.tsx",
         type: "registry:block",
+        target: "components/calendar-15/calendar-15.tsx",
       },
     ],
     dependencies: [
@@ -354,6 +369,7 @@ export const blocks: Registry["items"] = [
       {
         path: "blocks/calendar-16.tsx",
         type: "registry:block",
+        target: "components/calendar-16/calendar-16.tsx",
       },
     ],
     dependencies: [
@@ -375,6 +391,7 @@ export const blocks: Registry["items"] = [
       {
         path: "blocks/calendar-17.tsx",
         type: "registry:block",
+        target: "components/calendar-17/calendar-17.tsx",
       },
     ],
     dependencies: [
@@ -396,6 +413,7 @@ export const blocks: Registry["items"] = [
       {
         path: "blocks/calendar-18.tsx",
         type: "registry:block",
+        target: "components/calendar-18/calendar-18.tsx",
       },
     ],
     dependencies: [
@@ -416,6 +434,7 @@ export const blocks: Registry["items"] = [
       {
         path: "blocks/calendar-19.tsx",
         type: "registry:block",
+        target: "components/calendar-19/calendar-19.tsx",
       },
     ],
     dependencies: [
@@ -437,6 +456,7 @@ export const blocks: Registry["items"] = [
       {
         path: "blocks/calendar-20.tsx",
         type: "registry:block",
+        target: "components/calendar-20/calendar-20.tsx",
       },
     ],
     dependencies: [
@@ -457,6 +477,7 @@ export const blocks: Registry["items"] = [
       {
         path: "blocks/calendar-21.tsx",
         type: "registry:block",
+        target: "components/calendar-21/calendar-21.tsx",
       },
     ],
     dependencies: [
@@ -477,6 +498,7 @@ export const blocks: Registry["items"] = [
       {
         path: "blocks/calendar-22.tsx",
         type: "registry:block",
+        target: "components/calendar-22/calendar-22.tsx",
       },
     ],
     dependencies: [
@@ -499,6 +521,7 @@ export const blocks: Registry["items"] = [
       {
         path: "blocks/calendar-23.tsx",
         type: "registry:block",
+        target: "components/calendar-23/calendar-23.tsx",
       },
     ],
     dependencies: [
@@ -521,6 +544,7 @@ export const blocks: Registry["items"] = [
       {
         path: "blocks/calendar-24.tsx",
         type: "registry:block",
+        target: "components/calendar-24/calendar-24.tsx",
       },
     ],
     dependencies: [
@@ -543,6 +567,7 @@ export const blocks: Registry["items"] = [
       {
         path: "blocks/calendar-25.tsx",
         type: "registry:block",
+        target: "components/calendar-25/calendar-25.tsx",
       },
     ],
     dependencies: [
@@ -565,6 +590,7 @@ export const blocks: Registry["items"] = [
       {
         path: "blocks/calendar-26.tsx",
         type: "registry:block",
+        target: "components/calendar-26/calendar-26.tsx",
       },
     ],
     dependencies: [
@@ -587,6 +613,7 @@ export const blocks: Registry["items"] = [
       {
         path: "blocks/calendar-27.tsx",
         type: "registry:block",
+        target: "components/calendar-27/calendar-27.tsx",
       },
     ],
     dependencies: [
@@ -609,6 +636,7 @@ export const blocks: Registry["items"] = [
       {
         path: "blocks/calendar-28.tsx",
         type: "registry:block",
+        target: "components/calendar-28/calendar-28.tsx",
       },
     ],
     dependencies: [
@@ -631,6 +659,7 @@ export const blocks: Registry["items"] = [
       {
         path: "blocks/calendar-29.tsx",
         type: "registry:block",
+        target: "components/calendar-29/calendar-29.tsx",
       },
     ],
     dependencies: [
@@ -654,6 +683,7 @@ export const blocks: Registry["items"] = [
       {
         path: "blocks/calendar-30.tsx",
         type: "registry:block",
+        target: "components/calendar-30/calendar-30.tsx",
       },
     ],
     dependencies: [
@@ -677,6 +707,7 @@ export const blocks: Registry["items"] = [
       {
         path: "blocks/calendar-31.tsx",
         type: "registry:block",
+        target: "components/calendar-31/calendar-31.tsx",
       },
     ],
     dependencies: [
@@ -698,6 +729,7 @@ export const blocks: Registry["items"] = [
       {
         path: "blocks/calendar-32.tsx",
         type: "registry:block",
+        target: "components/calendar-32/calendar-32.tsx",
       },
     ],
     dependencies: [
@@ -720,678 +752,865 @@ export const blocks: Registry["items"] = [
       {
         path: "blocks/editor/index.tsx",
         type: "registry:block",
+        target: "components/editor/index.tsx",
       },
       {
         path: "blocks/editor/components/editor/index.ts",
-        type: "registry:block",
+        type: "registry:component",
+        target: "components/editor/components/editor/index.ts",
       },
       {
         path: "blocks/editor/components/editor/editor-kit.tsx",
-        type: "registry:block",
+        type: "registry:component",
+        target: "components/editor/components/editor/editor-kit.tsx",
       },
       {
         path: "blocks/editor/components/editor/plugins/ai-kit.tsx",
-        type: "registry:block",
+        type: "registry:component",
+        target: "components/editor/components/editor/plugins/ai-kit.tsx",
       },
       {
         path: "blocks/editor/components/editor/plugins/align-kit.tsx",
-        type: "registry:block",
+        type: "registry:component",
+        target: "components/editor/components/editor/plugins/align-kit.tsx",
       },
       {
         path: "blocks/editor/components/editor/plugins/autoformat-kit.tsx",
-        type: "registry:block",
+        type: "registry:component",
+        target:
+          "components/editor/components/editor/plugins/autoformat-kit.tsx",
       },
       {
         path: "blocks/editor/components/editor/plugins/basic-blocks-kit.tsx",
-        type: "registry:block",
+        type: "registry:component",
+        target:
+          "components/editor/components/editor/plugins/basic-blocks-kit.tsx",
       },
       {
         path: "blocks/editor/components/editor/plugins/basic-marks-kit.tsx",
-        type: "registry:block",
+        type: "registry:component",
+        target:
+          "components/editor/components/editor/plugins/basic-marks-kit.tsx",
       },
       {
         path: "blocks/editor/components/editor/plugins/block-menu-kit.tsx",
-        type: "registry:block",
+        type: "registry:component",
+        target:
+          "components/editor/components/editor/plugins/block-menu-kit.tsx",
       },
       {
         path: "blocks/editor/components/editor/plugins/block-placeholder-kit.tsx",
-        type: "registry:block",
+        type: "registry:component",
+        target:
+          "components/editor/components/editor/plugins/block-placeholder-kit.tsx",
       },
       {
         path: "blocks/editor/components/editor/plugins/callout-kit.tsx",
-        type: "registry:block",
+        type: "registry:component",
+        target: "components/editor/components/editor/plugins/callout-kit.tsx",
       },
       {
         path: "blocks/editor/components/editor/plugins/code-block-kit.tsx",
-        type: "registry:block",
+        type: "registry:component",
+        target:
+          "components/editor/components/editor/plugins/code-block-kit.tsx",
       },
       {
         path: "blocks/editor/components/editor/plugins/column-kit.tsx",
-        type: "registry:block",
+        type: "registry:component",
+        target: "components/editor/components/editor/plugins/column-kit.tsx",
       },
       {
         path: "blocks/editor/components/editor/plugins/comment-kit.tsx",
-        type: "registry:block",
+        type: "registry:component",
+        target: "components/editor/components/editor/plugins/comment-kit.tsx",
       },
       {
         path: "blocks/editor/components/editor/plugins/cursor-overlay-kit.tsx",
-        type: "registry:block",
+        type: "registry:component",
+        target:
+          "components/editor/components/editor/plugins/cursor-overlay-kit.tsx",
       },
       {
         path: "blocks/editor/components/editor/plugins/date-kit.tsx",
-        type: "registry:block",
+        type: "registry:component",
+        target: "components/editor/components/editor/plugins/date-kit.tsx",
       },
       {
         path: "blocks/editor/components/editor/plugins/discussion-kit.tsx",
-        type: "registry:block",
+        type: "registry:component",
+        target:
+          "components/editor/components/editor/plugins/discussion-kit.tsx",
       },
       {
         path: "blocks/editor/components/editor/plugins/dnd-kit.tsx",
-        type: "registry:block",
+        type: "registry:component",
+        target: "components/editor/components/editor/plugins/dnd-kit.tsx",
       },
       {
         path: "blocks/editor/components/editor/plugins/docx-kit.tsx",
-        type: "registry:block",
+        type: "registry:component",
+        target: "components/editor/components/editor/plugins/docx-kit.tsx",
       },
       {
         path: "blocks/editor/components/editor/plugins/emoji-kit.tsx",
-        type: "registry:block",
+        type: "registry:component",
+        target: "components/editor/components/editor/plugins/emoji-kit.tsx",
       },
       {
         path: "blocks/editor/components/editor/plugins/exit-break-kit.tsx",
-        type: "registry:block",
+        type: "registry:component",
+        target:
+          "components/editor/components/editor/plugins/exit-break-kit.tsx",
       },
       {
         path: "blocks/editor/components/editor/plugins/fixed-toolbar-kit.tsx",
-        type: "registry:block",
+        type: "registry:component",
+        target:
+          "components/editor/components/editor/plugins/fixed-toolbar-kit.tsx",
       },
       {
         path: "blocks/editor/components/editor/plugins/floating-toolbar-kit.tsx",
-        type: "registry:block",
+        type: "registry:component",
+        target:
+          "components/editor/components/editor/plugins/floating-toolbar-kit.tsx",
       },
       {
         path: "blocks/editor/components/editor/plugins/font-kit.tsx",
-        type: "registry:block",
+        type: "registry:component",
+        target: "components/editor/components/editor/plugins/font-kit.tsx",
       },
       {
         path: "blocks/editor/components/editor/plugins/line-height-kit.tsx",
-        type: "registry:block",
+        type: "registry:component",
+        target:
+          "components/editor/components/editor/plugins/line-height-kit.tsx",
       },
       {
         path: "blocks/editor/components/editor/plugins/link-kit.tsx",
-        type: "registry:block",
+        type: "registry:component",
+        target: "components/editor/components/editor/plugins/link-kit.tsx",
       },
       {
         path: "blocks/editor/components/editor/plugins/list-kit.tsx",
-        type: "registry:block",
+        type: "registry:component",
+        target: "components/editor/components/editor/plugins/list-kit.tsx",
       },
       {
         path: "blocks/editor/components/editor/plugins/markdown-kit.tsx",
-        type: "registry:block",
+        type: "registry:component",
+        target: "components/editor/components/editor/plugins/markdown-kit.tsx",
       },
       {
         path: "blocks/editor/components/editor/plugins/math-kit.tsx",
-        type: "registry:block",
+        type: "registry:component",
+        target: "components/editor/components/editor/plugins/math-kit.tsx",
       },
       {
         path: "blocks/editor/components/editor/plugins/media-kit.tsx",
-        type: "registry:block",
+        type: "registry:component",
+        target: "components/editor/components/editor/plugins/media-kit.tsx",
       },
       {
         path: "blocks/editor/components/editor/plugins/mention-kit.tsx",
-        type: "registry:block",
+        type: "registry:component",
+        target: "components/editor/components/editor/plugins/mention-kit.tsx",
       },
       {
         path: "blocks/editor/components/editor/plugins/slash-kit.tsx",
-        type: "registry:block",
+        type: "registry:component",
+        target: "components/editor/components/editor/plugins/slash-kit.tsx",
       },
       {
         path: "blocks/editor/components/editor/plugins/suggestion-kit.tsx",
-        type: "registry:block",
+        type: "registry:component",
+        target:
+          "components/editor/components/editor/plugins/suggestion-kit.tsx",
       },
       {
         path: "blocks/editor/components/editor/plugins/table-kit.tsx",
-        type: "registry:block",
+        type: "registry:component",
+        target: "components/editor/components/editor/plugins/table-kit.tsx",
       },
       {
         path: "blocks/editor/components/editor/plugins/toc-kit.tsx",
-        type: "registry:block",
+        type: "registry:component",
+        target: "components/editor/components/editor/plugins/toc-kit.tsx",
       },
       {
         path: "blocks/editor/components/editor/plugins/toggle-kit.tsx",
-        type: "registry:block",
+        type: "registry:component",
+        target: "components/editor/components/editor/plugins/toggle-kit.tsx",
       },
       {
         path: "blocks/editor/ui/ai-menu.tsx",
         type: "registry:block",
+        target: "components/editor/ui/ai-menu.tsx",
       },
       {
         path: "blocks/editor/ui/ai-node.tsx",
         type: "registry:block",
+        target: "components/editor/ui/ai-node.tsx",
       },
       {
         path: "blocks/editor/ui/blockquote-node.tsx",
         type: "registry:block",
+        target: "components/editor/ui/blockquote-node.tsx",
       },
       {
         path: "blocks/editor/ui/heading-node.tsx",
         type: "registry:block",
+        target: "components/editor/ui/heading-node.tsx",
       },
       {
         path: "blocks/editor/ui/hr-node.tsx",
         type: "registry:block",
+        target: "components/editor/ui/hr-node.tsx",
       },
       {
         path: "blocks/editor/ui/paragraph-node.tsx",
         type: "registry:block",
+        target: "components/editor/ui/paragraph-node.tsx",
       },
       {
         path: "blocks/editor/ui/code-node.tsx",
         type: "registry:block",
+        target: "components/editor/ui/code-node.tsx",
       },
       {
         path: "blocks/editor/ui/highlight-node.tsx",
         type: "registry:block",
+        target: "components/editor/ui/highlight-node.tsx",
       },
       {
         path: "blocks/editor/ui/kbd-node.tsx",
         type: "registry:block",
+        target: "components/editor/ui/kbd-node.tsx",
       },
       {
         path: "blocks/editor/ui/block-context-menu.tsx",
         type: "registry:block",
+        target: "components/editor/ui/block-context-menu.tsx",
       },
       {
         path: "blocks/editor/components/editor/plugins/block-selection-kit.tsx",
-        type: "registry:block",
+        type: "registry:component",
+        target:
+          "components/editor/components/editor/plugins/block-selection-kit.tsx",
       },
       {
         path: "blocks/editor/ui/callout-node.tsx",
         type: "registry:block",
+        target: "components/editor/ui/callout-node.tsx",
       },
       {
         path: "blocks/editor/ui/code-block-node.tsx",
         type: "registry:block",
+        target: "components/editor/ui/code-block-node.tsx",
       },
       {
         path: "blocks/editor/ui/column-node.tsx",
         type: "registry:block",
+        target: "components/editor/ui/column-node.tsx",
       },
       {
         path: "blocks/editor/ui/comment-node.tsx",
         type: "registry:block",
+        target: "components/editor/ui/comment-node.tsx",
       },
       {
         path: "blocks/editor/ui/cursor-overlay.tsx",
         type: "registry:block",
+        target: "components/editor/ui/cursor-overlay.tsx",
       },
       {
         path: "blocks/editor/ui/date-node.tsx",
         type: "registry:block",
+        target: "components/editor/ui/date-node.tsx",
       },
       {
         path: "blocks/editor/ui/block-discussion.tsx",
         type: "registry:block",
+        target: "components/editor/ui/block-discussion.tsx",
       },
       {
         path: "blocks/editor/ui/comment.tsx",
         type: "registry:block",
+        target: "components/editor/ui/comment.tsx",
       },
       {
         path: "blocks/editor/ui/block-draggable.tsx",
         type: "registry:block",
+        target: "components/editor/ui/block-draggable.tsx",
       },
       {
         path: "blocks/editor/ui/emoji-node.tsx",
         type: "registry:block",
+        target: "components/editor/ui/emoji-node.tsx",
       },
       {
         path: "blocks/editor/ui/fixed-toolbar.tsx",
         type: "registry:block",
+        target: "components/editor/ui/fixed-toolbar.tsx",
       },
       {
         path: "blocks/editor/ui/fixed-toolbar-buttons.tsx",
         type: "registry:block",
+        target: "components/editor/ui/fixed-toolbar-buttons.tsx",
       },
       {
         path: "blocks/editor/ui/floating-toolbar.tsx",
         type: "registry:block",
+        target: "components/editor/ui/floating-toolbar.tsx",
       },
       {
         path: "blocks/editor/ui/floating-toolbar-buttons.tsx",
         type: "registry:block",
+        target: "components/editor/ui/floating-toolbar-buttons.tsx",
       },
       {
         path: "blocks/editor/ui/link-node.tsx",
         type: "registry:block",
+        target: "components/editor/ui/link-node.tsx",
       },
       {
         path: "blocks/editor/ui/link-toolbar.tsx",
         type: "registry:block",
+        target: "components/editor/ui/link-toolbar.tsx",
       },
       {
         path: "blocks/editor/components/editor/plugins/indent-kit.tsx",
-        type: "registry:block",
+        type: "registry:component",
+        target: "components/editor/components/editor/plugins/indent-kit.tsx",
       },
       {
         path: "blocks/editor/ui/block-list.tsx",
         type: "registry:block",
+        target: "components/editor/ui/block-list.tsx",
       },
       {
         path: "blocks/editor/ui/equation-node.tsx",
         type: "registry:block",
+        target: "components/editor/ui/equation-node.tsx",
       },
       {
         path: "blocks/editor/ui/media-audio-node.tsx",
         type: "registry:block",
+        target: "components/editor/ui/media-audio-node.tsx",
       },
       {
         path: "blocks/editor/ui/media-embed-node.tsx",
         type: "registry:block",
+        target: "components/editor/ui/media-embed-node.tsx",
       },
       {
         path: "blocks/editor/ui/media-file-node.tsx",
         type: "registry:block",
+        target: "components/editor/ui/media-file-node.tsx",
       },
       {
         path: "blocks/editor/ui/media-image-node.tsx",
         type: "registry:block",
+        target: "components/editor/ui/media-image-node.tsx",
       },
       {
         path: "blocks/editor/ui/media-placeholder-node.tsx",
         type: "registry:block",
+        target: "components/editor/ui/media-placeholder-node.tsx",
       },
       {
         path: "blocks/editor/ui/media-preview-dialog.tsx",
         type: "registry:block",
+        target: "components/editor/ui/media-preview-dialog.tsx",
       },
       {
         path: "blocks/editor/ui/media-upload-toast.tsx",
         type: "registry:block",
+        target: "components/editor/ui/media-upload-toast.tsx",
       },
       {
         path: "blocks/editor/ui/media-video-node.tsx",
         type: "registry:block",
+        target: "components/editor/ui/media-video-node.tsx",
       },
       {
         path: "blocks/editor/ui/mention-node.tsx",
         type: "registry:block",
+        target: "components/editor/ui/mention-node.tsx",
       },
       {
         path: "blocks/editor/ui/slash-node.tsx",
         type: "registry:block",
+        target: "components/editor/ui/slash-node.tsx",
       },
       {
         path: "blocks/editor/ui/block-suggestion.tsx",
         type: "registry:block",
+        target: "components/editor/ui/block-suggestion.tsx",
       },
       {
         path: "blocks/editor/ui/suggestion-node.tsx",
         type: "registry:block",
+        target: "components/editor/ui/suggestion-node.tsx",
       },
       {
         path: "blocks/editor/ui/table-node.tsx",
         type: "registry:block",
+        target: "components/editor/ui/table-node.tsx",
       },
       {
         path: "blocks/editor/ui/toc-node.tsx",
         type: "registry:block",
+        target: "components/editor/ui/toc-node.tsx",
       },
       {
         path: "blocks/editor/ui/toggle-node.tsx",
         type: "registry:block",
+        target: "components/editor/ui/toggle-node.tsx",
       },
       {
         path: "blocks/editor/components/editor/use-chat.ts",
-        type: "registry:block",
+        type: "registry:component",
+        target: "components/editor/components/editor/use-chat.ts",
       },
       {
         path: "blocks/editor/ui/command.tsx",
         type: "registry:block",
+        target: "components/editor/ui/command.tsx",
       },
       {
         path: "blocks/editor/ui/ai-chat-editor.tsx",
         type: "registry:block",
+        target: "components/editor/ui/ai-chat-editor.tsx",
       },
       {
         path: "blocks/editor/hooks/use-is-touch-device.ts",
-        type: "registry:block",
+        type: "registry:hook",
+        target: "components/editor/hooks/use-is-touch-device.ts",
       },
       {
         path: "blocks/editor/ui/context-menu.tsx",
         type: "registry:block",
-      },
-      {
-        path: "blocks/editor/ui/context-menu.tsx",
-        type: "registry:block",
+        target: "components/editor/ui/context-menu.tsx",
       },
       {
         path: "blocks/editor/ui/block-selection.tsx",
         type: "registry:block",
+        target: "components/editor/ui/block-selection.tsx",
       },
       {
         path: "blocks/editor/ui/emoji-toolbar-button.tsx",
         type: "registry:block",
+        target: "components/editor/ui/emoji-toolbar-button.tsx",
       },
       {
         path: "blocks/editor/ui/editor.tsx",
         type: "registry:block",
+        target: "components/editor/ui/editor.tsx",
       },
       {
         path: "blocks/editor/hooks/use-debounce.ts",
-        type: "registry:block",
+        type: "registry:hook",
+        target: "components/editor/hooks/use-debounce.ts",
       },
       {
         path: "blocks/editor/ui/inline-combobox.tsx",
         type: "registry:block",
+        target: "components/editor/ui/inline-combobox.tsx",
       },
       {
         path: "blocks/editor/ui/toolbar.tsx",
         type: "registry:block",
+        target: "components/editor/ui/toolbar.tsx",
       },
       {
         path: "blocks/editor/ui/ai-toolbar-button.tsx",
         type: "registry:block",
+        target: "components/editor/ui/ai-toolbar-button.tsx",
       },
       {
         path: "blocks/editor/ui/align-toolbar-button.tsx",
         type: "registry:block",
+        target: "components/editor/ui/align-toolbar-button.tsx",
       },
       {
         path: "blocks/editor/ui/comment-toolbar-button.tsx",
         type: "registry:block",
+        target: "components/editor/ui/comment-toolbar-button.tsx",
       },
       {
         path: "blocks/editor/ui/export-toolbar-button.tsx",
         type: "registry:block",
+        target: "components/editor/ui/export-toolbar-button.tsx",
       },
       {
         path: "blocks/editor/ui/font-color-toolbar-button.tsx",
         type: "registry:block",
+        target: "components/editor/ui/font-color-toolbar-button.tsx",
       },
       {
         path: "blocks/editor/ui/font-size-toolbar-button.tsx",
         type: "registry:block",
+        target: "components/editor/ui/font-size-toolbar-button.tsx",
       },
       {
         path: "blocks/editor/ui/history-toolbar-button.tsx",
         type: "registry:block",
+        target: "components/editor/ui/history-toolbar-button.tsx",
       },
       {
         path: "blocks/editor/ui/import-toolbar-button.tsx",
         type: "registry:block",
+        target: "components/editor/ui/import-toolbar-button.tsx",
       },
       {
         path: "blocks/editor/ui/indent-toolbar-button.tsx",
         type: "registry:block",
+        target: "components/editor/ui/indent-toolbar-button.tsx",
       },
       {
         path: "blocks/editor/ui/insert-toolbar-button.tsx",
         type: "registry:block",
+        target: "components/editor/ui/insert-toolbar-button.tsx",
       },
       {
         path: "blocks/editor/ui/line-height-toolbar-button.tsx",
         type: "registry:block",
+        target: "components/editor/ui/line-height-toolbar-button.tsx",
       },
       {
         path: "blocks/editor/ui/link-toolbar-button.tsx",
         type: "registry:block",
+        target: "components/editor/ui/link-toolbar-button.tsx",
       },
       {
         path: "blocks/editor/ui/list-toolbar-button.tsx",
         type: "registry:block",
+        target: "components/editor/ui/list-toolbar-button.tsx",
       },
       {
         path: "blocks/editor/ui/mark-toolbar-button.tsx",
         type: "registry:block",
+        target: "components/editor/ui/mark-toolbar-button.tsx",
       },
       {
         path: "blocks/editor/ui/media-toolbar-button.tsx",
         type: "registry:block",
+        target: "components/editor/ui/media-toolbar-button.tsx",
       },
       {
         path: "blocks/editor/ui/mode-toolbar-button.tsx",
         type: "registry:block",
+        target: "components/editor/ui/mode-toolbar-button.tsx",
       },
       {
         path: "blocks/editor/ui/more-toolbar-button.tsx",
         type: "registry:block",
+        target: "components/editor/ui/more-toolbar-button.tsx",
       },
       {
         path: "blocks/editor/ui/table-toolbar-button.tsx",
         type: "registry:block",
+        target: "components/editor/ui/table-toolbar-button.tsx",
       },
       {
         path: "blocks/editor/ui/toggle-toolbar-button.tsx",
         type: "registry:block",
+        target: "components/editor/ui/toggle-toolbar-button.tsx",
       },
       {
         path: "blocks/editor/ui/turn-into-toolbar-button.tsx",
         type: "registry:block",
+        target: "components/editor/ui/turn-into-toolbar-button.tsx",
       },
       {
         path: "blocks/editor/ui/equation-toolbar-button.tsx",
         type: "registry:block",
+        target: "components/editor/ui/equation-toolbar-button.tsx",
       },
       {
         path: "blocks/editor/ui/suggestion-toolbar-button.tsx",
         type: "registry:block",
+        target: "components/editor/ui/suggestion-toolbar-button.tsx",
       },
       {
         path: "blocks/editor/ui/caption.tsx",
         type: "registry:block",
+        target: "components/editor/ui/caption.tsx",
       },
       {
         path: "blocks/editor/ui/media-toolbar.tsx",
         type: "registry:block",
+        target: "components/editor/ui/media-toolbar.tsx",
+      },
+      {
+        path: "blocks/editor/ui/resize-handle.tsx",
+        type: "registry:block",
+        target: "components/editor/ui/resize-handle.tsx",
       },
       {
         path: "blocks/editor/hooks/use-upload-file.ts",
-        type: "registry:block",
+        type: "registry:hook",
+        target: "components/editor/hooks/use-upload-file.ts",
       },
       {
         path: "blocks/editor/hooks/use-mounted.ts",
-        type: "registry:block",
-      },
-      {
-        path: "blocks/editor/hooks/use-upload-file.ts",
-        type: "registry:block",
-      },
-      {
-        path: "blocks/editor/hooks/use-mounted.ts",
-        type: "registry:block",
+        type: "registry:hook",
+        target: "components/editor/hooks/use-mounted.ts",
       },
       {
         path: "blocks/editor/components/editor/transforms.ts",
-        type: "registry:block",
+        type: "registry:component",
+        target: "components/editor/components/editor/transforms.ts",
       },
       {
         path: "blocks/editor/ui/table-icons.tsx",
         type: "registry:block",
+        target: "components/editor/ui/table-icons.tsx",
       },
       {
         path: "blocks/editor/components/editor/editor-base-kit.tsx",
-        type: "registry:block",
+        type: "registry:component",
+        target: "components/editor/components/editor/editor-base-kit.tsx",
       },
       {
         path: "blocks/editor/ui/editor-static.tsx",
         type: "registry:block",
+        target: "components/editor/ui/editor-static.tsx",
       },
       {
         path: "blocks/editor/components/editor/plugins/align-base-kit.tsx",
-        type: "registry:block",
+        type: "registry:component",
+        target:
+          "components/editor/components/editor/plugins/align-base-kit.tsx",
       },
       {
         path: "blocks/editor/components/editor/plugins/basic-blocks-base-kit.tsx",
-        type: "registry:block",
+        type: "registry:component",
+        target:
+          "components/editor/components/editor/plugins/basic-blocks-base-kit.tsx",
       },
       {
         path: "blocks/editor/components/editor/plugins/basic-marks-base-kit.tsx",
-        type: "registry:block",
+        type: "registry:component",
+        target:
+          "components/editor/components/editor/plugins/basic-marks-base-kit.tsx",
       },
       {
         path: "blocks/editor/components/editor/plugins/callout-base-kit.tsx",
-        type: "registry:block",
+        type: "registry:component",
+        target:
+          "components/editor/components/editor/plugins/callout-base-kit.tsx",
       },
       {
         path: "blocks/editor/components/editor/plugins/code-block-base-kit.tsx",
-        type: "registry:block",
+        type: "registry:component",
+        target:
+          "components/editor/components/editor/plugins/code-block-base-kit.tsx",
       },
       {
         path: "blocks/editor/components/editor/plugins/column-base-kit.tsx",
-        type: "registry:block",
+        type: "registry:component",
+        target:
+          "components/editor/components/editor/plugins/column-base-kit.tsx",
       },
       {
         path: "blocks/editor/components/editor/plugins/comment-base-kit.tsx",
-        type: "registry:block",
+        type: "registry:component",
+        target:
+          "components/editor/components/editor/plugins/comment-base-kit.tsx",
       },
       {
         path: "blocks/editor/components/editor/plugins/date-base-kit.tsx",
-        type: "registry:block",
+        type: "registry:component",
+        target: "components/editor/components/editor/plugins/date-base-kit.tsx",
       },
       {
         path: "blocks/editor/components/editor/plugins/font-base-kit.tsx",
-        type: "registry:block",
+        type: "registry:component",
+        target: "components/editor/components/editor/plugins/font-base-kit.tsx",
       },
       {
         path: "blocks/editor/components/editor/plugins/line-height-base-kit.tsx",
-        type: "registry:block",
+        type: "registry:component",
+        target:
+          "components/editor/components/editor/plugins/line-height-base-kit.tsx",
       },
       {
         path: "blocks/editor/components/editor/plugins/link-base-kit.tsx",
-        type: "registry:block",
+        type: "registry:component",
+        target: "components/editor/components/editor/plugins/link-base-kit.tsx",
       },
       {
         path: "blocks/editor/components/editor/plugins/list-base-kit.tsx",
-        type: "registry:block",
+        type: "registry:component",
+        target: "components/editor/components/editor/plugins/list-base-kit.tsx",
       },
       {
         path: "blocks/editor/components/editor/plugins/math-base-kit.tsx",
-        type: "registry:block",
+        type: "registry:component",
+        target: "components/editor/components/editor/plugins/math-base-kit.tsx",
       },
       {
         path: "blocks/editor/components/editor/plugins/media-base-kit.tsx",
-        type: "registry:block",
+        type: "registry:component",
+        target:
+          "components/editor/components/editor/plugins/media-base-kit.tsx",
       },
       {
         path: "blocks/editor/components/editor/plugins/mention-base-kit.tsx",
-        type: "registry:block",
+        type: "registry:component",
+        target:
+          "components/editor/components/editor/plugins/mention-base-kit.tsx",
       },
       {
         path: "blocks/editor/components/editor/plugins/suggestion-base-kit.tsx",
-        type: "registry:block",
+        type: "registry:component",
+        target:
+          "components/editor/components/editor/plugins/suggestion-base-kit.tsx",
       },
       {
         path: "blocks/editor/components/editor/plugins/table-base-kit.tsx",
-        type: "registry:block",
+        type: "registry:component",
+        target:
+          "components/editor/components/editor/plugins/table-base-kit.tsx",
       },
       {
         path: "blocks/editor/components/editor/plugins/toc-base-kit.tsx",
-        type: "registry:block",
+        type: "registry:component",
+        target: "components/editor/components/editor/plugins/toc-base-kit.tsx",
       },
       {
         path: "blocks/editor/components/editor/plugins/toggle-base-kit.tsx",
-        type: "registry:block",
+        type: "registry:component",
+        target:
+          "components/editor/components/editor/plugins/toggle-base-kit.tsx",
       },
       {
         path: "blocks/editor/ui/blockquote-node-static.tsx",
         type: "registry:block",
+        target: "components/editor/ui/blockquote-node-static.tsx",
       },
       {
         path: "blocks/editor/ui/heading-node-static.tsx",
         type: "registry:block",
+        target: "components/editor/ui/heading-node-static.tsx",
       },
       {
         path: "blocks/editor/ui/hr-node-static.tsx",
         type: "registry:block",
+        target: "components/editor/ui/hr-node-static.tsx",
       },
       {
         path: "blocks/editor/ui/paragraph-node-static.tsx",
         type: "registry:block",
+        target: "components/editor/ui/paragraph-node-static.tsx",
       },
       {
         path: "blocks/editor/ui/code-node-static.tsx",
         type: "registry:block",
+        target: "components/editor/ui/code-node-static.tsx",
       },
       {
         path: "blocks/editor/ui/highlight-node-static.tsx",
         type: "registry:block",
+        target: "components/editor/ui/highlight-node-static.tsx",
       },
       {
         path: "blocks/editor/ui/kbd-node-static.tsx",
         type: "registry:block",
+        target: "components/editor/ui/kbd-node-static.tsx",
       },
       {
         path: "blocks/editor/ui/callout-node-static.tsx",
         type: "registry:block",
+        target: "components/editor/ui/callout-node-static.tsx",
       },
       {
         path: "blocks/editor/ui/code-block-node-static.tsx",
         type: "registry:block",
+        target: "components/editor/ui/code-block-node-static.tsx",
       },
       {
         path: "blocks/editor/ui/column-node-static.tsx",
         type: "registry:block",
+        target: "components/editor/ui/column-node-static.tsx",
       },
       {
         path: "blocks/editor/ui/comment-node-static.tsx",
         type: "registry:block",
+        target: "components/editor/ui/comment-node-static.tsx",
       },
       {
         path: "blocks/editor/ui/date-node-static.tsx",
         type: "registry:block",
+        target: "components/editor/ui/date-node-static.tsx",
       },
       {
         path: "blocks/editor/ui/link-node-static.tsx",
         type: "registry:block",
+        target: "components/editor/ui/link-node-static.tsx",
       },
       {
         path: "blocks/editor/components/editor/plugins/indent-base-kit.tsx",
-        type: "registry:block",
+        type: "registry:component",
+        target:
+          "components/editor/components/editor/plugins/indent-base-kit.tsx",
       },
       {
         path: "blocks/editor/ui/block-list-static.tsx",
         type: "registry:block",
+        target: "components/editor/ui/block-list-static.tsx",
       },
       {
         path: "blocks/editor/ui/equation-node-static.tsx",
         type: "registry:block",
+        target: "components/editor/ui/equation-node-static.tsx",
       },
       {
         path: "blocks/editor/ui/media-audio-node-static.tsx",
         type: "registry:block",
+        target: "components/editor/ui/media-audio-node-static.tsx",
       },
       {
         path: "blocks/editor/ui/media-file-node-static.tsx",
         type: "registry:block",
+        target: "components/editor/ui/media-file-node-static.tsx",
       },
       {
         path: "blocks/editor/ui/media-image-node-static.tsx",
         type: "registry:block",
+        target: "components/editor/ui/media-image-node-static.tsx",
       },
       {
         path: "blocks/editor/ui/media-video-node-static.tsx",
         type: "registry:block",
+        target: "components/editor/ui/media-video-node-static.tsx",
       },
       {
         path: "blocks/editor/ui/mention-node-static.tsx",
         type: "registry:block",
+        target: "components/editor/ui/mention-node-static.tsx",
       },
       {
         path: "blocks/editor/ui/suggestion-node-static.tsx",
         type: "registry:block",
+        target: "components/editor/ui/suggestion-node-static.tsx",
       },
       {
         path: "blocks/editor/ui/table-node-static.tsx",
         type: "registry:block",
+        target: "components/editor/ui/table-node-static.tsx",
       },
       {
         path: "blocks/editor/ui/toc-node-static.tsx",
         type: "registry:block",
+        target: "components/editor/ui/toc-node-static.tsx",
       },
       {
         path: "blocks/editor/ui/toggle-node-static.tsx",
         type: "registry:block",
+        target: "components/editor/ui/toggle-node-static.tsx",
       },
     ],
     dependencies: [
@@ -1441,7 +1660,7 @@ export const blocks: Registry["items"] = [
       "@radix-ui/react-toolbar",
       "@radix-ui/react-tooltip",
       "@udecode/cn",
-      "@uploadthing",
+      "@uploadthing/react",
       "ai",
       "class-variance-authority",
       "clsx",
