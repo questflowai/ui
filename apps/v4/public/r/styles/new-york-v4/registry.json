@@ -1758,7 +1758,7 @@
         "@radix-ui/react-toolbar",
         "@radix-ui/react-tooltip",
         "@udecode/cn",
-        "@uploadthing/react",
+        "@uploadthing",
         "ai",
         "class-variance-authority",
         "clsx",
@@ -1780,8 +1780,7 @@
         "remark-math",
         "sonner",
         "tailwind-merge",
-        "uploadthing/next",
-        "uploadthing/types",
+        "uploadthing",
         "use-file-picker",
         "zod"
       ],
