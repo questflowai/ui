@@ -8,37 +8,37 @@ export const blocks: Registry["items"] = [
       {
         path: "blocks/hello-world/hello-world.tsx",
         type: "registry:block",
+        target: "packages/components/hello-world/hello-world.tsx",
       },
       {
         path: "blocks/hello-world/components/hello.tsx",
         type: "registry:component",
-        target: "components/hello-world/components/hello.tsx",
+        target: "packages/components/hello-world/components/hello.tsx",
       },
       {
         path: "blocks/hello-world/components/world.tsx",
         type: "registry:block",
+        target: "packages/components/hello-world/components/world.tsx",
       },
       {
         path: "blocks/hello-world/lib.ts",
         type: "registry:lib",
+        target: "packages/components/hello-world/lib.ts",
       },
       {
         path: "blocks/hello-world/test-hook.ts",
         type: "registry:hook",
+        target: "packages/components/hello-world/test-hook.ts",
       },
       {
         path: "blocks/hello-world/test.json",
         type: "registry:file",
-        target: "blocks/hello-world/test.json",
+        target: "packages/components/hello-world/test.json",
       },
       {
         path: "blocks/hello-world/page.tsx",
         type: "registry:page",
-        target: "blocks/hello-world/page.tsx",
-      },
-      {
-        path: "ui/button.tsx",
-        type: "registry:block",
+        target: "packages/components/hello-world/page.tsx",
       },
     ],
     dependencies: ["lucide-react"],

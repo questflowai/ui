@@ -932,35 +932,31 @@ export const Index: Record<string, any> = {
     files: [{
       path: "registry/new-york-v4/blocks/hello-world/hello-world.tsx",
       type: "registry:block",
-      target: ""
+      target: "packages/components/hello-world/hello-world.tsx"
     },{
       path: "registry/new-york-v4/blocks/hello-world/components/hello.tsx",
       type: "registry:component",
-      target: "components/hello-world/components/hello.tsx"
+      target: "packages/components/hello-world/components/hello.tsx"
     },{
       path: "registry/new-york-v4/blocks/hello-world/components/world.tsx",
       type: "registry:block",
-      target: ""
+      target: "packages/components/hello-world/components/world.tsx"
     },{
       path: "registry/new-york-v4/blocks/hello-world/lib.ts",
       type: "registry:lib",
-      target: ""
+      target: "packages/components/hello-world/lib.ts"
     },{
       path: "registry/new-york-v4/blocks/hello-world/test-hook.ts",
       type: "registry:hook",
-      target: ""
+      target: "packages/components/hello-world/test-hook.ts"
     },{
       path: "registry/new-york-v4/blocks/hello-world/test.json",
       type: "registry:file",
-      target: "blocks/hello-world/test.json"
+      target: "packages/components/hello-world/test.json"
     },{
       path: "registry/new-york-v4/blocks/hello-world/page.tsx",
       type: "registry:page",
-      target: "blocks/hello-world/page.tsx"
-    },{
-      path: "registry/new-york-v4/ui/button.tsx",
-      type: "registry:block",
-      target: ""
+      target: "packages/components/hello-world/page.tsx"
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/new-york-v4/blocks/hello-world/hello-world.tsx")
