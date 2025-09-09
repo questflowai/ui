@@ -13,7 +13,7 @@ export const blocks: Registry["items"] = [
       {
         path: "blocks/hello-world/components/hello.tsx",
         type: "registry:component",
-        target: "components/hello-world/components/hello.tsx",
+        // target: "components/hello-world/components/hello.tsx",
       },
       {
         path: "blocks/hello-world/components/world.tsx",

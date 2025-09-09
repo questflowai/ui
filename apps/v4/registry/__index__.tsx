@@ -936,7 +936,7 @@ export const Index: Record<string, any> = {
     },{
       path: "registry/new-york-v4/blocks/hello-world/components/hello.tsx",
       type: "registry:component",
-      target: "components/hello-world/components/hello.tsx"
+      target: ""
     },{
       path: "registry/new-york-v4/blocks/hello-world/components/world.tsx",
       type: "registry:block",
