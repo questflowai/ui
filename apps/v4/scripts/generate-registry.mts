@@ -319,7 +319,9 @@ async function generateRegistry(
       // 其它文件 -> components/<blockName>/<remaining path>
       let target: string
       if (isRootIndex) {
-        target = baseTarget
+        // 根目录 index 文件需要包含文件名 + 扩展，例如 components/editor/index.tsx
+        const rootIndexFile = rel.split("/").pop() || "index.tsx"
+        target = `${baseTarget}/${rootIndexFile}`.replace(/\\/g, "/")
       } else {
         target = `${baseTarget}/${inner}`.replace(/\\/g, "/")
       }
