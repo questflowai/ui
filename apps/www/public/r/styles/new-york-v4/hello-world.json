@@ -13,43 +13,43 @@
       "path": "registry/new-york-v4/blocks/hello-world/hello-world.tsx",
       "content": "import { PlusIcon } from \"lucide-react\"\n\nimport { Button } from \"@/registry/new-york-v4/ui/button\"\n\nimport Hello from \"./components/hello\"\nimport World from \"./components/world\"\nimport { formatDate } from \"./lib\"\nimport Page from \"./page\"\nimport { useTest } from \"./test-hook\"\nimport test from \"./test.json\"\n\nexport default function HelloWorld() {\n  const date = new Date()\n  const formattedDate = formatDate(date)\n  const testHook = useTest()\n\n  return (\n    <div className=\"flex min-h-svh w-full items-center justify-center p-6 md:p-10\">\n      <div className=\"w-full max-w-sm\">\n        <Hello />\n        <World />\n        <Button>Hello World Button</Button>\n        <PlusIcon />\n        <pre>{JSON.stringify(test, null, 2)}</pre>\n        <pre>{formattedDate}</pre>\n        <pre>{testHook}</pre>\n      </div>\n      <Page />\n    </div>\n  )\n}\n",
       "type": "registry:block",
-      "target": "packages/components/hello-world/hello-world.tsx"
+      "target": "components/hello-world/hello-world.tsx"
     },
     {
       "path": "registry/new-york-v4/blocks/hello-world/components/hello.tsx",
       "content": "export default function Hello() {\n  return <div>hello</div>\n}\n",
       "type": "registry:component",
-      "target": "packages/components/hello-world/components/hello.tsx"
+      "target": "components/hello-world/components/hello.tsx"
     },
     {
       "path": "registry/new-york-v4/blocks/hello-world/components/world.tsx",
       "content": "export default function World() {\n  return <div>world</div>\n}\n",
       "type": "registry:block",
-      "target": "packages/components/hello-world/components/world.tsx"
+      "target": "components/hello-world/components/world.tsx"
     },
     {
       "path": "registry/new-york-v4/blocks/hello-world/lib.ts",
       "content": "export function formatDate(date: Date) {\n  return date.toLocaleDateString()\n}\n",
       "type": "registry:lib",
-      "target": "packages/components/hello-world/lib.ts"
+      "target": "components/hello-world/lib.ts"
     },
     {
       "path": "registry/new-york-v4/blocks/hello-world/test-hook.ts",
       "content": "export function useTest() {\n  return \"test\"\n}\n",
       "type": "registry:hook",
-      "target": "packages/components/hello-world/test-hook.ts"
+      "target": "components/hello-world/test-hook.ts"
     },
     {
       "path": "registry/new-york-v4/blocks/hello-world/test.json",
       "content": "{\n  \"name\": \"hello-world\"\n}\n",
       "type": "registry:file",
-      "target": "packages/components/hello-world/test.json"
+      "target": "components/hello-world/test.json"
     },
     {
       "path": "registry/new-york-v4/blocks/hello-world/page.tsx",
       "content": "export default function Page() {\n  return <div>page</div>\n}\n",
       "type": "registry:page",
-      "target": "packages/components/hello-world/page.tsx"
+      "target": "components/hello-world/page.tsx"
     }
   ]
 }
