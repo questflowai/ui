@@ -1,13 +1,16 @@
 // 自动生成 registry-ui.ts 和 registry-blocks.ts，基础字段 name/type/files/dependencies/registryDependencies
-
 import { promises as fs } from "fs"
 import path from "path"
 
-// 直接使用 Node.js 默认的 __dirname
-// __dirname 由 Node.js 提供，无需自定义
+// 基于脚本真实路径推导 apps/v4 根目录，避免依赖执行时的 cwd
+const SCRIPT_FILE = path.resolve(process.argv[1])
+const SCRIPT_DIR = path.dirname(SCRIPT_FILE)
+// 若脚本位于 .../apps/v4/scripts，则根目录为其上一级
+const APP_ROOT =
+  path.basename(SCRIPT_DIR) === "scripts"
+    ? path.dirname(SCRIPT_DIR)
+    : process.cwd()
 
-const CWD = process.cwd()
-const APP_ROOT = CWD // 脚本在 apps/v4 下执行
 const REG_ROOT = path.join(APP_ROOT, "registry/new-york-v4")
 const uiDir = path.join(REG_ROOT, "ui")
 const blocksDir = path.join(REG_ROOT, "blocks")
@@ -240,6 +243,8 @@ async function generateRegistry(
         return rel
       })
       .filter(Boolean) as string[]
+    // 去重
+    relFilesRaw = Array.from(new Set(relFilesRaw))
 
     const uiNames = opts?.uiNames || new Set<string>()
     const needUiDeps: Set<string> = new Set()
@@ -262,11 +267,64 @@ async function generateRegistry(
       })
     }
 
-    // 构建最终文件对象
-    const relFiles = relFilesRaw.map((rel) => ({
-      path: rel,
-      type,
-    }))
+    // 构建最终文件对象（blocks 细分子类型 + target 路径）
+    const relFiles = relFilesRaw.map((rel) => {
+      if (type !== "registry:block") {
+        return { path: rel, type }
+      }
+      // rel 例: blocks/editor/components/editor/plugins/ai-kit.tsx
+      // 规范：blocks/<blockName>/...
+      const parts = rel.split("/")
+      const blockName = ent.name
+      const baseTarget = `components/${blockName}`
+      // 去掉前两段 blocks/<blockName>
+      let inner = parts.slice(2).join("/") // 可能为空或 index.tsx / xxx.tsx
+      let fileType = "registry:block"
+      const ext = inner.split(".").pop() || ""
+      const baseFile = inner.split("/").pop() || ""
+      const firstSeg = inner.split("/")[0] || ""
+      // 分类规则
+      const innerSegments = parts.slice(2)
+      const isRootIndex =
+        innerSegments.length === 0 ||
+        (innerSegments.length === 1 &&
+          (baseFile === "index.ts" || baseFile === "index.tsx"))
+
+      if (isRootIndex) {
+        fileType = "registry:block"
+      } else if (firstSeg === "components" || inner.startsWith("components/")) {
+        fileType = "registry:component"
+      } else if (
+        firstSeg === "hooks" ||
+        inner.includes("/hooks/") ||
+        /-hook\.(t|j)sx?$/.test(baseFile)
+      ) {
+        fileType = "registry:hook"
+      } else if (
+        baseFile === "lib.ts" ||
+        baseFile === "lib.tsx" ||
+        inner.includes("/lib/") ||
+        firstSeg === "lib"
+      ) {
+        fileType = "registry:lib"
+      } else if (baseFile === "page.tsx" || baseFile === "page.ts") {
+        fileType = "registry:page"
+      } else if (!/(t|j)sx?$/.test(ext)) {
+        fileType = "registry:file"
+      } else {
+        fileType = "registry:block"
+      }
+      // 生成 target：
+      // 入口 index.* -> components/<blockName>
+      // 其它文件 -> components/<blockName>/<remaining path>
+      let target: string
+      if (isRootIndex) {
+        target = baseTarget
+      } else {
+        target = `${baseTarget}/${inner}`.replace(/\\/g, "/")
+      }
+      return { path: rel, type: fileType, target }
+    })
     // 现有 registryDeps 加上需要的 UI 依赖
     needUiDeps.forEach((u) => registryDeps.push(u))
 
