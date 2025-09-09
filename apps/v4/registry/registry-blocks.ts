@@ -2,6 +2,48 @@ import { type Registry } from "shadcn/schema"
 
 export const blocks: Registry["items"] = [
   {
+    name: "hello-world",
+    type: "registry:block",
+    files: [
+      {
+        path: "blocks/hello-world/hello-world.tsx",
+        type: "registry:block",
+      },
+      {
+        path: "blocks/hello-world/components/hello.tsx",
+        type: "registry:block",
+      },
+      {
+        path: "blocks/hello-world/components/world.tsx",
+        type: "registry:block",
+      },
+      {
+        path: "blocks/hello-world/lib.ts",
+        type: "registry:lib",
+      },
+      {
+        path: "blocks/hello-world/test-hook.ts",
+        type: "registry:hook",
+      },
+      {
+        path: "blocks/hello-world/test.json",
+        type: "registry:file",
+        target: "blocks/hello-world/test.json",
+      },
+      {
+        path: "blocks/hello-world/page.tsx",
+        type: "registry:page",
+        target: "blocks/hello-world/page.tsx",
+      },
+      {
+        path: "ui/button.tsx",
+        type: "registry:block",
+      },
+    ],
+    dependencies: ["lucide-react"],
+    registryDependencies: ["button"],
+  },
+  {
     name: "calendar-01",
     type: "registry:block",
     files: [

@@ -14,7 +14,6 @@ import { DocsTableOfContents } from "@/components/docs-toc"
 import { OpenInV0Cta } from "@/components/open-in-v0-cta"
 import { Button } from "@/registry/new-york-v4/ui/button"
 
-
 export const revalidate = false
 export const dynamic = "force-static"
 export const dynamicParams = false
@@ -40,7 +39,7 @@ export async function generateMetadata(props: {
   }
 
   // Ensure page.url is valid before using it
-  const pageUrl = page.url || '/docs'
+  const pageUrl = page.url || "/docs"
 
   return {
     title: doc.title,
@@ -100,7 +99,7 @@ export default async function Page(props: {
         <div className="h-(--top-spacing) shrink-0" />
         <div className="mx-auto flex w-full max-w-2xl min-w-0 flex-1 flex-col gap-8 px-4 py-6 text-neutral-800 md:px-0 lg:py-8 dark:text-neutral-300">
           <div className="flex flex-col gap-2">
-            <h1 className="mt-0 scroll-m-20 font-bold text-3xl tracking-tighter">
+            <h1 className="mt-0 scroll-m-20 text-3xl font-bold tracking-tighter">
               {doc.title}
             </h1>
             <p className="mb-2 text-lg text-neutral-600 dark:text-neutral-400">
@@ -110,24 +109,26 @@ export default async function Page(props: {
 
           <MDX components={mdxComponents} />
           {links && links.length > 0 && (
-            <div className="not-prose flex flex-col gap-4 border-t pt-8 mt-12">
+            <div className="not-prose mt-12 flex flex-col gap-4 border-t pt-8">
               <div className="flex flex-col gap-1">
-                <div className="font-medium text-sm">Links</div>
+                <div className="text-sm font-medium">Links</div>
                 <div className="text-sm text-neutral-600 dark:text-neutral-400">
                   Additional resources and references.
                 </div>
               </div>
               <div className="space-y-1">
-                {links.map((link: { title: string; url: string }, idx: number) => (
-                  <Link
-                    key={idx}
-                    href={link.url}
-                    className="group flex items-center gap-1 text-neutral-800 text-sm underline-offset-2 hover:underline dark:text-neutral-300"
-                  >
-                    {link.title}
-                    <IconArrowUpRight className="size-3 group-hover:translate-x-px group-hover:-translate-y-px transition-transform" />
-                  </Link>
-                ))}
+                {links.map(
+                  (link: { title: string; url: string }, idx: number) => (
+                    <Link
+                      key={idx}
+                      href={link.url}
+                      className="group flex items-center gap-1 text-sm text-neutral-800 underline-offset-2 hover:underline dark:text-neutral-300"
+                    >
+                      {link.title}
+                      <IconArrowUpRight className="size-3 transition-transform group-hover:translate-x-px group-hover:-translate-y-px" />
+                    </Link>
+                  )
+                )}
               </div>
             </div>
           )}
@@ -167,7 +168,9 @@ export default async function Page(props: {
                   <IconArrowLeft className="size-4" />
                   Previous
                 </div>
-                <div className="font-medium text-sm">{neighbours.previous.name}</div>
+                <div className="text-sm font-medium">
+                  {neighbours.previous.name}
+                </div>
               </Link>
             ) : (
               <div />
@@ -181,7 +184,9 @@ export default async function Page(props: {
                   Next
                   <IconArrowRight className="size-4" />
                 </div>
-                <div className="font-medium text-sm">{neighbours.next.name}</div>
+                <div className="text-sm font-medium">
+                  {neighbours.next.name}
+                </div>
               </Link>
             ) : (
               <div />

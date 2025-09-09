@@ -2,23 +2,54 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "hello-world",
   "type": "registry:block",
-  "description": "A simple hello world block",
+  "dependencies": [
+    "lucide-react"
+  ],
   "registryDependencies": [
     "button"
   ],
   "files": [
     {
       "path": "registry/new-york-v4/blocks/hello-world/hello-world.tsx",
-      "content": "import { Button } from \"@/registry/new-york-v4/ui/button\"\n\nfunction HelloWorld() {\n  return <Button>Hello World</Button>\n}\n\nexport default function Page() {\n  return (\n    <div className=\"flex min-h-svh w-full items-center justify-center p-6 md:p-10\">\n      <div className=\"w-full max-w-sm\">\n        <HelloWorld />\n      </div>\n    </div>\n  )\n}\n",
-      "type": "registry:component"
+      "content": "import { PlusIcon } from \"lucide-react\"\n\nimport { Button } from \"@/registry/new-york-v4/ui/button\"\n\nimport Hello from \"./components/hello\"\nimport World from \"./components/world\"\nimport { formatDate } from \"./lib\"\nimport Page from \"./page\"\nimport { useTest } from \"./test-hook\"\nimport test from \"./test.json\"\n\nexport default function HelloWorld() {\n  const date = new Date()\n  const formattedDate = formatDate(date)\n  const testHook = useTest()\n\n  return (\n    <div className=\"flex min-h-svh w-full items-center justify-center p-6 md:p-10\">\n      <div className=\"w-full max-w-sm\">\n        <Hello />\n        <World />\n        <Button>Hello World Button</Button>\n        <PlusIcon />\n        <pre>{JSON.stringify(test, null, 2)}</pre>\n        <pre>{formattedDate}</pre>\n        <pre>{testHook}</pre>\n      </div>\n      <Page />\n    </div>\n  )\n}\n",
+      "type": "registry:block"
+    },
+    {
+      "path": "registry/new-york-v4/blocks/hello-world/components/hello.tsx",
+      "content": "export default function Hello() {\n  return <div>hello</div>\n}\n",
+      "type": "registry:block"
+    },
+    {
+      "path": "registry/new-york-v4/blocks/hello-world/components/world.tsx",
+      "content": "export default function World() {\n  return <div>world</div>\n}\n",
+      "type": "registry:block"
+    },
+    {
+      "path": "registry/new-york-v4/blocks/hello-world/lib.ts",
+      "content": "export function formatDate(date: Date) {\n  return date.toLocaleDateString()\n}\n",
+      "type": "registry:lib"
+    },
+    {
+      "path": "registry/new-york-v4/blocks/hello-world/test-hook.ts",
+      "content": "export function useTest() {\n  return \"test\"\n}\n",
+      "type": "registry:hook"
+    },
+    {
+      "path": "registry/new-york-v4/blocks/hello-world/test.json",
+      "content": "{\n  \"name\": \"hello-world\"\n}\n",
+      "type": "registry:file",
+      "target": "blocks/hello-world/test.json"
+    },
+    {
+      "path": "registry/new-york-v4/blocks/hello-world/page.tsx",
+      "content": "export default function Page() {\n  return <div>page</div>\n}\n",
+      "type": "registry:page",
+      "target": "blocks/hello-world/page.tsx"
+    },
+    {
+      "path": "registry/new-york-v4/ui/button.tsx",
+      "content": "import * as React from \"react\"\nimport { Slot } from \"@radix-ui/react-slot\"\nimport { cva, type VariantProps } from \"class-variance-authority\"\n\nimport { cn } from \"@/lib/utils\"\n\nconst buttonVariants = cva(\n  \"inline-flex cursor-pointer items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[0px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive\",\n  {\n    variants: {\n      variant: {\n        default: \"bg-primary text-primary-foreground   hover:bg-primary/90\",\n        destructive:\n          \"bg-destructive text-white   hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60\",\n        outline:\n          \"border bg-background   hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50\",\n        secondary:\n          \"bg-secondary text-secondary-foreground   hover:bg-secondary/80\",\n        ghost:\n          \"hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50\",\n        link: \"text-primary underline-offset-4 hover:underline\",\n      },\n      size: {\n        default: \"h-9 px-4 py-2 has-[>svg]:px-3\",\n        sm: \"h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5\",\n        lg: \"h-10 rounded-md px-6 has-[>svg]:px-4\",\n        icon: \"size-9\",\n      },\n    },\n    defaultVariants: {\n      variant: \"default\",\n      size: \"default\",\n    },\n  }\n)\n\nfunction Button({\n  className,\n  variant,\n  size,\n  asChild = false,\n  ...props\n}: React.ComponentProps<\"button\"> &\n  VariantProps<typeof buttonVariants> & {\n    asChild?: boolean\n  }) {\n  const Comp = asChild ? Slot : \"button\"\n\n  return (\n    <Comp\n      data-slot=\"button\"\n      className={cn(buttonVariants({ variant, size, className }))}\n      {...props}\n    />\n  )\n}\n\nexport { Button, buttonVariants }\n",
+      "type": "registry:block"
     }
-  ],
-  "meta": {
-    "iframeHeight": "600px",
-    "container": "w-full bg-surface min-h-svh flex px-6 py-12 items-start md:pt-20 justify-center min-w-0 xl:py-24",
-    "mobile": "component"
-  },
-  "categories": [
-    "hello-world"
   ]
 }
