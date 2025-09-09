@@ -1892,6 +1892,10 @@ export const Index: Record<string, any> = {
       type: "registry:block",
       target: ""
     },{
+      path: "registry/new-york-v4/blocks/editor/ui/context-menu.tsx",
+      type: "registry:block",
+      target: ""
+    },{
       path: "registry/new-york-v4/blocks/editor/ui/block-selection.tsx",
       type: "registry:block",
       target: ""
@@ -2012,7 +2016,11 @@ export const Index: Record<string, any> = {
       type: "registry:block",
       target: ""
     },{
-      path: "registry/new-york-v4/blocks/editor/ui/resize-handle.tsx",
+      path: "registry/new-york-v4/blocks/editor/hooks/use-upload-file.ts",
+      type: "registry:block",
+      target: ""
+    },{
+      path: "registry/new-york-v4/blocks/editor/hooks/use-mounted.ts",
       type: "registry:block",
       target: ""
     },{
