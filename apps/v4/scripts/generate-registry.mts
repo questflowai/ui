@@ -20,12 +20,16 @@ const outputBlocks = path.join(OUTPUT_DIR, "registry-blocks.ts")
 
 // 解析 import 语句，提取依赖包和本地文件
 function parseImports(code: string) {
-  const regex = /import\s+[^'";]+from\s+['"]([^'"]+)['"]/g
+  // 静态 import 语句
+  const staticRegex = /import\s+[^'";]+from\s+['"]([^'"]+)['"]/g
+  // 动态 import("xxx") / await import('xxx') / import('xxx')
+  const dynamicRegex = /import\(\s*['"]([^'"]+)['"]\s*\)/g
+  // CommonJS require("xxx") 形式
+  const requireRegex = /require\(\s*['"]([^'"()]+)['"]\s*\)/g
   const deps: string[] = []
   const locals: string[] = []
   let match
-  while ((match = regex.exec(code))) {
-    const pkg = match[1]
+  function classify(pkg: string) {
     if (
       !pkg.startsWith("./") &&
       !pkg.startsWith("../") &&
@@ -37,6 +41,15 @@ function parseImports(code: string) {
     } else {
       locals.push(pkg)
     }
+  }
+  while ((match = staticRegex.exec(code))) {
+    classify(match[1])
+  }
+  while ((match = dynamicRegex.exec(code))) {
+    classify(match[1])
+  }
+  while ((match = requireRegex.exec(code))) {
+    classify(match[1])
   }
   return {
     dependencies: Array.from(new Set(deps)),

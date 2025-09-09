@@ -924,48 +924,6 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
-  "hello-world": {
-    name: "hello-world",
-    description: "",
-    type: "registry:block",
-    registryDependencies: ["button"],
-    files: [{
-      path: "registry/new-york-v4/blocks/hello-world/hello-world.tsx",
-      type: "registry:block",
-      target: "components/hello-world/hello-world.tsx"
-    },{
-      path: "registry/new-york-v4/blocks/hello-world/components/hello.tsx",
-      type: "registry:component",
-      target: ""
-    },{
-      path: "registry/new-york-v4/blocks/hello-world/components/world.tsx",
-      type: "registry:block",
-      target: "components/hello-world/components/world.tsx"
-    },{
-      path: "registry/new-york-v4/blocks/hello-world/lib.ts",
-      type: "registry:lib",
-      target: "components/hello-world/lib.ts"
-    },{
-      path: "registry/new-york-v4/blocks/hello-world/test-hook.ts",
-      type: "registry:hook",
-      target: "components/hello-world/test-hook.ts"
-    },{
-      path: "registry/new-york-v4/blocks/hello-world/test.json",
-      type: "registry:file",
-      target: "components/hello-world/test.json"
-    },{
-      path: "registry/new-york-v4/blocks/hello-world/page.tsx",
-      type: "registry:page",
-      target: "components/hello-world/page.tsx"
-    }],
-    component: React.lazy(async () => {
-      const mod = await import("@/registry/new-york-v4/blocks/hello-world/hello-world.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
-      return { default: mod.default || mod[exportName] }
-    }),
-    categories: undefined,
-    meta: undefined,
-  },
   "calendar-01": {
     name: "calendar-01",
     description: "",

@@ -2,49 +2,6 @@ import { type Registry } from "shadcn/schema"
 
 export const blocks: Registry["items"] = [
   {
-    name: "hello-world",
-    type: "registry:block",
-    files: [
-      {
-        path: "blocks/hello-world/hello-world.tsx",
-        type: "registry:block",
-        target: "components/hello-world/hello-world.tsx",
-      },
-      {
-        path: "blocks/hello-world/components/hello.tsx",
-        type: "registry:component",
-        // target: "components/hello-world/components/hello.tsx",
-      },
-      {
-        path: "blocks/hello-world/components/world.tsx",
-        type: "registry:block",
-        target: "components/hello-world/components/world.tsx",
-      },
-      {
-        path: "blocks/hello-world/lib.ts",
-        type: "registry:lib",
-        target: "components/hello-world/lib.ts",
-      },
-      {
-        path: "blocks/hello-world/test-hook.ts",
-        type: "registry:hook",
-        target: "components/hello-world/test-hook.ts",
-      },
-      {
-        path: "blocks/hello-world/test.json",
-        type: "registry:file",
-        target: "components/hello-world/test.json",
-      },
-      {
-        path: "blocks/hello-world/page.tsx",
-        type: "registry:page",
-        target: "components/hello-world/page.tsx",
-      },
-    ],
-    dependencies: ["lucide-react"],
-    registryDependencies: ["button"],
-  },
-  {
     name: "calendar-01",
     type: "registry:block",
     files: [
@@ -1666,9 +1623,11 @@ export const blocks: Registry["items"] = [
       "clsx",
       "cmdk",
       "date-fns",
+      "html2canvas-pro",
       "lodash",
       "lowlight",
       "lucide-react",
+      "pdf-lib",
       "platejs",
       "react",
       "react-day-picker",
