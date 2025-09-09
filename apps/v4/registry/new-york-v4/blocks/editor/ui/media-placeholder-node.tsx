@@ -1,7 +1,6 @@
 "use client"
 
 import * as React from "react"
-import { useUploadFile } from "@@/registry/new-york-v4/ui/editor/hooks/use-upload-file"
 import {
   PlaceholderPlugin,
   PlaceholderProvider,
@@ -15,6 +14,7 @@ import { PlateElement, useEditorPlugin, withHOC } from "platejs/react"
 import { useFilePicker } from "use-file-picker"
 
 import { cn } from "@/lib/utils"
+import { useUploadFile } from "@/registry/new-york-v4/blocks/editor/hooks/use-upload-file"
 
 const CONTENT: Record<
   string,

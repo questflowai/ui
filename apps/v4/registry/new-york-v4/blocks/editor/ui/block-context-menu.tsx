@@ -1,7 +1,6 @@
 "use client"
 
 import * as React from "react"
-import { useIsTouchDevice } from "@@/registry/new-york-v4/ui/editor/hooks/use-is-touch-device"
 import { AIChatPlugin } from "@platejs/ai/react"
 import {
   BLOCK_CONTEXT_MENU_ID,
@@ -11,6 +10,7 @@ import {
 import { KEYS } from "platejs"
 import { useEditorPlugin, usePlateState } from "platejs/react"
 
+import { useIsTouchDevice } from "@/registry/new-york-v4/blocks/editor/hooks/use-is-touch-device"
 import {
   ContextMenu,
   ContextMenuContent,
