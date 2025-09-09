@@ -163,7 +163,13 @@ function parseRegistryDeps(code: string) {
 }
 
 // 生成 registry item
-async function generateRegistry(dir: string, type: string) {
+async function generateRegistry(
+  dir: string,
+  type: string,
+  opts?: {
+    uiNames?: Set<string>
+  }
+) {
   // 同时支持：
   // 1) 顶层 .ts/.tsx 文件
   // 2) 含有 index.ts 或 index.tsx 的子目录作为入口
@@ -201,17 +207,57 @@ async function generateRegistry(dir: string, type: string) {
       new Set([...graph.registryDependencies, ...registryDepsFromEntry])
     )
     // 转为相对 registry 路径（与 build-registry.mts 保持一致）
-    const relFiles = graph.files
+    // 初步相对路径文件列表
+    let relFilesRaw = graph.files
       .map((f) => {
         let rel = path.relative(REG_ROOT, f).replace(/\\/g, "/")
-        // shadcn 规范要求路径必须以 ui/ 或 blocks/ 开头
         if (!rel.startsWith("ui/") && !rel.startsWith("blocks/")) return null
-        return {
-          path: rel,
-          type,
-        }
+        return rel
       })
-      .filter(Boolean)
+      .filter(Boolean) as string[]
+
+    const uiNames = opts?.uiNames || new Set<string>()
+    const needUiDeps: Set<string> = new Set()
+
+    // 如果是 block：剔除已经在 UI registry 中注册过的 ui/<name>.tsx 文件
+    if (type === "registry:block" && uiNames.size) {
+      relFilesRaw = relFilesRaw.filter((rel) => {
+        if (rel.startsWith("ui/")) {
+          const base = rel
+            .split("/")
+            .pop()!
+            .replace(/\.(tsx|ts)$/, "")
+            .trim()
+          if (uiNames.has(base)) {
+            needUiDeps.add(base)
+            return false // 不放入 files
+          }
+        }
+        return true
+      })
+    }
+
+    // 构建最终文件对象
+    const relFiles = relFilesRaw.map((rel) => ({
+      path: rel,
+      type,
+    }))
+    // 现有 registryDeps 加上需要的 UI 依赖
+    needUiDeps.forEach((u) => registryDeps.push(u))
+
+    // 去重并过滤：如果某名字已经在本条目的 files 中（作为内部文件存在），则不要再放进 registryDependencies
+    const internalFileBaseNames = new Set(
+      relFiles.map((f) =>
+        f.path
+          .split("/")
+          .pop()!
+          .replace(/\.(tsx|ts)$/, "")
+      )
+    )
+    const finalRegistryDeps = Array.from(
+      new Set(registryDeps.filter((n) => !internalFileBaseNames.has(n)))
+    ).sort()
+
     items.push({
       name: ent.name,
       type,
@@ -219,8 +265,8 @@ async function generateRegistry(dir: string, type: string) {
       dependencies: graph.dependencies.length
         ? [...graph.dependencies].sort()
         : undefined,
-      registryDependencies: registryDeps.length
-        ? [...registryDeps].sort()
+      registryDependencies: finalRegistryDeps.length
+        ? finalRegistryDeps
         : undefined,
     })
   }
@@ -230,7 +276,11 @@ async function generateRegistry(dir: string, type: string) {
 
 async function main() {
   const uiItems = await generateRegistry(uiDir, "registry:ui")
-  const blocksItems = await generateRegistry(blocksDir, "registry:block")
+  // 收集 ui 组件名称，用于在生成 blocks 时过滤已注册 UI 文件并放入 registryDependencies
+  const uiNames = new Set(uiItems.map((i: any) => i.name))
+  const blocksItems = await generateRegistry(blocksDir, "registry:block", {
+    uiNames,
+  })
 
   // 写入 registry-ui.ts
 

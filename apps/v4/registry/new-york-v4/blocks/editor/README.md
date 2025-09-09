@@ -14,7 +14,7 @@
 "utils": "@/lib/utils",
 "ui": "@/registry/new-york-v4/ui/editor/ui",
 "lib": "@/lib",
-"hooks": "@@/registry/new-york-v4/ui/editor/hooks"
+"hooks": "@/registry/new-york-v4/ui/editor/hooks"
 },
 
 ## 拷贝从Platejs官方拷贝的新增Kit命令。

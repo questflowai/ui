@@ -2,629 +2,655 @@ import { type Registry } from "shadcn/schema"
 
 export const ui: Registry["items"] = [
   {
-    name: "accordion",
-    type: "registry:ui",
-    files: [
+    "name": "accordion",
+    "type": "registry:ui",
+    "files": [
       {
-        path: "ui/accordion.tsx",
-        type: "registry:ui",
-      },
+        "path": "ui/accordion.tsx",
+        "type": "registry:ui"
+      }
     ],
-    dependencies: [
+    "dependencies": [
       "@radix-ui/react-accordion",
       "clsx",
       "lucide-react",
       "react",
-      "tailwind-merge",
-    ],
+      "tailwind-merge"
+    ]
   },
   {
-    name: "alert",
-    type: "registry:ui",
-    files: [
+    "name": "alert",
+    "type": "registry:ui",
+    "files": [
       {
-        path: "ui/alert.tsx",
-        type: "registry:ui",
-      },
+        "path": "ui/alert.tsx",
+        "type": "registry:ui"
+      }
     ],
-    dependencies: [
+    "dependencies": [
       "class-variance-authority",
       "clsx",
       "react",
-      "tailwind-merge",
-    ],
+      "tailwind-merge"
+    ]
   },
   {
-    name: "alert-dialog",
-    type: "registry:ui",
-    files: [
+    "name": "alert-dialog",
+    "type": "registry:ui",
+    "files": [
       {
-        path: "ui/alert-dialog.tsx",
-        type: "registry:ui",
+        "path": "ui/alert-dialog.tsx",
+        "type": "registry:ui"
       },
       {
-        path: "ui/button.tsx",
-        type: "registry:ui",
-      },
+        "path": "ui/button.tsx",
+        "type": "registry:ui"
+      }
     ],
-    dependencies: [
+    "dependencies": [
       "@radix-ui/react-alert-dialog",
       "@radix-ui/react-slot",
       "class-variance-authority",
       "clsx",
       "react",
-      "tailwind-merge",
-    ],
-    registryDependencies: ["button"],
+      "tailwind-merge"
+    ]
   },
   {
-    name: "aspect-ratio",
-    type: "registry:ui",
-    files: [
+    "name": "aspect-ratio",
+    "type": "registry:ui",
+    "files": [
       {
-        path: "ui/aspect-ratio.tsx",
-        type: "registry:ui",
-      },
+        "path": "ui/aspect-ratio.tsx",
+        "type": "registry:ui"
+      }
     ],
-    dependencies: ["@radix-ui/react-aspect-ratio"],
+    "dependencies": [
+      "@radix-ui/react-aspect-ratio"
+    ]
   },
   {
-    name: "avatar",
-    type: "registry:ui",
-    files: [
+    "name": "avatar",
+    "type": "registry:ui",
+    "files": [
       {
-        path: "ui/avatar.tsx",
-        type: "registry:ui",
-      },
+        "path": "ui/avatar.tsx",
+        "type": "registry:ui"
+      }
     ],
-    dependencies: ["@radix-ui/react-avatar", "clsx", "react", "tailwind-merge"],
+    "dependencies": [
+      "@radix-ui/react-avatar",
+      "clsx",
+      "react",
+      "tailwind-merge"
+    ]
   },
   {
-    name: "badge",
-    type: "registry:ui",
-    files: [
+    "name": "badge",
+    "type": "registry:ui",
+    "files": [
       {
-        path: "ui/badge.tsx",
-        type: "registry:ui",
-      },
+        "path": "ui/badge.tsx",
+        "type": "registry:ui"
+      }
     ],
-    dependencies: [
+    "dependencies": [
       "@radix-ui/react-slot",
       "class-variance-authority",
       "clsx",
       "react",
-      "tailwind-merge",
-    ],
+      "tailwind-merge"
+    ]
   },
   {
-    name: "breadcrumb",
-    type: "registry:ui",
-    files: [
+    "name": "breadcrumb",
+    "type": "registry:ui",
+    "files": [
       {
-        path: "ui/breadcrumb.tsx",
-        type: "registry:ui",
-      },
+        "path": "ui/breadcrumb.tsx",
+        "type": "registry:ui"
+      }
     ],
-    dependencies: [
+    "dependencies": [
       "@radix-ui/react-slot",
       "clsx",
       "lucide-react",
       "react",
-      "tailwind-merge",
-    ],
+      "tailwind-merge"
+    ]
   },
   {
-    name: "button",
-    type: "registry:ui",
-    files: [
+    "name": "button",
+    "type": "registry:ui",
+    "files": [
       {
-        path: "ui/button.tsx",
-        type: "registry:ui",
-      },
+        "path": "ui/button.tsx",
+        "type": "registry:ui"
+      }
     ],
-    dependencies: [
+    "dependencies": [
       "@radix-ui/react-slot",
       "class-variance-authority",
       "clsx",
       "react",
-      "tailwind-merge",
-    ],
+      "tailwind-merge"
+    ]
   },
   {
-    name: "calendar",
-    type: "registry:ui",
-    files: [
+    "name": "calendar",
+    "type": "registry:ui",
+    "files": [
       {
-        path: "ui/calendar.tsx",
-        type: "registry:ui",
+        "path": "ui/calendar.tsx",
+        "type": "registry:ui"
       },
       {
-        path: "ui/button.tsx",
-        type: "registry:ui",
-      },
+        "path": "ui/button.tsx",
+        "type": "registry:ui"
+      }
     ],
-    dependencies: [
+    "dependencies": [
       "@radix-ui/react-slot",
       "class-variance-authority",
       "clsx",
       "lucide-react",
       "react",
       "react-day-picker",
-      "tailwind-merge",
-    ],
-    registryDependencies: ["button"],
+      "tailwind-merge"
+    ]
   },
   {
-    name: "card",
-    type: "registry:ui",
-    files: [
+    "name": "card",
+    "type": "registry:ui",
+    "files": [
       {
-        path: "ui/card.tsx",
-        type: "registry:ui",
-      },
+        "path": "ui/card.tsx",
+        "type": "registry:ui"
+      }
     ],
-    dependencies: ["clsx", "react", "tailwind-merge"],
+    "dependencies": [
+      "clsx",
+      "react",
+      "tailwind-merge"
+    ]
   },
   {
-    name: "carousel",
-    type: "registry:ui",
-    files: [
+    "name": "carousel",
+    "type": "registry:ui",
+    "files": [
       {
-        path: "ui/carousel.tsx",
-        type: "registry:ui",
+        "path": "ui/carousel.tsx",
+        "type": "registry:ui"
       },
       {
-        path: "ui/button.tsx",
-        type: "registry:ui",
-      },
+        "path": "ui/button.tsx",
+        "type": "registry:ui"
+      }
     ],
-    dependencies: [
+    "dependencies": [
       "@radix-ui/react-slot",
       "class-variance-authority",
       "clsx",
       "embla-carousel-react",
       "lucide-react",
       "react",
-      "tailwind-merge",
-    ],
-    registryDependencies: ["button"],
+      "tailwind-merge"
+    ]
   },
   {
-    name: "chart",
-    type: "registry:ui",
-    files: [
+    "name": "chart",
+    "type": "registry:ui",
+    "files": [
       {
-        path: "ui/chart.tsx",
-        type: "registry:ui",
-      },
+        "path": "ui/chart.tsx",
+        "type": "registry:ui"
+      }
     ],
-    dependencies: ["clsx", "react", "recharts", "tailwind-merge"],
+    "dependencies": [
+      "clsx",
+      "react",
+      "recharts",
+      "tailwind-merge"
+    ]
   },
   {
-    name: "checkbox",
-    type: "registry:ui",
-    files: [
+    "name": "checkbox",
+    "type": "registry:ui",
+    "files": [
       {
-        path: "ui/checkbox.tsx",
-        type: "registry:ui",
-      },
+        "path": "ui/checkbox.tsx",
+        "type": "registry:ui"
+      }
     ],
-    dependencies: [
+    "dependencies": [
       "@radix-ui/react-checkbox",
       "clsx",
       "lucide-react",
       "react",
-      "tailwind-merge",
-    ],
+      "tailwind-merge"
+    ]
   },
   {
-    name: "collapsible",
-    type: "registry:ui",
-    files: [
+    "name": "collapsible",
+    "type": "registry:ui",
+    "files": [
       {
-        path: "ui/collapsible.tsx",
-        type: "registry:ui",
-      },
+        "path": "ui/collapsible.tsx",
+        "type": "registry:ui"
+      }
     ],
-    dependencies: ["@radix-ui/react-collapsible"],
+    "dependencies": [
+      "@radix-ui/react-collapsible"
+    ]
   },
   {
-    name: "command",
-    type: "registry:ui",
-    files: [
+    "name": "command",
+    "type": "registry:ui",
+    "files": [
       {
-        path: "ui/command.tsx",
-        type: "registry:ui",
+        "path": "ui/command.tsx",
+        "type": "registry:ui"
       },
       {
-        path: "ui/dialog.tsx",
-        type: "registry:ui",
-      },
+        "path": "ui/dialog.tsx",
+        "type": "registry:ui"
+      }
     ],
-    dependencies: [
+    "dependencies": [
       "@radix-ui/react-dialog",
       "clsx",
       "cmdk",
       "lucide-react",
       "react",
-      "tailwind-merge",
-    ],
-    registryDependencies: ["dialog"],
+      "tailwind-merge"
+    ]
   },
   {
-    name: "context-menu",
-    type: "registry:ui",
-    files: [
+    "name": "context-menu",
+    "type": "registry:ui",
+    "files": [
       {
-        path: "ui/context-menu.tsx",
-        type: "registry:ui",
-      },
+        "path": "ui/context-menu.tsx",
+        "type": "registry:ui"
+      }
     ],
-    dependencies: [
+    "dependencies": [
       "@radix-ui/react-context-menu",
       "clsx",
       "lucide-react",
       "react",
-      "tailwind-merge",
-    ],
+      "tailwind-merge"
+    ]
   },
   {
-    name: "dialog",
-    type: "registry:ui",
-    files: [
+    "name": "dialog",
+    "type": "registry:ui",
+    "files": [
       {
-        path: "ui/dialog.tsx",
-        type: "registry:ui",
-      },
+        "path": "ui/dialog.tsx",
+        "type": "registry:ui"
+      }
     ],
-    dependencies: [
+    "dependencies": [
       "@radix-ui/react-dialog",
       "clsx",
       "lucide-react",
       "react",
+      "tailwind-merge"
+    ]
+  },
+  {
+    "name": "drawer",
+    "type": "registry:ui",
+    "files": [
+      {
+        "path": "ui/drawer.tsx",
+        "type": "registry:ui"
+      }
+    ],
+    "dependencies": [
+      "clsx",
+      "react",
       "tailwind-merge",
-    ],
+      "vaul"
+    ]
   },
   {
-    name: "drawer",
-    type: "registry:ui",
-    files: [
+    "name": "dropdown-menu",
+    "type": "registry:ui",
+    "files": [
       {
-        path: "ui/drawer.tsx",
-        type: "registry:ui",
-      },
+        "path": "ui/dropdown-menu.tsx",
+        "type": "registry:ui"
+      }
     ],
-    dependencies: ["clsx", "react", "tailwind-merge", "vaul"],
-  },
-  {
-    name: "dropdown-menu",
-    type: "registry:ui",
-    files: [
-      {
-        path: "ui/dropdown-menu.tsx",
-        type: "registry:ui",
-      },
-    ],
-    dependencies: [
+    "dependencies": [
       "@radix-ui/react-dropdown-menu",
       "clsx",
       "lucide-react",
       "react",
-      "tailwind-merge",
-    ],
+      "tailwind-merge"
+    ]
   },
   {
-    name: "editor",
-    type: "registry:ui",
-    files: [
+    "name": "editor",
+    "type": "registry:ui",
+    "files": [
       {
-        path: "ui/editor/index.tsx",
-        type: "registry:ui",
-      },
-    ],
+        "path": "ui/editor/index.tsx",
+        "type": "registry:ui"
+      }
+    ]
   },
   {
-    name: "form",
-    type: "registry:ui",
-    files: [
+    "name": "form",
+    "type": "registry:ui",
+    "files": [
       {
-        path: "ui/form.tsx",
-        type: "registry:ui",
+        "path": "ui/form.tsx",
+        "type": "registry:ui"
       },
       {
-        path: "ui/label.tsx",
-        type: "registry:ui",
-      },
+        "path": "ui/label.tsx",
+        "type": "registry:ui"
+      }
     ],
-    dependencies: [
+    "dependencies": [
       "@radix-ui/react-label",
       "@radix-ui/react-slot",
       "clsx",
       "react",
       "react-hook-form",
-      "tailwind-merge",
-    ],
-    registryDependencies: ["label"],
+      "tailwind-merge"
+    ]
   },
   {
-    name: "hover-card",
-    type: "registry:ui",
-    files: [
+    "name": "hover-card",
+    "type": "registry:ui",
+    "files": [
       {
-        path: "ui/hover-card.tsx",
-        type: "registry:ui",
-      },
+        "path": "ui/hover-card.tsx",
+        "type": "registry:ui"
+      }
     ],
-    dependencies: [
+    "dependencies": [
       "@radix-ui/react-hover-card",
       "clsx",
       "react",
-      "tailwind-merge",
-    ],
+      "tailwind-merge"
+    ]
   },
   {
-    name: "input",
-    type: "registry:ui",
-    files: [
+    "name": "input",
+    "type": "registry:ui",
+    "files": [
       {
-        path: "ui/input.tsx",
-        type: "registry:ui",
-      },
+        "path": "ui/input.tsx",
+        "type": "registry:ui"
+      }
     ],
-    dependencies: ["clsx", "react", "tailwind-merge"],
+    "dependencies": [
+      "clsx",
+      "react",
+      "tailwind-merge"
+    ]
   },
   {
-    name: "input-otp",
-    type: "registry:ui",
-    files: [
+    "name": "input-otp",
+    "type": "registry:ui",
+    "files": [
       {
-        path: "ui/input-otp.tsx",
-        type: "registry:ui",
-      },
+        "path": "ui/input-otp.tsx",
+        "type": "registry:ui"
+      }
     ],
-    dependencies: [
+    "dependencies": [
       "clsx",
       "input-otp",
       "lucide-react",
       "react",
-      "tailwind-merge",
-    ],
+      "tailwind-merge"
+    ]
   },
   {
-    name: "label",
-    type: "registry:ui",
-    files: [
+    "name": "label",
+    "type": "registry:ui",
+    "files": [
       {
-        path: "ui/label.tsx",
-        type: "registry:ui",
-      },
+        "path": "ui/label.tsx",
+        "type": "registry:ui"
+      }
     ],
-    dependencies: ["@radix-ui/react-label", "clsx", "react", "tailwind-merge"],
+    "dependencies": [
+      "@radix-ui/react-label",
+      "clsx",
+      "react",
+      "tailwind-merge"
+    ]
   },
   {
-    name: "menubar",
-    type: "registry:ui",
-    files: [
+    "name": "menubar",
+    "type": "registry:ui",
+    "files": [
       {
-        path: "ui/menubar.tsx",
-        type: "registry:ui",
-      },
+        "path": "ui/menubar.tsx",
+        "type": "registry:ui"
+      }
     ],
-    dependencies: [
+    "dependencies": [
       "@radix-ui/react-menubar",
       "clsx",
       "lucide-react",
       "react",
-      "tailwind-merge",
-    ],
+      "tailwind-merge"
+    ]
   },
   {
-    name: "navigation-menu",
-    type: "registry:ui",
-    files: [
+    "name": "navigation-menu",
+    "type": "registry:ui",
+    "files": [
       {
-        path: "ui/navigation-menu.tsx",
-        type: "registry:ui",
-      },
+        "path": "ui/navigation-menu.tsx",
+        "type": "registry:ui"
+      }
     ],
-    dependencies: [
+    "dependencies": [
       "@radix-ui/react-navigation-menu",
       "class-variance-authority",
       "clsx",
       "lucide-react",
       "react",
-      "tailwind-merge",
-    ],
+      "tailwind-merge"
+    ]
   },
   {
-    name: "pagination",
-    type: "registry:ui",
-    files: [
+    "name": "pagination",
+    "type": "registry:ui",
+    "files": [
       {
-        path: "ui/pagination.tsx",
-        type: "registry:ui",
+        "path": "ui/pagination.tsx",
+        "type": "registry:ui"
       },
       {
-        path: "ui/button.tsx",
-        type: "registry:ui",
-      },
+        "path": "ui/button.tsx",
+        "type": "registry:ui"
+      }
     ],
-    dependencies: [
+    "dependencies": [
       "@radix-ui/react-slot",
       "class-variance-authority",
       "clsx",
       "lucide-react",
       "react",
-      "tailwind-merge",
-    ],
-    registryDependencies: ["button"],
+      "tailwind-merge"
+    ]
   },
   {
-    name: "popover",
-    type: "registry:ui",
-    files: [
+    "name": "popover",
+    "type": "registry:ui",
+    "files": [
       {
-        path: "ui/popover.tsx",
-        type: "registry:ui",
-      },
+        "path": "ui/popover.tsx",
+        "type": "registry:ui"
+      }
     ],
-    dependencies: [
+    "dependencies": [
       "@radix-ui/react-popover",
       "clsx",
       "react",
-      "tailwind-merge",
-    ],
+      "tailwind-merge"
+    ]
   },
   {
-    name: "progress",
-    type: "registry:ui",
-    files: [
+    "name": "progress",
+    "type": "registry:ui",
+    "files": [
       {
-        path: "ui/progress.tsx",
-        type: "registry:ui",
-      },
+        "path": "ui/progress.tsx",
+        "type": "registry:ui"
+      }
     ],
-    dependencies: [
+    "dependencies": [
       "@radix-ui/react-progress",
       "clsx",
       "react",
-      "tailwind-merge",
-    ],
+      "tailwind-merge"
+    ]
   },
   {
-    name: "radio-group",
-    type: "registry:ui",
-    files: [
+    "name": "radio-group",
+    "type": "registry:ui",
+    "files": [
       {
-        path: "ui/radio-group.tsx",
-        type: "registry:ui",
-      },
+        "path": "ui/radio-group.tsx",
+        "type": "registry:ui"
+      }
     ],
-    dependencies: [
+    "dependencies": [
       "@radix-ui/react-radio-group",
       "clsx",
       "lucide-react",
       "react",
-      "tailwind-merge",
-    ],
+      "tailwind-merge"
+    ]
   },
   {
-    name: "resizable",
-    type: "registry:ui",
-    files: [
+    "name": "resizable",
+    "type": "registry:ui",
+    "files": [
       {
-        path: "ui/resizable.tsx",
-        type: "registry:ui",
-      },
+        "path": "ui/resizable.tsx",
+        "type": "registry:ui"
+      }
     ],
-    dependencies: [
+    "dependencies": [
       "clsx",
       "lucide-react",
       "react",
       "react-resizable-panels",
-      "tailwind-merge",
-    ],
+      "tailwind-merge"
+    ]
   },
   {
-    name: "scroll-area",
-    type: "registry:ui",
-    files: [
+    "name": "scroll-area",
+    "type": "registry:ui",
+    "files": [
       {
-        path: "ui/scroll-area.tsx",
-        type: "registry:ui",
-      },
+        "path": "ui/scroll-area.tsx",
+        "type": "registry:ui"
+      }
     ],
-    dependencies: [
+    "dependencies": [
       "@radix-ui/react-scroll-area",
       "clsx",
       "react",
-      "tailwind-merge",
-    ],
+      "tailwind-merge"
+    ]
   },
   {
-    name: "select",
-    type: "registry:ui",
-    files: [
+    "name": "select",
+    "type": "registry:ui",
+    "files": [
       {
-        path: "ui/select.tsx",
-        type: "registry:ui",
-      },
+        "path": "ui/select.tsx",
+        "type": "registry:ui"
+      }
     ],
-    dependencies: [
+    "dependencies": [
       "@radix-ui/react-select",
       "clsx",
       "lucide-react",
       "react",
-      "tailwind-merge",
-    ],
+      "tailwind-merge"
+    ]
   },
   {
-    name: "separator",
-    type: "registry:ui",
-    files: [
+    "name": "separator",
+    "type": "registry:ui",
+    "files": [
       {
-        path: "ui/separator.tsx",
-        type: "registry:ui",
-      },
+        "path": "ui/separator.tsx",
+        "type": "registry:ui"
+      }
     ],
-    dependencies: [
+    "dependencies": [
       "@radix-ui/react-separator",
       "clsx",
       "react",
-      "tailwind-merge",
-    ],
+      "tailwind-merge"
+    ]
   },
   {
-    name: "sheet",
-    type: "registry:ui",
-    files: [
+    "name": "sheet",
+    "type": "registry:ui",
+    "files": [
       {
-        path: "ui/sheet.tsx",
-        type: "registry:ui",
-      },
+        "path": "ui/sheet.tsx",
+        "type": "registry:ui"
+      }
     ],
-    dependencies: [
+    "dependencies": [
       "@radix-ui/react-dialog",
       "clsx",
       "lucide-react",
       "react",
-      "tailwind-merge",
-    ],
+      "tailwind-merge"
+    ]
   },
   {
-    name: "sidebar",
-    type: "registry:ui",
-    files: [
+    "name": "sidebar",
+    "type": "registry:ui",
+    "files": [
       {
-        path: "ui/sidebar.tsx",
-        type: "registry:ui",
+        "path": "ui/sidebar.tsx",
+        "type": "registry:ui"
       },
       {
-        path: "ui/button.tsx",
-        type: "registry:ui",
+        "path": "ui/button.tsx",
+        "type": "registry:ui"
       },
       {
-        path: "ui/input.tsx",
-        type: "registry:ui",
+        "path": "ui/input.tsx",
+        "type": "registry:ui"
       },
       {
-        path: "ui/separator.tsx",
-        type: "registry:ui",
+        "path": "ui/separator.tsx",
+        "type": "registry:ui"
       },
       {
-        path: "ui/sheet.tsx",
-        type: "registry:ui",
+        "path": "ui/sheet.tsx",
+        "type": "registry:ui"
       },
       {
-        path: "ui/skeleton.tsx",
-        type: "registry:ui",
+        "path": "ui/skeleton.tsx",
+        "type": "registry:ui"
       },
       {
-        path: "ui/tooltip.tsx",
-        type: "registry:ui",
-      },
+        "path": "ui/tooltip.tsx",
+        "type": "registry:ui"
+      }
     ],
-    dependencies: [
+    "dependencies": [
       "@radix-ui/react-dialog",
       "@radix-ui/react-separator",
       "@radix-ui/react-slot",
@@ -633,158 +659,178 @@ export const ui: Registry["items"] = [
       "clsx",
       "lucide-react",
       "react",
-      "tailwind-merge",
-    ],
-    registryDependencies: [
-      "button",
-      "input",
-      "separator",
-      "sheet",
-      "skeleton",
-      "tooltip",
-    ],
+      "tailwind-merge"
+    ]
   },
   {
-    name: "skeleton",
-    type: "registry:ui",
-    files: [
+    "name": "skeleton",
+    "type": "registry:ui",
+    "files": [
       {
-        path: "ui/skeleton.tsx",
-        type: "registry:ui",
-      },
+        "path": "ui/skeleton.tsx",
+        "type": "registry:ui"
+      }
     ],
-    dependencies: ["clsx", "tailwind-merge"],
+    "dependencies": [
+      "clsx",
+      "tailwind-merge"
+    ]
   },
   {
-    name: "slider",
-    type: "registry:ui",
-    files: [
+    "name": "slider",
+    "type": "registry:ui",
+    "files": [
       {
-        path: "ui/slider.tsx",
-        type: "registry:ui",
-      },
+        "path": "ui/slider.tsx",
+        "type": "registry:ui"
+      }
     ],
-    dependencies: ["@radix-ui/react-slider", "clsx", "react", "tailwind-merge"],
+    "dependencies": [
+      "@radix-ui/react-slider",
+      "clsx",
+      "react",
+      "tailwind-merge"
+    ]
   },
   {
-    name: "sonner",
-    type: "registry:ui",
-    files: [
+    "name": "sonner",
+    "type": "registry:ui",
+    "files": [
       {
-        path: "ui/sonner.tsx",
-        type: "registry:ui",
-      },
+        "path": "ui/sonner.tsx",
+        "type": "registry:ui"
+      }
     ],
-    dependencies: ["next-themes", "sonner"],
+    "dependencies": [
+      "next-themes",
+      "sonner"
+    ]
   },
   {
-    name: "switch",
-    type: "registry:ui",
-    files: [
+    "name": "switch",
+    "type": "registry:ui",
+    "files": [
       {
-        path: "ui/switch.tsx",
-        type: "registry:ui",
-      },
+        "path": "ui/switch.tsx",
+        "type": "registry:ui"
+      }
     ],
-    dependencies: ["@radix-ui/react-switch", "clsx", "react", "tailwind-merge"],
+    "dependencies": [
+      "@radix-ui/react-switch",
+      "clsx",
+      "react",
+      "tailwind-merge"
+    ]
   },
   {
-    name: "table",
-    type: "registry:ui",
-    files: [
+    "name": "table",
+    "type": "registry:ui",
+    "files": [
       {
-        path: "ui/table.tsx",
-        type: "registry:ui",
-      },
+        "path": "ui/table.tsx",
+        "type": "registry:ui"
+      }
     ],
-    dependencies: ["clsx", "react", "tailwind-merge"],
+    "dependencies": [
+      "clsx",
+      "react",
+      "tailwind-merge"
+    ]
   },
   {
-    name: "tabs",
-    type: "registry:ui",
-    files: [
+    "name": "tabs",
+    "type": "registry:ui",
+    "files": [
       {
-        path: "ui/tabs.tsx",
-        type: "registry:ui",
-      },
+        "path": "ui/tabs.tsx",
+        "type": "registry:ui"
+      }
     ],
-    dependencies: ["@radix-ui/react-tabs", "clsx", "react", "tailwind-merge"],
+    "dependencies": [
+      "@radix-ui/react-tabs",
+      "clsx",
+      "react",
+      "tailwind-merge"
+    ]
   },
   {
-    name: "test-ui",
-    type: "registry:ui",
-    files: [
+    "name": "test-ui",
+    "type": "registry:ui",
+    "files": [
       {
-        path: "ui/test-ui.tsx",
-        type: "registry:ui",
-      },
-    ],
+        "path": "ui/test-ui.tsx",
+        "type": "registry:ui"
+      }
+    ]
   },
   {
-    name: "textarea",
-    type: "registry:ui",
-    files: [
+    "name": "textarea",
+    "type": "registry:ui",
+    "files": [
       {
-        path: "ui/textarea.tsx",
-        type: "registry:ui",
-      },
+        "path": "ui/textarea.tsx",
+        "type": "registry:ui"
+      }
     ],
-    dependencies: ["clsx", "react", "tailwind-merge"],
+    "dependencies": [
+      "clsx",
+      "react",
+      "tailwind-merge"
+    ]
   },
   {
-    name: "toggle",
-    type: "registry:ui",
-    files: [
+    "name": "toggle",
+    "type": "registry:ui",
+    "files": [
       {
-        path: "ui/toggle.tsx",
-        type: "registry:ui",
-      },
+        "path": "ui/toggle.tsx",
+        "type": "registry:ui"
+      }
     ],
-    dependencies: [
+    "dependencies": [
       "@radix-ui/react-toggle",
       "class-variance-authority",
       "clsx",
       "react",
-      "tailwind-merge",
-    ],
+      "tailwind-merge"
+    ]
   },
   {
-    name: "toggle-group",
-    type: "registry:ui",
-    files: [
+    "name": "toggle-group",
+    "type": "registry:ui",
+    "files": [
       {
-        path: "ui/toggle-group.tsx",
-        type: "registry:ui",
+        "path": "ui/toggle-group.tsx",
+        "type": "registry:ui"
       },
       {
-        path: "ui/toggle.tsx",
-        type: "registry:ui",
-      },
+        "path": "ui/toggle.tsx",
+        "type": "registry:ui"
+      }
     ],
-    dependencies: [
+    "dependencies": [
       "@radix-ui/react-toggle",
       "@radix-ui/react-toggle-group",
       "class-variance-authority",
       "clsx",
       "react",
-      "tailwind-merge",
-    ],
-    registryDependencies: ["toggle"],
+      "tailwind-merge"
+    ]
   },
   {
-    name: "tooltip",
-    type: "registry:ui",
-    files: [
+    "name": "tooltip",
+    "type": "registry:ui",
+    "files": [
       {
-        path: "ui/tooltip.tsx",
-        type: "registry:ui",
-      },
+        "path": "ui/tooltip.tsx",
+        "type": "registry:ui"
+      }
     ],
-    dependencies: [
+    "dependencies": [
       "@radix-ui/react-tooltip",
       "clsx",
       "react",
-      "tailwind-merge",
-    ],
-  },
+      "tailwind-merge"
+    ]
+  }
 ]
