@@ -932,7 +932,7 @@ export const Index: Record<string, any> = {
     files: [{
       path: "registry/new-york-v4/blocks/calendar-01.tsx",
       type: "registry:block",
-      target: "components/calendar-01"
+      target: "components/calendar-01/calendar-01.tsx"
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/new-york-v4/blocks/calendar-01.tsx")
@@ -950,7 +950,7 @@ export const Index: Record<string, any> = {
     files: [{
       path: "registry/new-york-v4/blocks/calendar-02.tsx",
       type: "registry:block",
-      target: "components/calendar-02"
+      target: "components/calendar-02/calendar-02.tsx"
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/new-york-v4/blocks/calendar-02.tsx")
@@ -968,7 +968,7 @@ export const Index: Record<string, any> = {
     files: [{
       path: "registry/new-york-v4/blocks/calendar-03.tsx",
       type: "registry:block",
-      target: "components/calendar-03"
+      target: "components/calendar-03/calendar-03.tsx"
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/new-york-v4/blocks/calendar-03.tsx")
@@ -986,7 +986,7 @@ export const Index: Record<string, any> = {
     files: [{
       path: "registry/new-york-v4/blocks/calendar-04.tsx",
       type: "registry:block",
-      target: "components/calendar-04"
+      target: "components/calendar-04/calendar-04.tsx"
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/new-york-v4/blocks/calendar-04.tsx")
@@ -1004,7 +1004,7 @@ export const Index: Record<string, any> = {
     files: [{
       path: "registry/new-york-v4/blocks/calendar-05.tsx",
       type: "registry:block",
-      target: "components/calendar-05"
+      target: "components/calendar-05/calendar-05.tsx"
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/new-york-v4/blocks/calendar-05.tsx")
@@ -1022,7 +1022,7 @@ export const Index: Record<string, any> = {
     files: [{
       path: "registry/new-york-v4/blocks/calendar-06.tsx",
       type: "registry:block",
-      target: "components/calendar-06"
+      target: "components/calendar-06/calendar-06.tsx"
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/new-york-v4/blocks/calendar-06.tsx")
@@ -1040,7 +1040,7 @@ export const Index: Record<string, any> = {
     files: [{
       path: "registry/new-york-v4/blocks/calendar-07.tsx",
       type: "registry:block",
-      target: "components/calendar-07"
+      target: "components/calendar-07/calendar-07.tsx"
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/new-york-v4/blocks/calendar-07.tsx")
@@ -1058,7 +1058,7 @@ export const Index: Record<string, any> = {
     files: [{
       path: "registry/new-york-v4/blocks/calendar-08.tsx",
       type: "registry:block",
-      target: "components/calendar-08"
+      target: "components/calendar-08/calendar-08.tsx"
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/new-york-v4/blocks/calendar-08.tsx")
@@ -1076,7 +1076,7 @@ export const Index: Record<string, any> = {
     files: [{
       path: "registry/new-york-v4/blocks/calendar-09.tsx",
       type: "registry:block",
-      target: "components/calendar-09"
+      target: "components/calendar-09/calendar-09.tsx"
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/new-york-v4/blocks/calendar-09.tsx")
@@ -1094,7 +1094,7 @@ export const Index: Record<string, any> = {
     files: [{
       path: "registry/new-york-v4/blocks/calendar-10.tsx",
       type: "registry:block",
-      target: "components/calendar-10"
+      target: "components/calendar-10/calendar-10.tsx"
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/new-york-v4/blocks/calendar-10.tsx")
@@ -1112,7 +1112,7 @@ export const Index: Record<string, any> = {
     files: [{
       path: "registry/new-york-v4/blocks/calendar-11.tsx",
       type: "registry:block",
-      target: "components/calendar-11"
+      target: "components/calendar-11/calendar-11.tsx"
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/new-york-v4/blocks/calendar-11.tsx")
@@ -1130,7 +1130,7 @@ export const Index: Record<string, any> = {
     files: [{
       path: "registry/new-york-v4/blocks/calendar-12.tsx",
       type: "registry:block",
-      target: "components/calendar-12"
+      target: "components/calendar-12/calendar-12.tsx"
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/new-york-v4/blocks/calendar-12.tsx")
@@ -1148,7 +1148,7 @@ export const Index: Record<string, any> = {
     files: [{
       path: "registry/new-york-v4/blocks/calendar-13.tsx",
       type: "registry:block",
-      target: "components/calendar-13"
+      target: "components/calendar-13/calendar-13.tsx"
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/new-york-v4/blocks/calendar-13.tsx")
@@ -1166,7 +1166,7 @@ export const Index: Record<string, any> = {
     files: [{
       path: "registry/new-york-v4/blocks/calendar-14.tsx",
       type: "registry:block",
-      target: "components/calendar-14"
+      target: "components/calendar-14/calendar-14.tsx"
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/new-york-v4/blocks/calendar-14.tsx")
@@ -1184,7 +1184,7 @@ export const Index: Record<string, any> = {
     files: [{
       path: "registry/new-york-v4/blocks/calendar-15.tsx",
       type: "registry:block",
-      target: "components/calendar-15"
+      target: "components/calendar-15/calendar-15.tsx"
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/new-york-v4/blocks/calendar-15.tsx")
@@ -1202,7 +1202,7 @@ export const Index: Record<string, any> = {
     files: [{
       path: "registry/new-york-v4/blocks/calendar-16.tsx",
       type: "registry:block",
-      target: "components/calendar-16"
+      target: "components/calendar-16/calendar-16.tsx"
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/new-york-v4/blocks/calendar-16.tsx")
@@ -1220,7 +1220,7 @@ export const Index: Record<string, any> = {
     files: [{
       path: "registry/new-york-v4/blocks/calendar-17.tsx",
       type: "registry:block",
-      target: "components/calendar-17"
+      target: "components/calendar-17/calendar-17.tsx"
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/new-york-v4/blocks/calendar-17.tsx")
@@ -1238,7 +1238,7 @@ export const Index: Record<string, any> = {
     files: [{
       path: "registry/new-york-v4/blocks/calendar-18.tsx",
       type: "registry:block",
-      target: "components/calendar-18"
+      target: "components/calendar-18/calendar-18.tsx"
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/new-york-v4/blocks/calendar-18.tsx")
@@ -1256,7 +1256,7 @@ export const Index: Record<string, any> = {
     files: [{
       path: "registry/new-york-v4/blocks/calendar-19.tsx",
       type: "registry:block",
-      target: "components/calendar-19"
+      target: "components/calendar-19/calendar-19.tsx"
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/new-york-v4/blocks/calendar-19.tsx")
@@ -1274,7 +1274,7 @@ export const Index: Record<string, any> = {
     files: [{
       path: "registry/new-york-v4/blocks/calendar-20.tsx",
       type: "registry:block",
-      target: "components/calendar-20"
+      target: "components/calendar-20/calendar-20.tsx"
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/new-york-v4/blocks/calendar-20.tsx")
@@ -1292,7 +1292,7 @@ export const Index: Record<string, any> = {
     files: [{
       path: "registry/new-york-v4/blocks/calendar-21.tsx",
       type: "registry:block",
-      target: "components/calendar-21"
+      target: "components/calendar-21/calendar-21.tsx"
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/new-york-v4/blocks/calendar-21.tsx")
@@ -1310,7 +1310,7 @@ export const Index: Record<string, any> = {
     files: [{
       path: "registry/new-york-v4/blocks/calendar-22.tsx",
       type: "registry:block",
-      target: "components/calendar-22"
+      target: "components/calendar-22/calendar-22.tsx"
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/new-york-v4/blocks/calendar-22.tsx")
@@ -1328,7 +1328,7 @@ export const Index: Record<string, any> = {
     files: [{
       path: "registry/new-york-v4/blocks/calendar-23.tsx",
       type: "registry:block",
-      target: "components/calendar-23"
+      target: "components/calendar-23/calendar-23.tsx"
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/new-york-v4/blocks/calendar-23.tsx")
@@ -1346,7 +1346,7 @@ export const Index: Record<string, any> = {
     files: [{
       path: "registry/new-york-v4/blocks/calendar-24.tsx",
       type: "registry:block",
-      target: "components/calendar-24"
+      target: "components/calendar-24/calendar-24.tsx"
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/new-york-v4/blocks/calendar-24.tsx")
@@ -1364,7 +1364,7 @@ export const Index: Record<string, any> = {
     files: [{
       path: "registry/new-york-v4/blocks/calendar-25.tsx",
       type: "registry:block",
-      target: "components/calendar-25"
+      target: "components/calendar-25/calendar-25.tsx"
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/new-york-v4/blocks/calendar-25.tsx")
@@ -1382,7 +1382,7 @@ export const Index: Record<string, any> = {
     files: [{
       path: "registry/new-york-v4/blocks/calendar-26.tsx",
       type: "registry:block",
-      target: "components/calendar-26"
+      target: "components/calendar-26/calendar-26.tsx"
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/new-york-v4/blocks/calendar-26.tsx")
@@ -1400,7 +1400,7 @@ export const Index: Record<string, any> = {
     files: [{
       path: "registry/new-york-v4/blocks/calendar-27.tsx",
       type: "registry:block",
-      target: "components/calendar-27"
+      target: "components/calendar-27/calendar-27.tsx"
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/new-york-v4/blocks/calendar-27.tsx")
@@ -1418,7 +1418,7 @@ export const Index: Record<string, any> = {
     files: [{
       path: "registry/new-york-v4/blocks/calendar-28.tsx",
       type: "registry:block",
-      target: "components/calendar-28"
+      target: "components/calendar-28/calendar-28.tsx"
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/new-york-v4/blocks/calendar-28.tsx")
@@ -1436,7 +1436,7 @@ export const Index: Record<string, any> = {
     files: [{
       path: "registry/new-york-v4/blocks/calendar-29.tsx",
       type: "registry:block",
-      target: "components/calendar-29"
+      target: "components/calendar-29/calendar-29.tsx"
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/new-york-v4/blocks/calendar-29.tsx")
@@ -1454,7 +1454,7 @@ export const Index: Record<string, any> = {
     files: [{
       path: "registry/new-york-v4/blocks/calendar-30.tsx",
       type: "registry:block",
-      target: "components/calendar-30"
+      target: "components/calendar-30/calendar-30.tsx"
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/new-york-v4/blocks/calendar-30.tsx")
@@ -1472,7 +1472,7 @@ export const Index: Record<string, any> = {
     files: [{
       path: "registry/new-york-v4/blocks/calendar-31.tsx",
       type: "registry:block",
-      target: "components/calendar-31"
+      target: "components/calendar-31/calendar-31.tsx"
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/new-york-v4/blocks/calendar-31.tsx")
@@ -1490,7 +1490,7 @@ export const Index: Record<string, any> = {
     files: [{
       path: "registry/new-york-v4/blocks/calendar-32.tsx",
       type: "registry:block",
-      target: "components/calendar-32"
+      target: "components/calendar-32/calendar-32.tsx"
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/new-york-v4/blocks/calendar-32.tsx")
@@ -1508,7 +1508,7 @@ export const Index: Record<string, any> = {
     files: [{
       path: "registry/new-york-v4/blocks/editor/index.tsx",
       type: "registry:block",
-      target: "components/editor"
+      target: "components/editor/index.tsx"
     },{
       path: "registry/new-york-v4/blocks/editor/components/editor/index.ts",
       type: "registry:component",
