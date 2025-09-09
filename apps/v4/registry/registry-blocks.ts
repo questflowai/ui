@@ -281,12 +281,7 @@ export const blocks: Registry["items"] = [
       "lucide-react",
       "react",
       "react-day-picker",
-<<<<<<< HEAD
-      "react-day-picker/locale",
       "tailwind-merge",
-=======
-      "tailwind-merge"
->>>>>>> 7d586eee (fix: update script)
     ],
     registryDependencies: ["button", "calendar", "card", "select"],
   },
@@ -1059,17 +1054,12 @@ export const blocks: Registry["items"] = [
         type: "registry:block",
       },
       {
-<<<<<<< HEAD
         path: "blocks/editor/hooks/use-is-touch-device.ts",
         type: "registry:block",
-=======
-        "path": "blocks/editor/hooks/use-is-touch-device.ts",
-        "type": "registry:block"
       },
       {
-        "path": "blocks/editor/ui/context-menu.tsx",
-        "type": "registry:block"
->>>>>>> 7d586eee (fix: update script)
+        path: "blocks/editor/ui/context-menu.tsx",
+        type: "registry:block",
       },
       {
         path: "blocks/editor/ui/context-menu.tsx",
@@ -1196,17 +1186,12 @@ export const blocks: Registry["items"] = [
         type: "registry:block",
       },
       {
-<<<<<<< HEAD
-        path: "blocks/editor/ui/resize-handle.tsx",
+        path: "blocks/editor/hooks/use-upload-file.ts",
         type: "registry:block",
-=======
-        "path": "blocks/editor/hooks/use-upload-file.ts",
-        "type": "registry:block"
       },
       {
-        "path": "blocks/editor/hooks/use-mounted.ts",
-        "type": "registry:block"
->>>>>>> 7d586eee (fix: update script)
+        path: "blocks/editor/hooks/use-mounted.ts",
+        type: "registry:block",
       },
       {
         path: "blocks/editor/hooks/use-upload-file.ts",
@@ -1456,7 +1441,7 @@ export const blocks: Registry["items"] = [
       "@radix-ui/react-toolbar",
       "@radix-ui/react-tooltip",
       "@udecode/cn",
-      "@uploadthing/react",
+      "@uploadthing",
       "ai",
       "class-variance-authority",
       "clsx",
@@ -1478,8 +1463,7 @@ export const blocks: Registry["items"] = [
       "remark-math",
       "sonner",
       "tailwind-merge",
-      "uploadthing/next",
-      "uploadthing/types",
+      "uploadthing",
       "use-file-picker",
       "zod",
     ],
