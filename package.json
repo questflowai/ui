@@ -52,21 +52,23 @@
   },
   "packageManager": "pnpm@9.0.6",
   "pnpm": {
-    "overrides": {
-    }
+    "overrides": {}
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.888.0",
     "@babel/core": "^7.22.1",
     "@changesets/changelog-github": "^0.4.8",
     "@changesets/cli": "^2.26.1",
     "@commitlint/cli": "^17.6.3",
     "@commitlint/config-conventional": "^17.6.3",
+    "@google-cloud/storage": "^7.17.1",
     "@ianvs/prettier-plugin-sort-imports": "^3.7.2",
     "@manypkg/cli": "^0.20.0",
     "@typescript-eslint/parser": "^5.59.7",
     "autoprefixer": "^10.4.14",
     "concurrently": "^8.0.1",
     "cross-env": "^7.0.3",
+    "esbuild": "^0.25.0",
     "eslint": "^8.41.0",
     "eslint-config-next": "13.3.0",
     "eslint-config-prettier": "^8.8.0",
