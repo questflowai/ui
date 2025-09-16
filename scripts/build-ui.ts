@@ -1,17 +1,10 @@
 import fs from "node:fs/promises"
 import path from "node:path"
 
-const PUBLIC_DIR = path.join(process.cwd(), "build")
-const MANIFESTS_DIR = path.join(PUBLIC_DIR, "manifests")
+import { ui } from "../apps/v4/registry/registry-ui.js"
+import { createCdnClient } from "./cdn.js"
 
-const BUILD_UI_DIR = path.join(
-  process.cwd(),
-  "build",
-  "apps",
-  "v4",
-  "registry",
-  "new-york-v4"
-)
+const PUBLIC_DIR = path.join(process.cwd(), "build")
 
 // workspace UI source roots
 const UI_PKG_ROOT = path.join(process.cwd(), "apps", "v4")
@@ -21,24 +14,251 @@ const UI_HOOKS_DIR = path.join(UI_SRC_DIR, "hooks")
 const UI_BLOCKS_DIR = path.join(UI_SRC_DIR, "blocks")
 const UI_LIB_DIR = path.join(UI_PKG_ROOT, "lib")
 
+interface ComponentDependency {
+  name: string
+  version: string
+  url: string
+}
+
+interface ComponentManifest {
+  name: string
+  files: string[]
+  dependencies: ComponentDependency[]
+  internalDependencies: string[]
+}
+
+interface BuildManifest {
+  version: string
+  timestamp: string
+  components: ComponentManifest[]
+  importMap: Record<string, string>
+  cdnBaseUrl?: string
+}
+
+// Get version from www package.json (as requested)
+async function getVersionFromWww(): Promise<string> {
+  try {
+    const pkg = JSON.parse(
+      await fs.readFile(
+        path.join(process.cwd(), "apps", "v4", "package.json"),
+        "utf-8"
+      )
+    )
+    return pkg.version || "0.0.1"
+  } catch {
+    return "0.0.1"
+  }
+}
+
+// Get dependency versions from www package.json
+async function getDependencyVersions(): Promise<Record<string, string>> {
+  try {
+    const pkg = JSON.parse(
+      await fs.readFile(
+        path.join(process.cwd(), "apps", "v4", "package.json"),
+        "utf-8"
+      )
+    )
+    return { ...pkg.dependencies, ...pkg.devDependencies }
+  } catch {
+    return {}
+  }
+}
+
+// Extract dependencies from registry-ui.ts
+function extractRegistryDependencies(): Map<string, Set<string>> {
+  const componentDeps = new Map<string, Set<string>>()
+
+  for (const component of ui) {
+    const deps = new Set<string>()
+    if (component.dependencies) {
+      for (const dep of component.dependencies) {
+        // Filter out react core dependencies as they're handled separately
+        if (dep !== "react" && dep !== "react-dom") {
+          deps.add(dep)
+        }
+      }
+    }
+    componentDeps.set(component.name, deps)
+  }
+
+  return componentDeps
+}
+
+// Analyze common dependencies across components
+function analyzeCommonDependencies(componentDeps: Map<string, Set<string>>): {
+  common: Set<string>
+  usage: Map<string, number>
+} {
+  const usage = new Map<string, number>()
+  const allDeps = new Set<string>()
+
+  // Count usage of each dependency
+  Array.from(componentDeps.values()).forEach((deps) => {
+    Array.from(deps).forEach((dep) => {
+      allDeps.add(dep)
+      usage.set(dep, (usage.get(dep) || 0) + 1)
+    })
+  })
+
+  // Consider dependencies used by 3+ components as common
+  const common = new Set<string>()
+  const totalComponents = componentDeps.size
+  Array.from(usage.entries()).forEach(([dep, count]) => {
+    if (count >= Math.min(3, Math.ceil(totalComponents * 0.3))) {
+      common.add(dep)
+    }
+  })
+
+  return { common, usage }
+}
+
+// Add all dependencies to import map with version and prefix mapping
+function applyAllDepsToImportMap(
+  importMap: Record<string, string>,
+  allDeps: Set<string>,
+  versions: Record<string, string>
+) {
+  const sanitize = (v: string) => {
+    const s = String(v).trim()
+    if (!s) return ""
+    if (s.startsWith("workspace:")) return ""
+    return s.replace(/^[\^~]/, "")
+  }
+
+  for (const base of Array.from(allDeps)) {
+    const raw = versions?.[base]
+    const ver = raw ? sanitize(raw) : ""
+    if (!ver) continue // require a concrete version to avoid ranges/redirects
+
+    const externalQuery = encodeURIComponent(
+      "react,react-dom,react/jsx-runtime"
+    )
+
+    importMap[base] = `https://esm.sh/${base}@${ver}?external=${externalQuery}`
+    const pref = `${base}/`
+    importMap[pref] = `https://esm.sh/${base}@${ver}/?external=${externalQuery}`
+  }
+}
+
+// Generate importmap with component mappings
+async function generateImportMap(
+  uiVersion: string,
+  publicPrefix: string,
+  componentDeps: Map<string, Set<string>>,
+  versions: Record<string, string>,
+  cdnBaseUrl?: string
+): Promise<Record<string, string>> {
+  const importMap: Record<string, string> = {}
+
+  // Add React core dependencies
+  // const reactVersion = versions.react || "18.2.0"
+  // const reactDomVersion = versions["react-dom"] || "18.2.0"
+
+  // importMap["react"] = `https://esm.sh/react@${reactVersion}`
+  // importMap["react-dom"] = `https://esm.sh/react-dom@${reactDomVersion}`
+  // importMap[
+  //   "react/jsx-runtime"
+  // ] = `https://esm.sh/react@${reactVersion}/jsx-runtime`
+
+  // Get all dependencies (both common and rare) to ensure complete coverage
+  const { common, usage } = analyzeCommonDependencies(componentDeps)
+
+  // Collect ALL dependencies from both registry and static analysis
+  const registryDeps = extractRegistryDependencies()
+  const staticDeps = await scanUiThirdPartyDeps()
+
+  // Combine all dependencies to ensure nothing is missed
+  const allDeps = new Set(Array.from(staticDeps))
+  Array.from(registryDeps.values()).forEach((deps) => {
+    Array.from(deps).forEach((dep) => {
+      allDeps.add(dep)
+    })
+  })
+
+  // Add ALL dependencies to importmap (not just common ones)
+  applyAllDepsToImportMap(importMap, allDeps, versions)
+
+  // Add path prefix mappings for components (much more efficient)
+  const baseUrl = cdnBaseUrl || ""
+
+  // Map component directories to their CDN paths
+  importMap["components/ui/"] = `${baseUrl}${publicPrefix}ui/`
+  importMap["components/blocks/"] = `${baseUrl}${publicPrefix}blocks/`
+  importMap["components/hooks/"] = `${baseUrl}${publicPrefix}hooks/`
+  importMap["components/lib/"] = `${baseUrl}${publicPrefix}lib/`
+
+  return importMap
+}
+
+// Generate build manifest
+async function generateBuildManifest(
+  uiVersion: string,
+  componentDeps: Map<string, Set<string>>,
+  versions: Record<string, string>,
+  importMap: Record<string, string>,
+  cdnBaseUrl?: string
+): Promise<BuildManifest> {
+  const components: ComponentManifest[] = []
+
+  Array.from(componentDeps.entries()).forEach(([componentName, deps]) => {
+    const componentInfo = ui.find((c: any) => c.name === componentName)
+    if (!componentInfo) return
+
+    const dependencies: ComponentDependency[] = []
+    Array.from(deps).forEach((dep) => {
+      const version = versions[dep]
+      if (version) {
+        dependencies.push({
+          name: dep,
+          version: version.replace(/^[\^~]/, ""),
+          url:
+            importMap[dep] ||
+            `https://esm.sh/${dep}@${version.replace(/^[\^~]/, "")}`,
+        })
+      }
+    })
+
+    // Find internal dependencies (other components this component depends on)
+    const internalDependencies: string[] = []
+    const componentFiles = componentInfo.files || []
+
+    // This is a simplified approach - in a real scenario, you'd parse the component files
+    // to find actual internal dependencies
+    for (const file of componentFiles) {
+      if (file.path !== `ui/${componentName}.tsx`) {
+        const depName = path.basename(file.path, ".tsx")
+        if (depName !== componentName) {
+          internalDependencies.push(depName)
+        }
+      }
+    }
+
+    components.push({
+      name: componentName,
+      files: componentFiles.map((f: any) => f.path),
+      dependencies,
+      internalDependencies,
+    })
+  })
+
+  return {
+    version: uiVersion,
+    timestamp: new Date().toISOString(),
+    components,
+    importMap,
+    cdnBaseUrl,
+  }
+}
+
+// Build-ui.ts no longer handles CDN upload - that's now handled by release.ts
+
 async function pathExists(p: string) {
   try {
     await fs.access(p)
     return true
   } catch {
     return false
-  }
-}
-
-// Minimal UI pack version from workspace (fallback 0.0.0)
-async function getUiVersion(): Promise<string> {
-  try {
-    const pkg = JSON.parse(
-      await fs.readFile(path.join(UI_PKG_ROOT, "package.json"), "utf-8")
-    )
-    return pkg.version || "0.0.0"
-  } catch {
-    return "0.0.0"
   }
 }
 
@@ -133,7 +353,6 @@ async function scanUiThirdPartyDeps(): Promise<Set<string>> {
       }
     }
   }
-  // Always consider react-dom/jsx-runtime external (baseline already covers)
   return bases
 }
 
@@ -189,8 +408,8 @@ async function ensureUiBrowserEsmTree(): Promise<{
   cssPublicPath?: string
   builtJs: string[]
 }> {
-  const uiVersion = await getUiVersion()
-  const outDir = path.join(BUILD_UI_DIR, uiVersion)
+  const uiVersion = await getVersionFromWww()
+  const outDir = path.join(process.cwd(), "build", uiVersion)
   const publicPrefix = `/ui/${uiVersion}/`
 
   // Ensure output dir exists
@@ -224,12 +443,22 @@ async function ensureUiBrowserEsmTree(): Promise<{
   if (allFiles.length > 0) {
     const baseExternal = ["react", "react-dom", "react/jsx-runtime"]
 
-    // Auto-detect third-party deps used by UI and externalize them (base + subpath)
-    const extraPkgs = await scanUiThirdPartyDeps()
+    // Get dependencies from registry and static analysis
+    const registryDeps = extractRegistryDependencies()
+    const staticDeps = await scanUiThirdPartyDeps()
+
+    // Combine both sources of dependency information
+    const allExtraPkgs = new Set(Array.from(staticDeps))
+    Array.from(registryDeps.values()).forEach((deps) => {
+      Array.from(deps).forEach((dep) => {
+        allExtraPkgs.add(dep)
+      })
+    })
+
     const dynamicExternal: string[] = []
-    for (const pkg of Array.from(extraPkgs)) {
+    Array.from(allExtraPkgs).forEach((pkg) => {
       dynamicExternal.push(pkg, `${pkg}/*`)
-    }
+    })
 
     // Externalize all intra-UI imports so each component is a standalone file
     const uiSpecs = await collectUiSourceSpecifiers()
@@ -294,11 +523,80 @@ async function ensureUiBrowserEsmTree(): Promise<{
 
 async function main() {
   try {
+    console.log("Starting UI build process...")
+
+    // Build the UI components
     const result = await ensureUiBrowserEsmTree()
-    console.log("UI build successful!")
+    console.log(`UI build successful! Version: ${result.uiVersion}`)
+
+    // Get dependency information
+    const versions = await getDependencyVersions()
+    const componentDeps = extractRegistryDependencies()
+
+    // Get CDN client and base URL
+    const cdnClient = createCdnClient()
+    const cdnBaseUrl = cdnClient?.publicUrl("") || undefined
+
+    // Generate importmap
+    const importMap = await generateImportMap(
+      result.uiVersion,
+      result.publicPrefix,
+      componentDeps,
+      versions,
+      cdnBaseUrl
+    )
+
+    // Generate build manifest
+    const manifest = await generateBuildManifest(
+      result.uiVersion,
+      componentDeps,
+      versions,
+      importMap,
+      cdnBaseUrl
+    )
+
+    const MANIFESTS_DIR = path.join(PUBLIC_DIR, result.uiVersion, "manifests")
+
+    // Ensure manifests directory exists
+    await fs.mkdir(MANIFESTS_DIR, { recursive: true })
+
+    // Write importmap to file
+    const importMapPath = path.join(MANIFESTS_DIR, `importmap.json`)
+    await fs.writeFile(
+      importMapPath,
+      JSON.stringify({ imports: importMap }, null, 2)
+    )
+    console.log(`Generated importmap: ${importMapPath}`)
+
+    // Write manifest to file
+    const manifestPath = path.join(MANIFESTS_DIR, `manifest.json`)
+    await fs.writeFile(manifestPath, JSON.stringify(manifest, null, 2))
+    console.log(`Generated manifest: ${manifestPath}`)
+
+    // Summary
+    console.log("\n=== Build Summary ===")
     console.log(`Version: ${result.uiVersion}`)
     console.log(`Output directory: ${result.outDir}`)
-    console.log("Built files:", result.builtJs)
+    console.log(`Components built: ${result.builtJs.length}`)
+    console.log(
+      `Common dependencies: ${
+        Array.from(analyzeCommonDependencies(componentDeps).common).length
+      }`
+    )
+    console.log(`Total registry components: ${componentDeps.size}`)
+
+    console.log("\n=== Usage Example ===")
+    console.log("Add this to your HTML:")
+    console.log(
+      `<script type="importmap" src="${result.publicPrefix}../../../manifests/importmap.json"></script>`
+    )
+    console.log('<script type="module">')
+    console.log('  import { Button } from "components/ui/button"')
+    console.log('  import { Calendar } from "components/blocks/calendar-01"')
+    console.log('  import { useMobile } from "components/hooks/use-mobile"')
+    console.log('  import { cn } from "components/lib/utils"')
+    console.log("  // Use your components...")
+    console.log("</script>")
   } catch (error) {
     console.error("UI build failed:", error)
     process.exit(1)

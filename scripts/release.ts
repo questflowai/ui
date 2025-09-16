@@ -104,15 +104,37 @@ async function main() {
   }
 
   const uiVersion = await getUiVersion()
-  const buildDir = path.join(BUILD_UI_DIR, uiVersion)
+  console.log(`Uploading UI version: ${uiVersion}`)
 
-  const filePaths = await listFiles(buildDir)
+  // Upload component files
+  const buildDir = path.join(process.cwd(), "build", uiVersion,)
+  const componentFiles = await listFiles(buildDir)
 
-  console.log(`Uploading ${filePaths.length} files to CDN...`)
-
-  for (const filePath of filePaths) {
+  console.log(`Uploading ${componentFiles.length} component files to CDN...`)
+  const prefixDir = 'mc'
+  for (const filePath of componentFiles) {
     const rel = path.relative(buildDir, filePath).split(path.sep).join("/")
-    const key = `qf-ui/${uiVersion}/${rel}`
+    // micro components
+    const key = `${prefixDir}/${uiVersion}/${rel}`
+    const contentType = getContentType(filePath)
+
+    await cdnClient.putObject(
+      key,
+      await fs.readFile(filePath),
+      contentType,
+      "public, max-age=31536000, immutable"
+    )
+  }
+
+  // Upload importmap and manifest files
+  const manifestsDir = path.join(process.cwd(), "build", uiVersion, "manifests")
+  const manifestFiles = await listFiles(manifestsDir)
+
+  console.log(`Uploading ${manifestFiles.length} manifest files to CDN...`)
+
+  for (const filePath of manifestFiles) {
+    const fileName = path.basename(filePath)
+    const key = `${prefixDir}/${uiVersion}/${fileName}`
     const contentType = getContentType(filePath)
 
     await cdnClient.putObject(
@@ -124,6 +146,8 @@ async function main() {
   }
 
   console.log("CDN upload complete!")
+  console.log(`Importmap URL: ${cdnClient.publicUrl(`${prefixDir}/${uiVersion}/importmap.json`)}`)
+  console.log(`Manifest URL: ${cdnClient.publicUrl(`${prefixDir}/${uiVersion}/manifest.json`)}`)
 }
 
 main().catch((error) => {
