@@ -1,5 +1,8 @@
 import fs from "node:fs/promises"
 import path from "node:path"
+import postcss from "postcss"
+import tailwindcss from "tailwindcss"
+import autoprefixer from "autoprefixer"
 
 import { ui } from "../apps/v4/registry/registry-ui.js"
 import { createCdnClient } from "./cdn.js"
@@ -32,6 +35,7 @@ interface BuildManifest {
   timestamp: string
   components: ComponentManifest[]
   importMap: Record<string, string>
+  cssPath?: string
   cdnBaseUrl?: string
 }
 
@@ -182,11 +186,18 @@ async function generateImportMap(
   // Add path prefix mappings for components (much more efficient)
   const baseUrl = cdnBaseUrl || ""
 
-  // Map component directories to their CDN paths
-  importMap["components/ui/"] = `${baseUrl}${publicPrefix}ui/`
-  importMap["components/blocks/"] = `${baseUrl}${publicPrefix}blocks/`
-  importMap["components/hooks/"] = `${baseUrl}${publicPrefix}hooks/`
-  importMap["components/lib/"] = `${baseUrl}${publicPrefix}lib/`
+  // Map component directories to their CDN paths (keep for backward compatibility)
+  importMap["@/components/ui/"] = `${baseUrl}${publicPrefix}ui/`
+  importMap["@/components/blocks/"] = `${baseUrl}${publicPrefix}blocks/`
+  importMap["@/components/hooks/"] = `${baseUrl}${publicPrefix}hooks/`
+  importMap["@/components/lib/"] = `${baseUrl}${publicPrefix}lib/`
+
+  // Add specific file mappings with .js extensions for CDN compatibility
+  const uiSpecs = await collectUiSourceSpecifiers()
+  for (const spec of uiSpecs) {
+    // Map each specific file to its .js version on CDN
+    importMap[`@/components/${spec}`] = `${baseUrl}${publicPrefix}${spec}.js`
+  }
 
   return importMap
 }
@@ -398,6 +409,87 @@ async function collectUiSourceSpecifiers(): Promise<string[]> {
 }
 
 /**
+ * Compile CSS using PostCSS and Tailwind CSS
+ * Generates a complete CSS bundle with all necessary styles
+ */
+async function compileCss(
+  uiVersion: string,
+  outDir: string,
+  publicPrefix: string
+): Promise<string | undefined> {
+  try {
+    console.log("Compiling CSS...")
+
+    // Create styles directory
+    const stylesDir = path.join(outDir, "styles")
+    await fs.mkdir(stylesDir, { recursive: true })
+
+    // Read the main CSS file
+    const mainCssPath = path.join(UI_PKG_ROOT, "styles", "globals.css")
+    const cssContent = await fs.readFile(mainCssPath, "utf-8")
+
+    // For Tailwind CSS v4, we need to use the existing postcss config
+    // Read the postcss config from the v4 app
+    const postcssConfigPath = path.join(UI_PKG_ROOT, "postcss.config.mjs")
+    let postcssConfig
+
+    try {
+      // Import the postcss config dynamically
+      const configModule = await import(postcssConfigPath)
+      postcssConfig = configModule.default || configModule
+    } catch (error) {
+      console.log("Using fallback PostCSS config")
+      // Fallback config for Tailwind CSS v4
+      postcssConfig = {
+        plugins: {
+          "@tailwindcss/postcss": {},
+          autoprefixer: {},
+        },
+      }
+    }
+
+    // Create PostCSS processor with the config
+    const plugins = []
+
+    // Add Tailwind CSS plugin
+    if (postcssConfig.plugins["@tailwindcss/postcss"]) {
+      try {
+        const tailwindPostcss = await import("@tailwindcss/postcss")
+        plugins.push(tailwindPostcss.default())
+      } catch (error) {
+        console.log("@tailwindcss/postcss not found, using regular tailwindcss")
+        plugins.push(tailwindcss())
+      }
+    } else {
+      // Fallback to regular tailwindcss
+      plugins.push(tailwindcss())
+    }
+
+    // Add autoprefixer
+    plugins.push(autoprefixer())
+
+    // Process CSS with PostCSS
+    const result = await postcss(plugins).process(cssContent, {
+      from: mainCssPath,
+      to: undefined,
+    })
+
+    // Write the compiled CSS
+    const outputCssPath = path.join(stylesDir, "globals.css")
+    await fs.writeFile(outputCssPath, result.css)
+
+    const cssPublicPath = `${publicPrefix}styles/globals.css`
+    console.log(`CSS compiled successfully: ${outputCssPath}`)
+    console.log(`CSS public path: ${cssPublicPath}`)
+
+    return cssPublicPath
+  } catch (error) {
+    console.error("CSS compilation failed:", error)
+    return undefined
+  }
+}
+
+/**
  * Build UI browser ESM tree (components/*.tsx, lib/*.ts) and compile Tailwind CSS to a single globals.css.
  * Returns local public paths prefix and css path to be used in importmap.
  */
@@ -410,7 +502,7 @@ async function ensureUiBrowserEsmTree(): Promise<{
 }> {
   const uiVersion = await getVersionFromWww()
   const outDir = path.join(process.cwd(), "build", uiVersion)
-  const publicPrefix = `/ui/${uiVersion}/`
+  const publicPrefix = `/mc/${uiVersion}/`
 
   // Ensure output dir exists
   await fs.mkdir(outDir, { recursive: true })
@@ -529,6 +621,13 @@ async function main() {
     const result = await ensureUiBrowserEsmTree()
     console.log(`UI build successful! Version: ${result.uiVersion}`)
 
+    // Compile CSS
+    const cssPublicPath = await compileCss(
+      result.uiVersion,
+      result.outDir,
+      result.publicPrefix
+    )
+
     // Get dependency information
     const versions = await getDependencyVersions()
     const componentDeps = extractRegistryDependencies()
@@ -546,7 +645,7 @@ async function main() {
       cdnBaseUrl
     )
 
-    // Generate build manifest
+    // Generate build manifest with CSS path
     const manifest = await generateBuildManifest(
       result.uiVersion,
       componentDeps,
@@ -554,6 +653,11 @@ async function main() {
       importMap,
       cdnBaseUrl
     )
+
+    // Add CSS path to manifest
+    if (cssPublicPath) {
+      manifest.cssPath = cssPublicPath
+    }
 
     const MANIFESTS_DIR = path.join(PUBLIC_DIR, result.uiVersion, "manifests")
 
@@ -578,6 +682,7 @@ async function main() {
     console.log(`Version: ${result.uiVersion}`)
     console.log(`Output directory: ${result.outDir}`)
     console.log(`Components built: ${result.builtJs.length}`)
+    console.log(`CSS compiled: ${cssPublicPath ? "✓" : "✗"}`)
     console.log(
       `Common dependencies: ${
         Array.from(analyzeCommonDependencies(componentDeps).common).length
@@ -587,6 +692,9 @@ async function main() {
 
     console.log("\n=== Usage Example ===")
     console.log("Add this to your HTML:")
+    if (cssPublicPath) {
+      console.log(`<link rel="stylesheet" href="${cssPublicPath}">`)
+    }
     console.log(
       `<script type="importmap" src="${result.publicPrefix}../../../manifests/importmap.json"></script>`
     )

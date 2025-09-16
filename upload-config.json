@@ -1,0 +1,46 @@
+{
+  "presets": {
+    "essential-ui": {
+      "name": "essential-ui",
+      "description": "Essential UI components for basic applications",
+      "categories": ["ui", "lib"],
+      "components": ["button", "card", "input", "label", "select", "textarea", "checkbox", "radio-group"]
+    },
+    "dashboard-components": {
+      "name": "dashboard-components",
+      "description": "Components needed for dashboard applications",
+      "categories": ["ui", "blocks", "charts", "hooks", "lib"],
+      "components": ["button", "card", "table", "badge", "avatar", "dropdown-menu"],
+      "exclude": ["calendar-*", "login-*"]
+    },
+    "css-only": {
+      "name": "css-only",
+      "description": "Upload only CSS files",
+      "categories": ["css"]
+    },
+    "charts-complete": {
+      "name": "charts-complete",
+      "description": "All chart components and dependencies",
+      "categories": ["charts", "ui", "hooks", "lib"],
+      "components": ["card", "button"]
+    }
+  },
+  "environment": {
+    "required": [
+      "CDN_STRATEGY",
+      "CDN_BASE_URL"
+    ],
+    "optional": [
+      "AWS_S3_BUCKET",
+      "AWS_REGION",
+      "AWS_ACCESS_KEY_ID",
+      "AWS_SECRET_ACCESS_KEY",
+      "S3_ENDPOINT",
+      "S3_FORCE_PATH_STYLE",
+      "GCS_BUCKET",
+      "GOOGLE_APPLICATION_CREDENTIALS",
+      "GOOGLE_CREDENTIALS_JSON",
+      "GOOGLE_PROJECT_ID"
+    ]
+  }
+}

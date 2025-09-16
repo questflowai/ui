@@ -35,6 +35,9 @@ importers:
       '@manypkg/cli':
         specifier: ^0.20.0
         version: 0.20.0
+      '@tailwindcss/postcss':
+        specifier: ^4.1.11
+        version: 4.1.11
       '@typescript-eslint/parser':
         specifier: ^5.59.7
         version: 5.62.0(eslint@8.57.1)(typescript@5.9.2)

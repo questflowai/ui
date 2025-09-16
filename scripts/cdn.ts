@@ -90,7 +90,10 @@ export function createCdnClient(): CdnClient | null {
         console.log(`Uploaded to ${bucket}/${Key}`)
       },
       publicUrl(key) {
-        return `${base}/${normalizeKey(key)}`
+        if (key) {
+          return `${base}/${normalizeKey(key)}`
+        }
+        return base
       },
     }
   }
