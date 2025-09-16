@@ -202,7 +202,7 @@ async function getFilesToUpload(options: UploadOptions): Promise<{
 
   // Handle manifest-only options first
   if (options.manifestsOnly || options.importmapOnly || options.configFilesOnly) {
-    const manifestFiles = allFiles.filter(f => f.includes("/manifests/") && f.endsWith(".json"))
+    const manifestFiles = allFiles.filter(f => path.basename(f) === 'manifest.json' || path.basename(f) === 'importmap.json')
 
     if (options.manifestsOnly) {
       const manifestFile = manifestFiles.filter(f => f.includes("manifest.json"))
@@ -321,8 +321,8 @@ async function getFilesToUpload(options: UploadOptions): Promise<{
 
   // Always include manifest files if we're uploading anything
   if (filesToUpload.length > 0) {
-    const manifestFiles = allFiles.filter(f =>
-      f.includes("/manifests/") && (f.endsWith(".json"))
+    const manifestFiles = allFiles.filter(
+      f => path.basename(f) === "manifest.json" || path.basename(f) === "importmap.json"
     )
     filesToUpload.push(...manifestFiles)
   }

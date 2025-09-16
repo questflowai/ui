@@ -126,24 +126,6 @@ async function main() {
     )
   }
 
-  // Upload importmap and manifest files
-  const manifestsDir = path.join(process.cwd(), "build", uiVersion, "manifests")
-  const manifestFiles = await listFiles(manifestsDir)
-
-  console.log(`Uploading ${manifestFiles.length} manifest files to CDN...`)
-
-  for (const filePath of manifestFiles) {
-    const fileName = path.basename(filePath)
-    const key = `${prefixDir}/${uiVersion}/${fileName}`
-    const contentType = getContentType(filePath)
-
-    await cdnClient.putObject(
-      key,
-      await fs.readFile(filePath),
-      contentType,
-      "public, max-age=31536000, immutable"
-    )
-  }
 
   console.log("CDN upload complete!")
   console.log(`Importmap URL: ${cdnClient.publicUrl(`${prefixDir}/${uiVersion}/importmap.json`)}`)

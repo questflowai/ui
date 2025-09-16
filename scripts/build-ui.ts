@@ -666,13 +666,8 @@ async function main() {
       manifest.cssPath = cssPublicPath
     }
 
-    const MANIFESTS_DIR = path.join(PUBLIC_DIR, result.uiVersion, "manifests")
-
-    // Ensure manifests directory exists
-    await fs.mkdir(MANIFESTS_DIR, { recursive: true })
-
     // Write importmap to file
-    const importMapPath = path.join(MANIFESTS_DIR, `importmap.json`)
+    const importMapPath = path.join(result.outDir, `importmap.json`)
     await fs.writeFile(
       importMapPath,
       JSON.stringify({ imports: importMap }, null, 2)
@@ -680,7 +675,7 @@ async function main() {
     console.log(`Generated importmap: ${importMapPath}`)
 
     // Write manifest to file
-    const manifestPath = path.join(MANIFESTS_DIR, `manifest.json`)
+    const manifestPath = path.join(result.outDir, `manifest.json`)
     await fs.writeFile(manifestPath, JSON.stringify(manifest, null, 2))
     console.log(`Generated manifest: ${manifestPath}`)
 
@@ -703,7 +698,7 @@ async function main() {
       console.log(`<link rel="stylesheet" href="${cssPublicPath}">`)
     }
     console.log(
-      `<script type="importmap" src="${result.publicPrefix}../../../manifests/importmap.json"></script>`
+      `<script type="importmap" src="${result.publicPrefix}importmap.json"></script>`
     )
     console.log('<script type="module">')
     console.log('  import { Button } from "components/ui/button"')
