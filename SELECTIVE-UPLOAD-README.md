@@ -44,9 +44,16 @@ npm run upload:ui
 # 只上传 blocks
 npm run upload:blocks
 
+# 只上传配置文件
+npx tsx scripts/selective-upload.ts --manifests-only      # 只上传 manifest.json
+npx tsx scripts/selective-upload.ts --importmap-only      # 只上传 importmap.json
+npx tsx scripts/selective-upload.ts --config-files-only   # 上传所有配置文件
+
 # 使用预设配置
 npm run upload:essential    # 基础组件包
 npm run upload:dashboard    # 仪表板组件包
+npx tsx scripts/selective-upload.ts --preset=manifests-only     # 只上传 manifest 文件
+npx tsx scripts/selective-upload.ts --preset=config-files-only  # 上传所有配置文件
 
 # 干运行（查看会上传什么，但不实际上传）
 npm run upload:dry-run
@@ -108,6 +115,9 @@ GOOGLE_PROJECT_ID=your-project-id
 - **dashboard-components**: 仪表板应用组件（包含 UI、blocks、charts）
 - **css-only**: 只上传 CSS 文件
 - **charts-complete**: 完整的图表组件包
+- **manifests-only**: 只上传 manifest.json 配置文件
+- **importmap-only**: 只上传 importmap.json 配置文件
+- **config-files-only**: 上传所有配置文件（manifest.json 和 importmap.json）
 
 ## 🛠️ 自定义预设
 

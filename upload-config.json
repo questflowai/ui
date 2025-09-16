@@ -23,6 +23,21 @@
       "description": "All chart components and dependencies",
       "categories": ["charts", "ui", "hooks", "lib"],
       "components": ["card", "button"]
+    },
+    "manifests-only": {
+      "name": "manifests-only",
+      "description": "Upload only manifest.json file",
+      "categories": ["manifests"]
+    },
+    "importmap-only": {
+      "name": "importmap-only",
+      "description": "Upload only importmap.json file",
+      "categories": ["importmap"]
+    },
+    "config-files-only": {
+      "name": "config-files-only",
+      "description": "Upload both manifest and importmap files",
+      "categories": ["config-files"]
     }
   },
   "environment": {

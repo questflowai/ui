@@ -114,13 +114,34 @@ const MENU_OPTIONS: MenuOption[] = [
   },
   {
     key: "12",
+    title: "只上传 Manifest 文件",
+    description: "只上传 manifest.json 配置文件",
+    command: "tsx scripts/selective-upload.ts --manifests-only",
+    requiresEnv: true
+  },
+  {
+    key: "13",
+    title: "只上传 Importmap 文件",
+    description: "只上传 importmap.json 配置文件",
+    command: "tsx scripts/selective-upload.ts --importmap-only",
+    requiresEnv: true
+  },
+  {
+    key: "14",
+    title: "只上传配置文件",
+    description: "上传 manifest.json 和 importmap.json",
+    command: "tsx scripts/selective-upload.ts --config-files-only",
+    requiresEnv: true
+  },
+  {
+    key: "15",
     title: "自定义上传",
     description: "使用自定义参数进行选择性上传",
     command: "custom",
     requiresEnv: true
   },
   {
-    key: "13",
+    key: "16",
     title: "干运行模式",
     description: "查看会上传什么文件（不实际上传）",
     command: "tsx scripts/selective-upload.ts --dry-run",
@@ -148,9 +169,9 @@ function printMenu() {
 
   MENU_OPTIONS.forEach(option => {
     const envIcon = option.requiresEnv ? "🔐" : "📋"
-    console.log(`${envIcon} ${option.key.padStart(2)}: ${option.title}`)
-    console.log(`     ${option.description}`)
-    console.log("")
+    console.log(`${envIcon} ${option.key.padStart(2)}: ${option.title} [${option.description}]`)
+    // console.log(`     ${option.description}`)
+    // console.log("")
   })
 
   console.log("🚪  0: 退出")

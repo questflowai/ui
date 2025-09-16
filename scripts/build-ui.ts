@@ -151,7 +151,8 @@ async function generateImportMap(
   publicPrefix: string,
   componentDeps: Map<string, Set<string>>,
   versions: Record<string, string>,
-  cdnBaseUrl?: string
+  cdnBaseUrl?: string,
+  cssPublicPath?: string
 ): Promise<Record<string, string>> {
   const importMap: Record<string, string> = {}
 
@@ -197,6 +198,11 @@ async function generateImportMap(
   for (const spec of uiSpecs) {
     // Map each specific file to its .js version on CDN
     importMap[`@/components/${spec}`] = `${baseUrl}${publicPrefix}${spec}.js`
+  }
+
+  // Add CSS mapping if available
+  if (cssPublicPath) {
+    importMap["ui:css"] = `${baseUrl}${cssPublicPath}`
   }
 
   return importMap
@@ -642,7 +648,8 @@ async function main() {
       result.publicPrefix,
       componentDeps,
       versions,
-      cdnBaseUrl
+      cdnBaseUrl,
+      cssPublicPath
     )
 
     // Generate build manifest with CSS path

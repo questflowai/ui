@@ -34,6 +34,9 @@ interface UploadOptions {
   hooksOnly?: boolean
   libOnly?: boolean
   examplesOnly?: boolean
+  manifestsOnly?: boolean
+  importmapOnly?: boolean
+  configFilesOnly?: boolean
   components?: string[]
   blocks?: string[]
   charts?: string[]
@@ -75,6 +78,21 @@ const PRESETS: UploadPreset[] = [
     description: "All chart components and dependencies",
     categories: ["charts", "ui", "hooks", "lib"],
     components: ["card", "button"],
+  },
+  {
+    name: "manifests-only",
+    description: "Upload only manifest.json file",
+    categories: ["manifests"],
+  },
+  {
+    name: "importmap-only",
+    description: "Upload only importmap.json file",
+    categories: ["importmap"],
+  },
+  {
+    name: "config-files-only",
+    description: "Upload both manifest and importmap files",
+    categories: ["config-files"],
   },
 ]
 
@@ -174,13 +192,42 @@ async function getFilesToUpload(options: UploadOptions): Promise<{
       hooksOnly: preset.categories.includes("hooks"),
       libOnly: preset.categories.includes("lib"),
       examplesOnly: preset.categories.includes("examples"),
+      manifestsOnly: preset.categories.includes("manifests"),
+      importmapOnly: preset.categories.includes("importmap"),
+      configFilesOnly: preset.categories.includes("config-files"),
       components: preset.components,
       exclude: preset.exclude,
     }
   }
 
+  // Handle manifest-only options first
+  if (options.manifestsOnly || options.importmapOnly || options.configFilesOnly) {
+    const manifestFiles = allFiles.filter(f => f.includes("/manifests/") && f.endsWith(".json"))
+
+    if (options.manifestsOnly) {
+      const manifestFile = manifestFiles.filter(f => f.includes("manifest.json"))
+      filesToUpload.push(...manifestFile)
+      if (manifestFile.length > 0) categories.push("manifests")
+    }
+
+    if (options.importmapOnly) {
+      const importmapFile = manifestFiles.filter(f => f.includes("importmap.json"))
+      filesToUpload.push(...importmapFile)
+      if (importmapFile.length > 0) categories.push("importmap")
+    }
+
+    if (options.configFilesOnly) {
+      filesToUpload.push(...manifestFiles)
+      if (manifestFiles.length > 0) categories.push("config-files")
+    }
+
+    // For manifest-only uploads, skip other file types
+    filesToUpload = Array.from(new Set(filesToUpload))
+    return { files: filesToUpload, categories }
+  }
+
   // CSS files
-  if (options.cssOnly || (!options.uiOnly && !options.blocksOnly && !options.chartsOnly && !options.hooksOnly && !options.libOnly && !options.examplesOnly)) {
+  if (options.cssOnly || (!options.uiOnly && !options.blocksOnly && !options.chartsOnly && !options.hooksOnly && !options.libOnly && !options.examplesOnly && !options.manifestsOnly && !options.importmapOnly && !options.configFilesOnly)) {
     const cssFiles = allFiles.filter(f => f.includes("/styles/") && f.endsWith(".css"))
     filesToUpload.push(...cssFiles)
     if (cssFiles.length > 0) categories.push("css")
@@ -315,6 +362,15 @@ function parseArgs(): UploadOptions {
       case "--examples-only":
         options.examplesOnly = true
         break
+      case "--manifests-only":
+        options.manifestsOnly = true
+        break
+      case "--importmap-only":
+        options.importmapOnly = true
+        break
+      case "--config-files-only":
+        options.configFilesOnly = true
+        break
       case "--components":
         if (i + 1 < args.length) {
           options.components = args[++i].split(",")
@@ -373,6 +429,11 @@ Category Options:
   --lib-only          Upload only lib utilities
   --examples-only     Upload only examples
 
+Configuration Files:
+  --manifests-only    Upload only manifest.json file
+  --importmap-only    Upload only importmap.json file
+  --config-files-only Upload both manifest and importmap files
+
 Specific Selection:
   --components <list> Upload specific components (comma-separated)
   --blocks <list>     Upload specific blocks (comma-separated)
@@ -395,6 +456,8 @@ Examples:
   npx tsx scripts/selective-upload.ts --ui-only --components=button,card,input
   npx tsx scripts/selective-upload.ts --blocks-only --exclude=sidebar-*
   npx tsx scripts/selective-upload.ts --preset=essential-ui
+  npx tsx scripts/selective-upload.ts --manifests-only
+  npx tsx scripts/selective-upload.ts --config-files-only --dry-run
   npx tsx scripts/selective-upload.ts --ui-only --hooks-only --lib-only --dry-run
 `)
 }
