@@ -1,8 +1,8 @@
 import fs from "node:fs/promises"
 import path from "node:path"
+import autoprefixer from "autoprefixer"
 import postcss from "postcss"
 import tailwindcss from "tailwindcss"
-import autoprefixer from "autoprefixer"
 
 import { ui } from "../apps/v4/registry/registry-ui.js"
 import { createCdnClient } from "./cdn.js"
@@ -15,7 +15,7 @@ const UI_SRC_DIR = path.join(UI_PKG_ROOT, "registry", "new-york-v4")
 const UI_COMPONENTS_DIR = path.join(UI_SRC_DIR, "ui")
 const UI_HOOKS_DIR = path.join(UI_SRC_DIR, "hooks")
 const UI_BLOCKS_DIR = path.join(UI_SRC_DIR, "blocks")
-const UI_LIB_DIR = path.join(UI_PKG_ROOT, "lib")
+const UI_LIB_DIR = path.join(UI_SRC_DIR, "lib")
 
 interface ComponentDependency {
   name: string
@@ -407,7 +407,7 @@ async function collectUiSourceSpecifiers(): Promise<string[]> {
   if (await pathExists(UI_LIB_DIR)) {
     out.push(
       ...(await listFilesRecursive(UI_LIB_DIR, [".ts", ".tsx"])).map((abs) =>
-        toNoExt(abs, UI_PKG_ROOT)
+        toNoExt(abs, UI_SRC_DIR)
       )
     )
   }
@@ -529,10 +529,8 @@ async function ensureUiBrowserEsmTree(): Promise<{
 
   const allFiles = [...components, ...blocksFiles, ...hookFiles, ...libFiles]
   const entryPoints = allFiles.reduce((acc, abs) => {
-    const isLib = abs.startsWith(UI_LIB_DIR)
-    const rel = path
-      .relative(isLib ? UI_PKG_ROOT : UI_SRC_DIR, abs)
-      .replace(/\.(tsx|ts)$/, "")
+    // const isLib = abs.startsWith(UI_LIB_DIR)
+    const rel = path.relative(UI_SRC_DIR, abs).replace(/\.(tsx|ts)$/, "")
     acc[rel] = abs
     return acc
   }, {} as Record<string, string>)
