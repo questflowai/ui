@@ -608,6 +608,18 @@ async function ensureUiBrowserEsmTree(): Promise<{
             })
           },
         },
+        {
+          name: "ensure-react-import",
+          setup(build) {
+            build.onLoad({ filter: /\.tsx$/ }, async (args) => {
+              let contents = await fs.readFile(args.path, "utf8")
+              if (!/from\s+["']react["']/.test(contents)) {
+                contents = `import React from "react";\n${contents}`
+              }
+              return { contents, loader: "tsx" }
+            })
+          },
+        },
       ],
     })
   }
