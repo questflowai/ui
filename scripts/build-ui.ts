@@ -205,6 +205,9 @@ async function generateImportMap(
     importMap["ui:css"] = `${baseUrl}${cssPublicPath}`
   }
 
+  // 由于部分模型知识库导致依旧使用的旧版路径，故继续保留旧版路径映射
+  importMap["@/lib/utils"] = `https://cdn.questflow.ai/mc/0.1.0/lib/utils.js`
+
   return importMap
 }
 
