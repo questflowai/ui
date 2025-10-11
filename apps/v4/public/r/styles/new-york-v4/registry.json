@@ -857,6 +857,24 @@
       ]
     },
     {
+      "name": "toast",
+      "type": "registry:ui",
+      "dependencies": [
+        "@radix-ui/react-toast",
+        "clsx",
+        "react",
+        "tailwind-merge",
+        "class-variance-authority",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/ui/toast.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "toaster",
       "type": "registry:ui",
       "files": [
@@ -5763,6 +5781,72 @@
       "files": [
         {
           "path": "registry/new-york-v4/examples/textarea-with-text.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "toast-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "toast",
+        "sonner"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/toast-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "toast-destructive",
+      "type": "registry:example",
+      "registryDependencies": [
+        "toast"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/toast-destructive.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "toast-simple",
+      "type": "registry:example",
+      "registryDependencies": [
+        "toast"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/toast-simple.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "toast-with-action",
+      "type": "registry:example",
+      "registryDependencies": [
+        "toast"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/toast-with-action.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "toast-with-title",
+      "type": "registry:example",
+      "registryDependencies": [
+        "toast"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/toast-with-title.tsx",
           "type": "registry:example"
         }
       ]

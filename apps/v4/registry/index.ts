@@ -11,12 +11,13 @@ import { themes } from "@/registry/registry-themes"
 import { ui } from "@/registry/registry-ui"
 
 const DEPRECATED_ITEMS = [
-  "toast",
-  "toast-demo",
-  "toast-destructive",
-  "toast-simple",
-  "toast-with-action",
-  "toast-with-title",
+  // Toast items are now using the new Sonner implementation
+  // "toast",
+  // "toast-demo",
+  // "toast-destructive",
+  // "toast-simple",
+  // "toast-with-action",
+  // "toast-with-title",
 ]
 
 // Shared between index and style for backward compatibility.
