@@ -762,4 +762,32 @@ export const ui: Registry["items"] = [
       "tailwind-merge",
     ],
   },
+  {
+    name: "toast",
+    type: "registry:ui",
+    files: [
+      {
+        path: "ui/toast.tsx",
+        type: "registry:ui",
+      },
+    ],
+    dependencies: [
+      "@radix-ui/react-toast",
+      "clsx",
+      "react",
+      "tailwind-merge",
+      "class-variance-authority",
+      "lucide-react",
+    ],
+  },
+  {
+    name: "toaster",
+    type: "registry:ui",
+    files: [
+      {
+        path: "ui/toaster.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
 ]

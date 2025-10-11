@@ -924,6 +924,24 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
+  "toaster": {
+    name: "toaster",
+    description: "",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/new-york-v4/ui/toaster.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/ui/toaster.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
   "calendar-01": {
     name: "calendar-01",
     description: "",
@@ -3472,6 +3490,24 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/new-york-v4/hooks/use-mobile.ts")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "use-toast": {
+    name: "use-toast",
+    description: "",
+    type: "registry:hook",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/new-york-v4/hooks/use-toast.ts",
+      type: "registry:hook",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/hooks/use-toast.ts")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
       return { default: mod.default || mod[exportName] }
     }),
