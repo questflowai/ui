@@ -38,11 +38,7 @@
       "name": "accordion",
       "type": "registry:ui",
       "dependencies": [
-        "@radix-ui/react-accordion",
-        "clsx",
-        "lucide-react",
-        "react",
-        "tailwind-merge"
+        "@radix-ui/react-accordion"
       ],
       "files": [
         {
@@ -54,12 +50,6 @@
     {
       "name": "alert",
       "type": "registry:ui",
-      "dependencies": [
-        "class-variance-authority",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
       "files": [
         {
           "path": "registry/new-york-v4/ui/alert.tsx",
@@ -71,20 +61,14 @@
       "name": "alert-dialog",
       "type": "registry:ui",
       "dependencies": [
-        "@radix-ui/react-alert-dialog",
-        "@radix-ui/react-slot",
-        "class-variance-authority",
-        "clsx",
-        "react",
-        "tailwind-merge"
+        "@radix-ui/react-alert-dialog"
+      ],
+      "registryDependencies": [
+        "button"
       ],
       "files": [
         {
           "path": "registry/new-york-v4/ui/alert-dialog.tsx",
-          "type": "registry:ui"
-        },
-        {
-          "path": "registry/new-york-v4/ui/button.tsx",
           "type": "registry:ui"
         }
       ]
@@ -106,10 +90,7 @@
       "name": "avatar",
       "type": "registry:ui",
       "dependencies": [
-        "@radix-ui/react-avatar",
-        "clsx",
-        "react",
-        "tailwind-merge"
+        "@radix-ui/react-avatar"
       ],
       "files": [
         {
@@ -122,11 +103,7 @@
       "name": "badge",
       "type": "registry:ui",
       "dependencies": [
-        "@radix-ui/react-slot",
-        "class-variance-authority",
-        "clsx",
-        "react",
-        "tailwind-merge"
+        "@radix-ui/react-slot"
       ],
       "files": [
         {
@@ -139,11 +116,7 @@
       "name": "breadcrumb",
       "type": "registry:ui",
       "dependencies": [
-        "@radix-ui/react-slot",
-        "clsx",
-        "lucide-react",
-        "react",
-        "tailwind-merge"
+        "@radix-ui/react-slot"
       ],
       "files": [
         {
@@ -156,15 +129,25 @@
       "name": "button",
       "type": "registry:ui",
       "dependencies": [
-        "@radix-ui/react-slot",
-        "class-variance-authority",
-        "clsx",
-        "react",
-        "tailwind-merge"
+        "@radix-ui/react-slot"
       ],
       "files": [
         {
           "path": "registry/new-york-v4/ui/button.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "button-group",
+      "type": "registry:ui",
+      "registryDependencies": [
+        "button",
+        "separator"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/ui/button-group.tsx",
           "type": "registry:ui"
         }
       ]
@@ -173,21 +156,15 @@
       "name": "calendar",
       "type": "registry:ui",
       "dependencies": [
-        "@radix-ui/react-slot",
-        "class-variance-authority",
-        "clsx",
-        "lucide-react",
-        "react",
-        "react-day-picker",
-        "tailwind-merge"
+        "react-day-picker@latest",
+        "date-fns"
+      ],
+      "registryDependencies": [
+        "button"
       ],
       "files": [
         {
           "path": "registry/new-york-v4/ui/calendar.tsx",
-          "type": "registry:ui"
-        },
-        {
-          "path": "registry/new-york-v4/ui/button.tsx",
           "type": "registry:ui"
         }
       ]
@@ -195,11 +172,6 @@
     {
       "name": "card",
       "type": "registry:ui",
-      "dependencies": [
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
       "files": [
         {
           "path": "registry/new-york-v4/ui/card.tsx",
@@ -211,21 +183,14 @@
       "name": "carousel",
       "type": "registry:ui",
       "dependencies": [
-        "@radix-ui/react-slot",
-        "class-variance-authority",
-        "clsx",
-        "embla-carousel-react",
-        "lucide-react",
-        "react",
-        "tailwind-merge"
+        "embla-carousel-react"
+      ],
+      "registryDependencies": [
+        "button"
       ],
       "files": [
         {
           "path": "registry/new-york-v4/ui/carousel.tsx",
-          "type": "registry:ui"
-        },
-        {
-          "path": "registry/new-york-v4/ui/button.tsx",
           "type": "registry:ui"
         }
       ]
@@ -234,10 +199,11 @@
       "name": "chart",
       "type": "registry:ui",
       "dependencies": [
-        "clsx",
-        "react",
-        "recharts",
-        "tailwind-merge"
+        "recharts@2.15.4",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "card"
       ],
       "files": [
         {
@@ -250,11 +216,7 @@
       "name": "checkbox",
       "type": "registry:ui",
       "dependencies": [
-        "@radix-ui/react-checkbox",
-        "clsx",
-        "lucide-react",
-        "react",
-        "tailwind-merge"
+        "@radix-ui/react-checkbox"
       ],
       "files": [
         {
@@ -280,20 +242,14 @@
       "name": "command",
       "type": "registry:ui",
       "dependencies": [
-        "@radix-ui/react-dialog",
-        "clsx",
-        "cmdk",
-        "lucide-react",
-        "react",
-        "tailwind-merge"
+        "cmdk"
+      ],
+      "registryDependencies": [
+        "dialog"
       ],
       "files": [
         {
           "path": "registry/new-york-v4/ui/command.tsx",
-          "type": "registry:ui"
-        },
-        {
-          "path": "registry/new-york-v4/ui/dialog.tsx",
           "type": "registry:ui"
         }
       ]
@@ -302,11 +258,7 @@
       "name": "context-menu",
       "type": "registry:ui",
       "dependencies": [
-        "@radix-ui/react-context-menu",
-        "clsx",
-        "lucide-react",
-        "react",
-        "tailwind-merge"
+        "@radix-ui/react-context-menu"
       ],
       "files": [
         {
@@ -319,11 +271,7 @@
       "name": "dialog",
       "type": "registry:ui",
       "dependencies": [
-        "@radix-ui/react-dialog",
-        "clsx",
-        "lucide-react",
-        "react",
-        "tailwind-merge"
+        "@radix-ui/react-dialog"
       ],
       "files": [
         {
@@ -336,10 +284,8 @@
       "name": "drawer",
       "type": "registry:ui",
       "dependencies": [
-        "clsx",
-        "react",
-        "tailwind-merge",
-        "vaul"
+        "vaul",
+        "@radix-ui/react-dialog"
       ],
       "files": [
         {
@@ -352,15 +298,35 @@
       "name": "dropdown-menu",
       "type": "registry:ui",
       "dependencies": [
-        "@radix-ui/react-dropdown-menu",
-        "clsx",
-        "lucide-react",
-        "react",
-        "tailwind-merge"
+        "@radix-ui/react-dropdown-menu"
       ],
       "files": [
         {
           "path": "registry/new-york-v4/ui/dropdown-menu.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "empty",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "registry/new-york-v4/ui/empty.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "field",
+      "type": "registry:ui",
+      "registryDependencies": [
+        "label",
+        "separator"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/ui/field.tsx",
           "type": "registry:ui"
         }
       ]
@@ -371,18 +337,17 @@
       "dependencies": [
         "@radix-ui/react-label",
         "@radix-ui/react-slot",
-        "clsx",
-        "react",
-        "react-hook-form",
-        "tailwind-merge"
+        "@hookform/resolvers",
+        "zod",
+        "react-hook-form"
+      ],
+      "registryDependencies": [
+        "button",
+        "label"
       ],
       "files": [
         {
           "path": "registry/new-york-v4/ui/form.tsx",
-          "type": "registry:ui"
-        },
-        {
-          "path": "registry/new-york-v4/ui/label.tsx",
           "type": "registry:ui"
         }
       ]
@@ -391,10 +356,7 @@
       "name": "hover-card",
       "type": "registry:ui",
       "dependencies": [
-        "@radix-ui/react-hover-card",
-        "clsx",
-        "react",
-        "tailwind-merge"
+        "@radix-ui/react-hover-card"
       ],
       "files": [
         {
@@ -406,11 +368,6 @@
     {
       "name": "input",
       "type": "registry:ui",
-      "dependencies": [
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
       "files": [
         {
           "path": "registry/new-york-v4/ui/input.tsx",
@@ -419,14 +376,25 @@
       ]
     },
     {
+      "name": "input-group",
+      "type": "registry:ui",
+      "registryDependencies": [
+        "button",
+        "input",
+        "textarea"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/ui/input-group.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "input-otp",
       "type": "registry:ui",
       "dependencies": [
-        "clsx",
-        "input-otp",
-        "lucide-react",
-        "react",
-        "tailwind-merge"
+        "input-otp"
       ],
       "files": [
         {
@@ -436,13 +404,23 @@
       ]
     },
     {
+      "name": "item",
+      "type": "registry:ui",
+      "registryDependencies": [
+        "separator"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/ui/item.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "label",
       "type": "registry:ui",
       "dependencies": [
-        "@radix-ui/react-label",
-        "clsx",
-        "react",
-        "tailwind-merge"
+        "@radix-ui/react-label"
       ],
       "files": [
         {
@@ -455,11 +433,7 @@
       "name": "menubar",
       "type": "registry:ui",
       "dependencies": [
-        "@radix-ui/react-menubar",
-        "clsx",
-        "lucide-react",
-        "react",
-        "tailwind-merge"
+        "@radix-ui/react-menubar"
       ],
       "files": [
         {
@@ -472,12 +446,7 @@
       "name": "navigation-menu",
       "type": "registry:ui",
       "dependencies": [
-        "@radix-ui/react-navigation-menu",
-        "class-variance-authority",
-        "clsx",
-        "lucide-react",
-        "react",
-        "tailwind-merge"
+        "@radix-ui/react-navigation-menu"
       ],
       "files": [
         {
@@ -489,21 +458,12 @@
     {
       "name": "pagination",
       "type": "registry:ui",
-      "dependencies": [
-        "@radix-ui/react-slot",
-        "class-variance-authority",
-        "clsx",
-        "lucide-react",
-        "react",
-        "tailwind-merge"
+      "registryDependencies": [
+        "button"
       ],
       "files": [
         {
           "path": "registry/new-york-v4/ui/pagination.tsx",
-          "type": "registry:ui"
-        },
-        {
-          "path": "registry/new-york-v4/ui/button.tsx",
           "type": "registry:ui"
         }
       ]
@@ -512,10 +472,7 @@
       "name": "popover",
       "type": "registry:ui",
       "dependencies": [
-        "@radix-ui/react-popover",
-        "clsx",
-        "react",
-        "tailwind-merge"
+        "@radix-ui/react-popover"
       ],
       "files": [
         {
@@ -528,10 +485,7 @@
       "name": "progress",
       "type": "registry:ui",
       "dependencies": [
-        "@radix-ui/react-progress",
-        "clsx",
-        "react",
-        "tailwind-merge"
+        "@radix-ui/react-progress"
       ],
       "files": [
         {
@@ -544,11 +498,7 @@
       "name": "radio-group",
       "type": "registry:ui",
       "dependencies": [
-        "@radix-ui/react-radio-group",
-        "clsx",
-        "lucide-react",
-        "react",
-        "tailwind-merge"
+        "@radix-ui/react-radio-group"
       ],
       "files": [
         {
@@ -561,11 +511,7 @@
       "name": "resizable",
       "type": "registry:ui",
       "dependencies": [
-        "clsx",
-        "lucide-react",
-        "react",
-        "react-resizable-panels",
-        "tailwind-merge"
+        "react-resizable-panels"
       ],
       "files": [
         {
@@ -578,10 +524,7 @@
       "name": "scroll-area",
       "type": "registry:ui",
       "dependencies": [
-        "@radix-ui/react-scroll-area",
-        "clsx",
-        "react",
-        "tailwind-merge"
+        "@radix-ui/react-scroll-area"
       ],
       "files": [
         {
@@ -594,11 +537,7 @@
       "name": "select",
       "type": "registry:ui",
       "dependencies": [
-        "@radix-ui/react-select",
-        "clsx",
-        "lucide-react",
-        "react",
-        "tailwind-merge"
+        "@radix-ui/react-select"
       ],
       "files": [
         {
@@ -611,10 +550,7 @@
       "name": "separator",
       "type": "registry:ui",
       "dependencies": [
-        "@radix-ui/react-separator",
-        "clsx",
-        "react",
-        "tailwind-merge"
+        "@radix-ui/react-separator"
       ],
       "files": [
         {
@@ -627,11 +563,7 @@
       "name": "sheet",
       "type": "registry:ui",
       "dependencies": [
-        "@radix-ui/react-dialog",
-        "clsx",
-        "lucide-react",
-        "react",
-        "tailwind-merge"
+        "@radix-ui/react-dialog"
       ],
       "files": [
         {
@@ -644,54 +576,71 @@
       "name": "sidebar",
       "type": "registry:ui",
       "dependencies": [
-        "@radix-ui/react-dialog",
-        "@radix-ui/react-separator",
         "@radix-ui/react-slot",
-        "@radix-ui/react-tooltip",
         "class-variance-authority",
-        "clsx",
-        "lucide-react",
-        "react",
-        "tailwind-merge"
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "separator",
+        "sheet",
+        "tooltip",
+        "input",
+        "use-mobile",
+        "skeleton"
       ],
       "files": [
         {
           "path": "registry/new-york-v4/ui/sidebar.tsx",
           "type": "registry:ui"
-        },
-        {
-          "path": "registry/new-york-v4/ui/button.tsx",
-          "type": "registry:ui"
-        },
-        {
-          "path": "registry/new-york-v4/ui/input.tsx",
-          "type": "registry:ui"
-        },
-        {
-          "path": "registry/new-york-v4/ui/separator.tsx",
-          "type": "registry:ui"
-        },
-        {
-          "path": "registry/new-york-v4/ui/sheet.tsx",
-          "type": "registry:ui"
-        },
-        {
-          "path": "registry/new-york-v4/ui/skeleton.tsx",
-          "type": "registry:ui"
-        },
-        {
-          "path": "registry/new-york-v4/ui/tooltip.tsx",
-          "type": "registry:ui"
         }
-      ]
+      ],
+      "tailwind": {
+        "config": {
+          "theme": {
+            "extend": {
+              "colors": {
+                "sidebar": {
+                  "DEFAULT": "hsl(var(--sidebar-background))",
+                  "foreground": "hsl(var(--sidebar-foreground))",
+                  "primary": "hsl(var(--sidebar-primary))",
+                  "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
+                  "accent": "hsl(var(--sidebar-accent))",
+                  "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
+                  "border": "hsl(var(--sidebar-border))",
+                  "ring": "hsl(var(--sidebar-ring))"
+                }
+              }
+            }
+          }
+        }
+      },
+      "cssVars": {
+        "light": {
+          "sidebar-background": "0 0% 98%",
+          "sidebar-foreground": "240 5.3% 26.1%",
+          "sidebar-primary": "240 5.9% 10%",
+          "sidebar-primary-foreground": "0 0% 98%",
+          "sidebar-accent": "240 4.8% 95.9%",
+          "sidebar-accent-foreground": "240 5.9% 10%",
+          "sidebar-border": "220 13% 91%",
+          "sidebar-ring": "217.2 91.2% 59.8%"
+        },
+        "dark": {
+          "sidebar-background": "240 5.9% 10%",
+          "sidebar-foreground": "240 4.8% 95.9%",
+          "sidebar-primary": "224.3 76.3% 48%",
+          "sidebar-primary-foreground": "0 0% 100%",
+          "sidebar-accent": "240 3.7% 15.9%",
+          "sidebar-accent-foreground": "240 4.8% 95.9%",
+          "sidebar-border": "240 3.7% 15.9%",
+          "sidebar-ring": "217.2 91.2% 59.8%"
+        }
+      }
     },
     {
       "name": "skeleton",
       "type": "registry:ui",
-      "dependencies": [
-        "clsx",
-        "tailwind-merge"
-      ],
       "files": [
         {
           "path": "registry/new-york-v4/ui/skeleton.tsx",
@@ -703,10 +652,7 @@
       "name": "slider",
       "type": "registry:ui",
       "dependencies": [
-        "@radix-ui/react-slider",
-        "clsx",
-        "react",
-        "tailwind-merge"
+        "@radix-ui/react-slider"
       ],
       "files": [
         {
@@ -719,8 +665,8 @@
       "name": "sonner",
       "type": "registry:ui",
       "dependencies": [
-        "next-themes",
-        "sonner"
+        "sonner",
+        "next-themes"
       ],
       "files": [
         {
@@ -730,13 +676,23 @@
       ]
     },
     {
+      "name": "spinner",
+      "type": "registry:ui",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/ui/spinner.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "switch",
       "type": "registry:ui",
       "dependencies": [
-        "@radix-ui/react-switch",
-        "clsx",
-        "react",
-        "tailwind-merge"
+        "@radix-ui/react-switch"
       ],
       "files": [
         {
@@ -748,11 +704,6 @@
     {
       "name": "table",
       "type": "registry:ui",
-      "dependencies": [
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
       "files": [
         {
           "path": "registry/new-york-v4/ui/table.tsx",
@@ -764,10 +715,7 @@
       "name": "tabs",
       "type": "registry:ui",
       "dependencies": [
-        "@radix-ui/react-tabs",
-        "clsx",
-        "react",
-        "tailwind-merge"
+        "@radix-ui/react-tabs"
       ],
       "files": [
         {
@@ -779,11 +727,6 @@
     {
       "name": "textarea",
       "type": "registry:ui",
-      "dependencies": [
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
       "files": [
         {
           "path": "registry/new-york-v4/ui/textarea.tsx",
@@ -795,11 +738,7 @@
       "name": "toggle",
       "type": "registry:ui",
       "dependencies": [
-        "@radix-ui/react-toggle",
-        "class-variance-authority",
-        "clsx",
-        "react",
-        "tailwind-merge"
+        "@radix-ui/react-toggle"
       ],
       "files": [
         {
@@ -812,20 +751,14 @@
       "name": "toggle-group",
       "type": "registry:ui",
       "dependencies": [
-        "@radix-ui/react-toggle",
-        "@radix-ui/react-toggle-group",
-        "class-variance-authority",
-        "clsx",
-        "react",
-        "tailwind-merge"
+        "@radix-ui/react-toggle-group"
+      ],
+      "registryDependencies": [
+        "toggle"
       ],
       "files": [
         {
           "path": "registry/new-york-v4/ui/toggle-group.tsx",
-          "type": "registry:ui"
-        },
-        {
-          "path": "registry/new-york-v4/ui/toggle.tsx",
           "type": "registry:ui"
         }
       ]
@@ -834,10 +767,7 @@
       "name": "tooltip",
       "type": "registry:ui",
       "dependencies": [
-        "@radix-ui/react-tooltip",
-        "clsx",
-        "react",
-        "tailwind-merge"
+        "@radix-ui/react-tooltip"
       ],
       "files": [
         {
@@ -847,295 +777,1103 @@
       ]
     },
     {
-      "name": "toaster",
+      "name": "kbd",
       "type": "registry:ui",
       "files": [
         {
-          "path": "registry/new-york-v4/ui/toaster.tsx",
+          "path": "registry/new-york-v4/ui/kbd.tsx",
           "type": "registry:ui"
         }
       ]
     },
     {
-      "name": "calendar-01",
+      "name": "native-select",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "registry/new-york-v4/ui/native-select.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "dashboard-01",
       "type": "registry:block",
+      "description": "A dashboard with sidebar, charts and data table.",
       "dependencies": [
-        "@radix-ui/react-slot",
-        "class-variance-authority",
-        "clsx",
-        "lucide-react",
-        "react",
-        "react-day-picker",
-        "tailwind-merge"
+        "@dnd-kit/core",
+        "@dnd-kit/modifiers",
+        "@dnd-kit/sortable",
+        "@dnd-kit/utilities",
+        "@tanstack/react-table",
+        "zod",
+        "@tabler/icons-react"
       ],
       "registryDependencies": [
+        "sidebar",
+        "breadcrumb",
+        "separator",
+        "label",
+        "chart",
+        "card",
+        "select",
+        "tabs",
+        "table",
+        "toggle-group",
+        "badge",
         "button",
+        "checkbox",
+        "dropdown-menu",
+        "drawer",
+        "input",
+        "avatar",
+        "sheet",
+        "sonner"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/dashboard-01/page.tsx",
+          "type": "registry:page",
+          "target": "app/dashboard/page.tsx"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/dashboard-01/data.json",
+          "type": "registry:file",
+          "target": "app/dashboard/data.json"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/dashboard-01/components/app-sidebar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/dashboard-01/components/chart-area-interactive.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/dashboard-01/components/data-table.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/dashboard-01/components/nav-documents.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/dashboard-01/components/nav-main.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/dashboard-01/components/nav-secondary.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/dashboard-01/components/nav-user.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/dashboard-01/components/section-cards.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/dashboard-01/components/site-header.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "iframeHeight": "1000px"
+      },
+      "categories": [
+        "dashboard"
+      ]
+    },
+    {
+      "name": "sidebar-01",
+      "type": "registry:block",
+      "description": "A simple sidebar with navigation grouped by section.",
+      "registryDependencies": [
+        "sidebar",
+        "breadcrumb",
+        "separator",
+        "label",
+        "dropdown-menu"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/sidebar-01/page.tsx",
+          "type": "registry:page",
+          "target": "app/dashboard/page.tsx"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/sidebar-01/components/app-sidebar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/sidebar-01/components/search-form.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/sidebar-01/components/version-switcher.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": [
+        "sidebar",
+        "dashboard"
+      ]
+    },
+    {
+      "name": "sidebar-02",
+      "type": "registry:block",
+      "description": "A sidebar with collapsible sections.",
+      "registryDependencies": [
+        "sidebar",
+        "breadcrumb",
+        "separator",
+        "label",
+        "dropdown-menu"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/sidebar-02/page.tsx",
+          "type": "registry:page",
+          "target": "app/dashboard/page.tsx"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/sidebar-02/components/app-sidebar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/sidebar-02/components/search-form.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/sidebar-02/components/version-switcher.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": [
+        "sidebar",
+        "dashboard"
+      ]
+    },
+    {
+      "name": "sidebar-03",
+      "type": "registry:block",
+      "description": "A sidebar with submenus.",
+      "registryDependencies": [
+        "sidebar",
+        "breadcrumb"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/sidebar-03/page.tsx",
+          "type": "registry:page",
+          "target": "app/dashboard/page.tsx"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/sidebar-03/components/app-sidebar.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": [
+        "sidebar",
+        "dashboard"
+      ]
+    },
+    {
+      "name": "sidebar-04",
+      "type": "registry:block",
+      "description": "A floating sidebar with submenus.",
+      "registryDependencies": [
+        "sidebar",
+        "breadcrumb",
+        "separator"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/sidebar-04/page.tsx",
+          "type": "registry:page",
+          "target": "app/dashboard/page.tsx"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/sidebar-04/components/app-sidebar.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": [
+        "sidebar",
+        "dashboard"
+      ]
+    },
+    {
+      "name": "sidebar-05",
+      "type": "registry:block",
+      "description": "A sidebar with collapsible submenus.",
+      "registryDependencies": [
+        "sidebar",
+        "breadcrumb",
+        "separator",
+        "label",
+        "collapsible"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/sidebar-05/page.tsx",
+          "type": "registry:page",
+          "target": "app/dashboard/page.tsx"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/sidebar-05/components/app-sidebar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/sidebar-05/components/search-form.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": [
+        "sidebar",
+        "dashboard"
+      ]
+    },
+    {
+      "name": "sidebar-06",
+      "type": "registry:block",
+      "description": "A sidebar with submenus as dropdowns.",
+      "registryDependencies": [
+        "sidebar",
+        "breadcrumb",
+        "separator",
+        "card",
+        "dropdown-menu"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/sidebar-06/page.tsx",
+          "type": "registry:page",
+          "target": "app/dashboard/page.tsx"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/sidebar-06/components/app-sidebar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/sidebar-06/components/nav-main.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/sidebar-06/components/sidebar-opt-in-form.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": [
+        "sidebar",
+        "dashboard"
+      ]
+    },
+    {
+      "name": "sidebar-07",
+      "type": "registry:block",
+      "description": "A sidebar that collapses to icons.",
+      "registryDependencies": [
+        "sidebar",
+        "breadcrumb",
+        "separator",
+        "collapsible",
+        "dropdown-menu",
+        "avatar"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/sidebar-07/page.tsx",
+          "type": "registry:page",
+          "target": "app/dashboard/page.tsx"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/sidebar-07/components/app-sidebar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/sidebar-07/components/nav-main.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/sidebar-07/components/nav-projects.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/sidebar-07/components/nav-user.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/sidebar-07/components/team-switcher.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": [
+        "sidebar",
+        "dashboard"
+      ]
+    },
+    {
+      "name": "sidebar-08",
+      "type": "registry:block",
+      "description": "An inset sidebar with secondary navigation.",
+      "registryDependencies": [
+        "sidebar",
+        "breadcrumb",
+        "separator",
+        "collapsible",
+        "dropdown-menu",
+        "avatar"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/sidebar-08/page.tsx",
+          "type": "registry:page",
+          "target": "app/dashboard/page.tsx"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/sidebar-08/components/app-sidebar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/sidebar-08/components/nav-main.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/sidebar-08/components/nav-projects.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/sidebar-08/components/nav-secondary.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/sidebar-08/components/nav-user.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": [
+        "sidebar",
+        "dashboard"
+      ]
+    },
+    {
+      "name": "sidebar-09",
+      "type": "registry:block",
+      "description": "Collapsible nested sidebars.",
+      "registryDependencies": [
+        "sidebar",
+        "breadcrumb",
+        "separator",
+        "collapsible",
+        "dropdown-menu",
+        "avatar",
+        "switch",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/sidebar-09/page.tsx",
+          "type": "registry:page",
+          "target": "app/dashboard/page.tsx"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/sidebar-09/components/app-sidebar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/sidebar-09/components/nav-user.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": [
+        "sidebar",
+        "dashboard"
+      ]
+    },
+    {
+      "name": "sidebar-10",
+      "type": "registry:block",
+      "description": "A sidebar in a popover.",
+      "registryDependencies": [
+        "sidebar",
+        "breadcrumb",
+        "separator",
+        "popover",
+        "collapsible",
+        "dropdown-menu"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/sidebar-10/page.tsx",
+          "type": "registry:page",
+          "target": "app/dashboard/page.tsx"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/sidebar-10/components/app-sidebar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/sidebar-10/components/nav-actions.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/sidebar-10/components/nav-favorites.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/sidebar-10/components/nav-main.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/sidebar-10/components/nav-secondary.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/sidebar-10/components/nav-workspaces.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/sidebar-10/components/team-switcher.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": [
+        "sidebar",
+        "dashboard"
+      ]
+    },
+    {
+      "name": "sidebar-11",
+      "type": "registry:block",
+      "description": "A sidebar with a collapsible file tree.",
+      "registryDependencies": [
+        "sidebar",
+        "breadcrumb",
+        "separator",
+        "collapsible"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/sidebar-11/page.tsx",
+          "type": "registry:page",
+          "target": "app/dashboard/page.tsx"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/sidebar-11/components/app-sidebar.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": [
+        "sidebar",
+        "dashboard"
+      ]
+    },
+    {
+      "name": "sidebar-12",
+      "type": "registry:block",
+      "description": "A sidebar with a calendar.",
+      "registryDependencies": [
+        "sidebar",
+        "breadcrumb",
+        "separator",
+        "collapsible",
+        "calendar",
+        "dropdown-menu",
+        "avatar"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/sidebar-12/page.tsx",
+          "type": "registry:page",
+          "target": "app/dashboard/page.tsx"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/sidebar-12/components/app-sidebar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/sidebar-12/components/calendars.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/sidebar-12/components/date-picker.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/sidebar-12/components/nav-user.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": [
+        "sidebar",
+        "dashboard"
+      ]
+    },
+    {
+      "name": "sidebar-13",
+      "type": "registry:block",
+      "description": "A sidebar in a dialog.",
+      "registryDependencies": [
+        "sidebar",
+        "breadcrumb",
+        "button",
+        "dialog"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/sidebar-13/page.tsx",
+          "type": "registry:page",
+          "target": "app/dashboard/page.tsx"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/sidebar-13/components/settings-dialog.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": [
+        "sidebar",
+        "dashboard"
+      ]
+    },
+    {
+      "name": "sidebar-14",
+      "type": "registry:block",
+      "description": "A sidebar on the right.",
+      "registryDependencies": [
+        "sidebar",
+        "breadcrumb"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/sidebar-14/page.tsx",
+          "type": "registry:page",
+          "target": "app/dashboard/page.tsx"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/sidebar-14/components/app-sidebar.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": [
+        "sidebar",
+        "dashboard"
+      ]
+    },
+    {
+      "name": "sidebar-15",
+      "type": "registry:block",
+      "description": "A left and right sidebar.",
+      "registryDependencies": [
+        "sidebar",
+        "breadcrumb",
+        "separator",
+        "popover",
+        "collapsible",
+        "dropdown-menu",
+        "calendar",
+        "avatar"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/sidebar-15/page.tsx",
+          "type": "registry:page",
+          "target": "app/dashboard/page.tsx"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/sidebar-15/components/calendars.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/sidebar-15/components/date-picker.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/sidebar-15/components/nav-favorites.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/sidebar-15/components/nav-main.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/sidebar-15/components/nav-secondary.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/sidebar-15/components/nav-user.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/sidebar-15/components/nav-workspaces.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/sidebar-15/components/sidebar-left.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/sidebar-15/components/sidebar-right.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/sidebar-15/components/team-switcher.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": [
+        "sidebar",
+        "dashboard"
+      ]
+    },
+    {
+      "name": "sidebar-16",
+      "type": "registry:block",
+      "description": "A sidebar with a sticky site header.",
+      "registryDependencies": [
+        "sidebar",
+        "breadcrumb",
+        "separator",
+        "collapsible",
+        "dropdown-menu",
+        "avatar",
+        "button",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/sidebar-16/page.tsx",
+          "type": "registry:page",
+          "target": "app/dashboard/page.tsx"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/sidebar-16/components/app-sidebar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/sidebar-16/components/nav-main.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/sidebar-16/components/nav-projects.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/sidebar-16/components/nav-secondary.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/sidebar-16/components/nav-user.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/sidebar-16/components/search-form.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/sidebar-16/components/site-header.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": [
+        "sidebar",
+        "dashboard"
+      ]
+    },
+    {
+      "name": "login-01",
+      "type": "registry:block",
+      "description": "A simple login form.",
+      "registryDependencies": [
+        "button",
+        "card",
+        "input",
+        "label",
+        "field"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/login-01/page.tsx",
+          "type": "registry:page",
+          "target": "app/login/page.tsx"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/login-01/components/login-form.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": [
+        "authentication",
+        "login"
+      ]
+    },
+    {
+      "name": "login-02",
+      "type": "registry:block",
+      "description": "A two column login page with a cover image.",
+      "registryDependencies": [
+        "button",
+        "input",
+        "label",
+        "field"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/login-02/page.tsx",
+          "type": "registry:page",
+          "target": "app/login/page.tsx"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/login-02/components/login-form.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": [
+        "authentication",
+        "login"
+      ]
+    },
+    {
+      "name": "login-03",
+      "type": "registry:block",
+      "description": "A login page with a muted background color.",
+      "registryDependencies": [
+        "button",
+        "card",
+        "input",
+        "label",
+        "field"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/login-03/page.tsx",
+          "type": "registry:page",
+          "target": "app/login/page.tsx"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/login-03/components/login-form.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": [
+        "authentication",
+        "login"
+      ]
+    },
+    {
+      "name": "login-04",
+      "type": "registry:block",
+      "description": "A login page with form and image.",
+      "registryDependencies": [
+        "button",
+        "card",
+        "input",
+        "label",
+        "field"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/login-04/page.tsx",
+          "type": "registry:page",
+          "target": "app/login/page.tsx"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/login-04/components/login-form.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": [
+        "authentication",
+        "login"
+      ]
+    },
+    {
+      "name": "login-05",
+      "type": "registry:block",
+      "description": "A simple email-only login page.",
+      "registryDependencies": [
+        "button",
+        "input",
+        "label",
+        "field"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/login-05/page.tsx",
+          "type": "registry:page",
+          "target": "app/login/page.tsx"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/login-05/components/login-form.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": [
+        "authentication",
+        "login"
+      ]
+    },
+    {
+      "name": "calendar-01",
+      "type": "registry:block",
+      "description": "A simple calendar.",
+      "registryDependencies": [
         "calendar"
       ],
       "files": [
         {
           "path": "registry/new-york-v4/blocks/calendar-01.tsx",
-          "type": "registry:block",
-          "target": "components/calendar-01/calendar-01.tsx"
+          "type": "registry:component"
         }
+      ],
+      "meta": {
+        "iframeHeight": "600px",
+        "container": "w-full bg-surface min-h-svh flex px-4 py-12 items-start md:py-20 justify-center min-w-0",
+        "mobile": "component"
+      },
+      "categories": [
+        "calendar",
+        "date"
       ]
     },
     {
       "name": "calendar-02",
       "type": "registry:block",
-      "dependencies": [
-        "@radix-ui/react-slot",
-        "class-variance-authority",
-        "clsx",
-        "lucide-react",
-        "react",
-        "react-day-picker",
-        "tailwind-merge"
-      ],
+      "description": "Multiple months with single selection.",
       "registryDependencies": [
-        "button",
         "calendar"
       ],
       "files": [
         {
           "path": "registry/new-york-v4/blocks/calendar-02.tsx",
-          "type": "registry:block",
-          "target": "components/calendar-02/calendar-02.tsx"
+          "type": "registry:component"
         }
+      ],
+      "meta": {
+        "iframeHeight": "600px",
+        "container": "w-full bg-surface min-h-svh flex px-4 py-12 items-start md:py-20 justify-center min-w-0",
+        "mobile": "component"
+      },
+      "categories": [
+        "calendar",
+        "date"
       ]
     },
     {
       "name": "calendar-03",
       "type": "registry:block",
-      "dependencies": [
-        "@radix-ui/react-slot",
-        "class-variance-authority",
-        "clsx",
-        "lucide-react",
-        "react",
-        "react-day-picker",
-        "tailwind-merge"
-      ],
+      "description": "Multiple months with multiple selection.",
       "registryDependencies": [
-        "button",
         "calendar"
       ],
       "files": [
         {
           "path": "registry/new-york-v4/blocks/calendar-03.tsx",
-          "type": "registry:block",
-          "target": "components/calendar-03/calendar-03.tsx"
+          "type": "registry:component"
         }
+      ],
+      "meta": {
+        "iframeHeight": "600px",
+        "container": "w-full bg-surface min-h-svh flex px-4 py-12 items-start md:py-20 justify-center min-w-0",
+        "mobile": "component"
+      },
+      "categories": [
+        "calendar",
+        "date"
       ]
     },
     {
       "name": "calendar-04",
       "type": "registry:block",
-      "dependencies": [
-        "@radix-ui/react-slot",
-        "class-variance-authority",
-        "clsx",
-        "lucide-react",
-        "react",
-        "react-day-picker",
-        "tailwind-merge"
-      ],
+      "description": "Single month with range selection",
       "registryDependencies": [
-        "button",
         "calendar"
       ],
       "files": [
         {
           "path": "registry/new-york-v4/blocks/calendar-04.tsx",
-          "type": "registry:block",
-          "target": "components/calendar-04/calendar-04.tsx"
+          "type": "registry:component"
         }
+      ],
+      "meta": {
+        "iframeHeight": "600px",
+        "container": "w-full bg-surface min-h-svh flex px-4 py-12 items-start md:py-20 justify-center min-w-0 xl:pt-28",
+        "mobile": "component"
+      },
+      "categories": [
+        "calendar",
+        "date"
       ]
     },
     {
       "name": "calendar-05",
       "type": "registry:block",
-      "dependencies": [
-        "@radix-ui/react-slot",
-        "class-variance-authority",
-        "clsx",
-        "lucide-react",
-        "react",
-        "react-day-picker",
-        "tailwind-merge"
-      ],
+      "description": "Multiple months with range selection",
       "registryDependencies": [
-        "button",
         "calendar"
       ],
       "files": [
         {
           "path": "registry/new-york-v4/blocks/calendar-05.tsx",
-          "type": "registry:block",
-          "target": "components/calendar-05/calendar-05.tsx"
+          "type": "registry:component"
         }
+      ],
+      "meta": {
+        "iframeHeight": "600px",
+        "container": "w-full bg-surface min-h-svh flex px-6 py-12 items-start md:pt-20 justify-center min-w-0 xl:py-24",
+        "mobile": "component"
+      },
+      "categories": [
+        "calendar",
+        "date"
       ]
     },
     {
       "name": "calendar-06",
       "type": "registry:block",
-      "dependencies": [
-        "@radix-ui/react-slot",
-        "class-variance-authority",
-        "clsx",
-        "lucide-react",
-        "react",
-        "react-day-picker",
-        "tailwind-merge"
-      ],
+      "description": "Range selection with minimum days",
       "registryDependencies": [
-        "button",
         "calendar"
       ],
       "files": [
         {
           "path": "registry/new-york-v4/blocks/calendar-06.tsx",
-          "type": "registry:block",
-          "target": "components/calendar-06/calendar-06.tsx"
+          "type": "registry:component"
         }
+      ],
+      "meta": {
+        "iframeHeight": "600px",
+        "container": "w-full bg-surface min-h-svh flex px-6 py-12 items-start md:pt-20 justify-center min-w-0 xl:py-24",
+        "mobile": "component"
+      },
+      "categories": [
+        "calendar",
+        "date"
       ]
     },
     {
       "name": "calendar-07",
       "type": "registry:block",
-      "dependencies": [
-        "@radix-ui/react-slot",
-        "class-variance-authority",
-        "clsx",
-        "lucide-react",
-        "react",
-        "react-day-picker",
-        "tailwind-merge"
-      ],
+      "description": "Range selection with minimum and maximum days",
       "registryDependencies": [
-        "button",
         "calendar"
       ],
       "files": [
         {
           "path": "registry/new-york-v4/blocks/calendar-07.tsx",
-          "type": "registry:block",
-          "target": "components/calendar-07/calendar-07.tsx"
+          "type": "registry:component"
         }
+      ],
+      "meta": {
+        "iframeHeight": "600px",
+        "container": "w-full bg-surface min-h-svh flex px-6 py-12 items-start md:pt-20 justify-center min-w-0 xl:py-24",
+        "mobile": "component"
+      },
+      "categories": [
+        "calendar",
+        "date"
       ]
     },
     {
       "name": "calendar-08",
       "type": "registry:block",
-      "dependencies": [
-        "@radix-ui/react-slot",
-        "class-variance-authority",
-        "clsx",
-        "lucide-react",
-        "react",
-        "react-day-picker",
-        "tailwind-merge"
-      ],
+      "description": "Calendar with disabled days",
       "registryDependencies": [
-        "button",
         "calendar"
       ],
       "files": [
         {
           "path": "registry/new-york-v4/blocks/calendar-08.tsx",
-          "type": "registry:block",
-          "target": "components/calendar-08/calendar-08.tsx"
+          "type": "registry:component"
         }
+      ],
+      "meta": {
+        "iframeHeight": "600px",
+        "container": "w-full bg-surface min-h-svh flex px-6 py-12 items-start md:pt-20 justify-center min-w-0 xl:py-24",
+        "mobile": "component"
+      },
+      "categories": [
+        "calendar",
+        "date"
       ]
     },
     {
       "name": "calendar-09",
       "type": "registry:block",
-      "dependencies": [
-        "@radix-ui/react-slot",
-        "class-variance-authority",
-        "clsx",
-        "lucide-react",
-        "react",
-        "react-day-picker",
-        "tailwind-merge"
-      ],
+      "description": "Calendar with disabled weekends",
       "registryDependencies": [
-        "button",
         "calendar"
       ],
       "files": [
         {
           "path": "registry/new-york-v4/blocks/calendar-09.tsx",
-          "type": "registry:block",
-          "target": "components/calendar-09/calendar-09.tsx"
+          "type": "registry:component"
         }
+      ],
+      "meta": {
+        "iframeHeight": "600px",
+        "container": "w-full bg-surface min-h-svh flex px-6 py-12 items-start md:pt-20 justify-center min-w-0 xl:py-24",
+        "mobile": "component"
+      },
+      "categories": [
+        "calendar",
+        "date"
       ]
     },
     {
       "name": "calendar-10",
       "type": "registry:block",
-      "dependencies": [
-        "@radix-ui/react-slot",
-        "class-variance-authority",
-        "clsx",
-        "lucide-react",
-        "react",
-        "react-day-picker",
-        "tailwind-merge"
-      ],
+      "description": "Today button",
       "registryDependencies": [
-        "button",
         "calendar",
-        "card"
+        "card",
+        "button"
       ],
       "files": [
         {
           "path": "registry/new-york-v4/blocks/calendar-10.tsx",
-          "type": "registry:block",
-          "target": "components/calendar-10/calendar-10.tsx"
+          "type": "registry:component"
         }
+      ],
+      "meta": {
+        "iframeHeight": "600px",
+        "container": "w-full bg-surface min-h-svh flex px-6 py-12 items-start md:pt-20 justify-center min-w-0 xl:py-24",
+        "mobile": "component"
+      },
+      "categories": [
+        "calendar",
+        "date"
       ]
     },
     {
       "name": "calendar-11",
       "type": "registry:block",
-      "dependencies": [
-        "@radix-ui/react-slot",
-        "class-variance-authority",
-        "clsx",
-        "lucide-react",
-        "react",
-        "react-day-picker",
-        "tailwind-merge"
-      ],
+      "description": "Start and end of month",
       "registryDependencies": [
-        "button",
         "calendar"
       ],
       "files": [
         {
           "path": "registry/new-york-v4/blocks/calendar-11.tsx",
-          "type": "registry:block",
-          "target": "components/calendar-11/calendar-11.tsx"
+          "type": "registry:component"
         }
+      ],
+      "meta": {
+        "iframeHeight": "600px",
+        "container": "w-full bg-surface min-h-svh flex px-6 py-12 items-start md:pt-20 justify-center min-w-0 xl:py-24",
+        "mobile": "component"
+      },
+      "categories": [
+        "calendar",
+        "date"
       ]
     },
     {
       "name": "calendar-12",
       "type": "registry:block",
-      "dependencies": [
-        "@radix-ui/react-select",
-        "@radix-ui/react-slot",
-        "class-variance-authority",
-        "clsx",
-        "lucide-react",
-        "react",
-        "react-day-picker",
-        "tailwind-merge"
-      ],
+      "description": "Localized calendar",
       "registryDependencies": [
-        "button",
         "calendar",
         "card",
         "select"
@@ -1143,27 +1881,24 @@
       "files": [
         {
           "path": "registry/new-york-v4/blocks/calendar-12.tsx",
-          "type": "registry:block",
-          "target": "components/calendar-12/calendar-12.tsx"
+          "type": "registry:component"
         }
+      ],
+      "meta": {
+        "iframeHeight": "600px",
+        "container": "w-full bg-surface min-h-svh flex px-6 py-12 items-start md:pt-20 justify-center min-w-0 xl:py-24",
+        "mobile": "component"
+      },
+      "categories": [
+        "calendar",
+        "date"
       ]
     },
     {
       "name": "calendar-13",
       "type": "registry:block",
-      "dependencies": [
-        "@radix-ui/react-label",
-        "@radix-ui/react-select",
-        "@radix-ui/react-slot",
-        "class-variance-authority",
-        "clsx",
-        "lucide-react",
-        "react",
-        "react-day-picker",
-        "tailwind-merge"
-      ],
+      "description": "With Month and Year Dropdown",
       "registryDependencies": [
-        "button",
         "calendar",
         "label",
         "select"
@@ -1171,74 +1906,70 @@
       "files": [
         {
           "path": "registry/new-york-v4/blocks/calendar-13.tsx",
-          "type": "registry:block",
-          "target": "components/calendar-13/calendar-13.tsx"
+          "type": "registry:component"
         }
+      ],
+      "meta": {
+        "iframeHeight": "600px",
+        "container": "w-full bg-surface min-h-svh flex px-6 py-12 items-start md:pt-20 justify-center min-w-0 xl:py-24",
+        "mobile": "component"
+      },
+      "categories": [
+        "calendar",
+        "date"
       ]
     },
     {
       "name": "calendar-14",
       "type": "registry:block",
-      "dependencies": [
-        "@radix-ui/react-slot",
-        "class-variance-authority",
-        "clsx",
-        "lucide-react",
-        "react",
-        "react-day-picker",
-        "tailwind-merge"
-      ],
+      "description": "With Booked/Unavailable Days",
       "registryDependencies": [
-        "button",
         "calendar"
       ],
       "files": [
         {
           "path": "registry/new-york-v4/blocks/calendar-14.tsx",
-          "type": "registry:block",
-          "target": "components/calendar-14/calendar-14.tsx"
+          "type": "registry:component"
         }
+      ],
+      "meta": {
+        "iframeHeight": "600px",
+        "container": "w-full bg-surface min-h-svh flex px-6 py-12 items-start md:pt-20 justify-center min-w-0 xl:py-24",
+        "mobile": "component"
+      },
+      "categories": [
+        "calendar",
+        "date"
       ]
     },
     {
       "name": "calendar-15",
       "type": "registry:block",
-      "dependencies": [
-        "@radix-ui/react-slot",
-        "class-variance-authority",
-        "clsx",
-        "lucide-react",
-        "react",
-        "react-day-picker",
-        "tailwind-merge"
-      ],
+      "description": "With Week Numbers",
       "registryDependencies": [
-        "button",
         "calendar"
       ],
       "files": [
         {
           "path": "registry/new-york-v4/blocks/calendar-15.tsx",
-          "type": "registry:block",
-          "target": "components/calendar-15/calendar-15.tsx"
+          "type": "registry:component"
         }
+      ],
+      "meta": {
+        "iframeHeight": "600px",
+        "container": "w-full bg-surface min-h-svh flex px-6 py-12 items-start md:pt-20 justify-center min-w-0 xl:py-24",
+        "mobile": "component"
+      },
+      "categories": [
+        "calendar",
+        "date"
       ]
     },
     {
       "name": "calendar-16",
       "type": "registry:block",
-      "dependencies": [
-        "@radix-ui/react-label",
-        "@radix-ui/react-slot",
-        "class-variance-authority",
-        "clsx",
-        "lucide-react",
-        "react",
-        "react-day-picker",
-        "tailwind-merge"
-      ],
+      "description": "With time picker",
       "registryDependencies": [
-        "button",
         "calendar",
         "card",
         "input",
@@ -1247,26 +1978,24 @@
       "files": [
         {
           "path": "registry/new-york-v4/blocks/calendar-16.tsx",
-          "type": "registry:block",
-          "target": "components/calendar-16/calendar-16.tsx"
+          "type": "registry:component"
         }
+      ],
+      "meta": {
+        "iframeHeight": "600px",
+        "container": "w-full bg-surface min-h-svh flex px-6 py-12 items-start justify-center min-w-0",
+        "mobile": "component"
+      },
+      "categories": [
+        "calendar",
+        "date"
       ]
     },
     {
       "name": "calendar-17",
       "type": "registry:block",
-      "dependencies": [
-        "@radix-ui/react-label",
-        "@radix-ui/react-slot",
-        "class-variance-authority",
-        "clsx",
-        "lucide-react",
-        "react",
-        "react-day-picker",
-        "tailwind-merge"
-      ],
+      "description": "With time picker inline",
       "registryDependencies": [
-        "button",
         "calendar",
         "card",
         "input",
@@ -1275,1351 +2004,673 @@
       "files": [
         {
           "path": "registry/new-york-v4/blocks/calendar-17.tsx",
-          "type": "registry:block",
-          "target": "components/calendar-17/calendar-17.tsx"
+          "type": "registry:component"
         }
+      ],
+      "meta": {
+        "iframeHeight": "600px",
+        "container": "w-full bg-surface min-h-svh flex px-6 py-12 items-start md:pt-20 justify-center min-w-0 xl:py-24",
+        "mobile": "component"
+      },
+      "categories": [
+        "calendar",
+        "date"
       ]
     },
     {
       "name": "calendar-18",
       "type": "registry:block",
-      "dependencies": [
-        "@radix-ui/react-slot",
-        "class-variance-authority",
-        "clsx",
-        "lucide-react",
-        "react",
-        "react-day-picker",
-        "tailwind-merge"
-      ],
+      "description": "Variable size",
       "registryDependencies": [
-        "button",
         "calendar"
       ],
       "files": [
         {
           "path": "registry/new-york-v4/blocks/calendar-18.tsx",
-          "type": "registry:block",
-          "target": "components/calendar-18/calendar-18.tsx"
+          "type": "registry:component"
         }
+      ],
+      "meta": {
+        "iframeHeight": "600px",
+        "container": "w-full bg-surface min-h-svh flex px-6 py-12 items-start md:pt-20 justify-center min-w-0 xl:py-24",
+        "mobile": "component"
+      },
+      "categories": [
+        "calendar",
+        "date"
       ]
     },
     {
       "name": "calendar-19",
       "type": "registry:block",
+      "description": "With presets",
       "dependencies": [
-        "@radix-ui/react-slot",
-        "class-variance-authority",
-        "clsx",
-        "date-fns",
-        "lucide-react",
-        "react",
-        "react-day-picker",
-        "tailwind-merge"
+        "date-fns"
       ],
       "registryDependencies": [
-        "button",
         "calendar",
-        "card"
+        "card",
+        "input",
+        "label"
       ],
       "files": [
         {
           "path": "registry/new-york-v4/blocks/calendar-19.tsx",
-          "type": "registry:block",
-          "target": "components/calendar-19/calendar-19.tsx"
+          "type": "registry:component"
         }
+      ],
+      "meta": {
+        "iframeHeight": "600px",
+        "container": "w-full bg-surface min-h-svh flex px-6 py-12 items-start justify-center min-w-0",
+        "mobile": "component"
+      },
+      "categories": [
+        "calendar",
+        "date"
       ]
     },
     {
       "name": "calendar-20",
       "type": "registry:block",
-      "dependencies": [
-        "@radix-ui/react-slot",
-        "class-variance-authority",
-        "clsx",
-        "lucide-react",
-        "react",
-        "react-day-picker",
-        "tailwind-merge"
-      ],
+      "description": "With time presets",
       "registryDependencies": [
-        "button",
         "calendar",
-        "card"
+        "card",
+        "button"
       ],
       "files": [
         {
           "path": "registry/new-york-v4/blocks/calendar-20.tsx",
-          "type": "registry:block",
-          "target": "components/calendar-20/calendar-20.tsx"
+          "type": "registry:component"
         }
+      ],
+      "meta": {
+        "iframeHeight": "600px",
+        "container": "w-full bg-surface min-h-svh flex px-6 py-12 items-start justify-center min-w-0",
+        "mobile": "component"
+      },
+      "categories": [
+        "calendar",
+        "date"
       ]
     },
     {
       "name": "calendar-21",
       "type": "registry:block",
-      "dependencies": [
-        "@radix-ui/react-slot",
-        "class-variance-authority",
-        "clsx",
-        "lucide-react",
-        "react",
-        "react-day-picker",
-        "tailwind-merge"
-      ],
+      "description": "Custom days and formatters",
       "registryDependencies": [
-        "button",
         "calendar"
       ],
       "files": [
         {
           "path": "registry/new-york-v4/blocks/calendar-21.tsx",
-          "type": "registry:block",
-          "target": "components/calendar-21/calendar-21.tsx"
+          "type": "registry:component"
         }
+      ],
+      "meta": {
+        "iframeHeight": "600px",
+        "container": "w-full bg-surface min-h-svh flex px-6 py-12 items-start justify-center min-w-0",
+        "mobile": "component"
+      },
+      "categories": [
+        "calendar",
+        "date"
       ]
     },
     {
       "name": "calendar-22",
       "type": "registry:block",
-      "dependencies": [
-        "@radix-ui/react-label",
-        "@radix-ui/react-popover",
-        "@radix-ui/react-slot",
-        "class-variance-authority",
-        "clsx",
-        "lucide-react",
-        "react",
-        "react-day-picker",
-        "tailwind-merge"
-      ],
+      "description": "Date picker",
       "registryDependencies": [
-        "button",
         "calendar",
-        "label",
-        "popover"
+        "popover",
+        "button",
+        "label"
       ],
       "files": [
         {
           "path": "registry/new-york-v4/blocks/calendar-22.tsx",
-          "type": "registry:block",
-          "target": "components/calendar-22/calendar-22.tsx"
+          "type": "registry:component"
         }
+      ],
+      "meta": {
+        "iframeHeight": "600px",
+        "container": "w-full bg-surface min-h-svh flex px-6 py-12 items-start md:pt-20 justify-center min-w-0 xl:py-24",
+        "mobile": "component"
+      },
+      "categories": [
+        "calendar",
+        "date"
       ]
     },
     {
       "name": "calendar-23",
       "type": "registry:block",
-      "dependencies": [
-        "@radix-ui/react-label",
-        "@radix-ui/react-popover",
-        "@radix-ui/react-slot",
-        "class-variance-authority",
-        "clsx",
-        "lucide-react",
-        "react",
-        "react-day-picker",
-        "tailwind-merge"
-      ],
+      "description": "Date range picker",
       "registryDependencies": [
-        "button",
         "calendar",
-        "label",
-        "popover"
+        "popover",
+        "button",
+        "label"
       ],
       "files": [
         {
           "path": "registry/new-york-v4/blocks/calendar-23.tsx",
-          "type": "registry:block",
-          "target": "components/calendar-23/calendar-23.tsx"
+          "type": "registry:component"
         }
+      ],
+      "meta": {
+        "iframeHeight": "600px",
+        "container": "w-full bg-surface min-h-svh flex px-6 py-12 items-start md:pt-20 justify-center min-w-0 xl:py-24",
+        "mobile": "component"
+      },
+      "categories": [
+        "calendar",
+        "date"
       ]
     },
     {
       "name": "calendar-24",
       "type": "registry:block",
-      "dependencies": [
-        "@radix-ui/react-label",
-        "@radix-ui/react-popover",
-        "@radix-ui/react-slot",
-        "class-variance-authority",
-        "clsx",
-        "lucide-react",
-        "react",
-        "react-day-picker",
-        "tailwind-merge"
-      ],
+      "description": "Date and Time picker",
       "registryDependencies": [
-        "button",
         "calendar",
-        "input",
-        "label",
-        "popover"
+        "popover",
+        "button",
+        "label"
       ],
       "files": [
         {
           "path": "registry/new-york-v4/blocks/calendar-24.tsx",
-          "type": "registry:block",
-          "target": "components/calendar-24/calendar-24.tsx"
+          "type": "registry:component"
         }
+      ],
+      "meta": {
+        "iframeHeight": "600px",
+        "container": "w-full bg-surface min-h-svh flex px-6 py-12 items-start md:pt-20 justify-center min-w-0 xl:py-24",
+        "mobile": "component"
+      },
+      "categories": [
+        "calendar",
+        "date"
       ]
     },
     {
       "name": "calendar-25",
       "type": "registry:block",
-      "dependencies": [
-        "@radix-ui/react-label",
-        "@radix-ui/react-popover",
-        "@radix-ui/react-slot",
-        "class-variance-authority",
-        "clsx",
-        "lucide-react",
-        "react",
-        "react-day-picker",
-        "tailwind-merge"
-      ],
+      "description": "Date and Time range picker",
       "registryDependencies": [
-        "button",
         "calendar",
-        "input",
-        "label",
-        "popover"
+        "popover",
+        "button",
+        "label"
       ],
       "files": [
         {
           "path": "registry/new-york-v4/blocks/calendar-25.tsx",
-          "type": "registry:block",
-          "target": "components/calendar-25/calendar-25.tsx"
+          "type": "registry:component"
         }
+      ],
+      "meta": {
+        "iframeHeight": "600px",
+        "container": "w-full bg-surface min-h-svh flex px-6 py-12 items-start md:pt-20 justify-center min-w-0 xl:py-24",
+        "mobile": "component"
+      },
+      "categories": [
+        "calendar",
+        "date"
       ]
     },
     {
       "name": "calendar-26",
       "type": "registry:block",
-      "dependencies": [
-        "@radix-ui/react-label",
-        "@radix-ui/react-popover",
-        "@radix-ui/react-slot",
-        "class-variance-authority",
-        "clsx",
-        "lucide-react",
-        "react",
-        "react-day-picker",
-        "tailwind-merge"
-      ],
+      "description": "Date range picker with time",
       "registryDependencies": [
-        "button",
         "calendar",
+        "popover",
+        "button",
         "input",
-        "label",
-        "popover"
+        "label"
       ],
       "files": [
         {
           "path": "registry/new-york-v4/blocks/calendar-26.tsx",
-          "type": "registry:block",
-          "target": "components/calendar-26/calendar-26.tsx"
+          "type": "registry:component"
         }
+      ],
+      "meta": {
+        "iframeHeight": "600px",
+        "container": "w-full bg-surface min-h-svh flex px-6 py-12 items-start md:pt-20 justify-center min-w-0 xl:py-24",
+        "mobile": "component"
+      },
+      "categories": [
+        "calendar",
+        "date"
       ]
     },
     {
       "name": "calendar-27",
       "type": "registry:block",
-      "dependencies": [
-        "@radix-ui/react-popover",
-        "@radix-ui/react-slot",
-        "class-variance-authority",
-        "clsx",
-        "lucide-react",
-        "react",
-        "react-day-picker",
-        "recharts",
-        "tailwind-merge"
-      ],
+      "description": "Chart filter",
       "registryDependencies": [
-        "button",
         "calendar",
-        "card",
         "chart",
-        "popover"
+        "card",
+        "popover",
+        "button"
       ],
       "files": [
         {
           "path": "registry/new-york-v4/blocks/calendar-27.tsx",
-          "type": "registry:block",
-          "target": "components/calendar-27/calendar-27.tsx"
+          "type": "registry:component"
         }
+      ],
+      "meta": {
+        "iframeHeight": "600px",
+        "container": "w-full bg-surface min-h-svh flex px-6 py-12 items-start justify-center min-w-0",
+        "mobile": "component"
+      },
+      "categories": [
+        "calendar",
+        "date"
       ]
     },
     {
       "name": "calendar-28",
       "type": "registry:block",
-      "dependencies": [
-        "@radix-ui/react-label",
-        "@radix-ui/react-popover",
-        "@radix-ui/react-slot",
-        "class-variance-authority",
-        "clsx",
-        "lucide-react",
-        "react",
-        "react-day-picker",
-        "tailwind-merge"
-      ],
+      "description": "Input with date picker",
       "registryDependencies": [
-        "button",
         "calendar",
         "input",
         "label",
-        "popover"
+        "popover",
+        "button"
       ],
       "files": [
         {
           "path": "registry/new-york-v4/blocks/calendar-28.tsx",
-          "type": "registry:block",
-          "target": "components/calendar-28/calendar-28.tsx"
+          "type": "registry:component"
         }
+      ],
+      "meta": {
+        "iframeHeight": "600px",
+        "container": "w-full bg-surface min-h-svh flex px-6 py-12 items-start md:pt-20 justify-center min-w-0 xl:py-24",
+        "mobile": "component"
+      },
+      "categories": [
+        "calendar",
+        "date"
       ]
     },
     {
       "name": "calendar-29",
       "type": "registry:block",
+      "description": "Natural language date picker",
       "dependencies": [
-        "@radix-ui/react-label",
-        "@radix-ui/react-popover",
-        "@radix-ui/react-slot",
-        "chrono-node",
-        "class-variance-authority",
-        "clsx",
-        "lucide-react",
-        "react",
-        "react-day-picker",
-        "tailwind-merge"
+        "chrono-node"
       ],
       "registryDependencies": [
-        "button",
         "calendar",
         "input",
         "label",
-        "popover"
+        "popover",
+        "button"
       ],
       "files": [
         {
           "path": "registry/new-york-v4/blocks/calendar-29.tsx",
-          "type": "registry:block",
-          "target": "components/calendar-29/calendar-29.tsx"
+          "type": "registry:component"
         }
+      ],
+      "meta": {
+        "iframeHeight": "600px",
+        "container": "w-full bg-surface min-h-svh flex px-6 py-12 items-start md:pt-20 justify-center min-w-0 xl:py-24",
+        "mobile": "component"
+      },
+      "categories": [
+        "calendar",
+        "date"
       ]
     },
     {
       "name": "calendar-30",
       "type": "registry:block",
-      "dependencies": [
-        "@radix-ui/react-label",
-        "@radix-ui/react-popover",
-        "@radix-ui/react-slot",
-        "class-variance-authority",
-        "clsx",
-        "little-date",
-        "lucide-react",
-        "react",
-        "react-day-picker",
-        "tailwind-merge"
-      ],
+      "description": "With little-date",
       "registryDependencies": [
-        "button",
         "calendar",
+        "input",
         "label",
-        "popover"
+        "popover",
+        "button"
       ],
       "files": [
         {
           "path": "registry/new-york-v4/blocks/calendar-30.tsx",
-          "type": "registry:block",
-          "target": "components/calendar-30/calendar-30.tsx"
+          "type": "registry:component"
         }
+      ],
+      "meta": {
+        "iframeHeight": "600px",
+        "container": "w-full bg-surface min-h-svh flex px-6 py-12 items-start md:pt-20 justify-center min-w-0 xl:py-24",
+        "mobile": "component"
+      },
+      "categories": [
+        "calendar",
+        "date"
       ]
     },
     {
       "name": "calendar-31",
       "type": "registry:block",
-      "dependencies": [
-        "@radix-ui/react-slot",
-        "class-variance-authority",
-        "clsx",
-        "little-date",
-        "lucide-react",
-        "react",
-        "react-day-picker",
-        "tailwind-merge"
-      ],
+      "description": "With event slots",
       "registryDependencies": [
-        "button",
         "calendar",
-        "card"
+        "card",
+        "button"
       ],
       "files": [
         {
           "path": "registry/new-york-v4/blocks/calendar-31.tsx",
-          "type": "registry:block",
-          "target": "components/calendar-31/calendar-31.tsx"
+          "type": "registry:component"
         }
+      ],
+      "meta": {
+        "iframeHeight": "700px",
+        "container": "w-full bg-surface min-h-svh flex px-6 py-12 items-start md:pt-20 justify-center min-w-0",
+        "mobile": "component"
+      },
+      "categories": [
+        "calendar",
+        "date"
       ]
     },
     {
       "name": "calendar-32",
       "type": "registry:block",
-      "dependencies": [
-        "@radix-ui/react-label",
-        "@radix-ui/react-slot",
-        "class-variance-authority",
-        "clsx",
-        "lucide-react",
-        "react",
-        "react-day-picker",
-        "tailwind-merge",
-        "vaul"
-      ],
+      "description": "Date picker in a drawer",
       "registryDependencies": [
-        "button",
         "calendar",
-        "drawer",
-        "label"
+        "button",
+        "drawer"
       ],
       "files": [
         {
           "path": "registry/new-york-v4/blocks/calendar-32.tsx",
-          "type": "registry:block",
-          "target": "components/calendar-32/calendar-32.tsx"
+          "type": "registry:component"
         }
+      ],
+      "meta": {
+        "iframeHeight": "600px",
+        "container": "w-full bg-surface min-h-svh flex px-6 py-12 items-start md:pt-20 justify-center min-w-0 xl:py-24",
+        "mobile": "component"
+      },
+      "categories": [
+        "calendar",
+        "date"
       ]
     },
     {
-      "name": "editor",
+      "name": "signup-01",
       "type": "registry:block",
-      "dependencies": [
-        "@ai-sdk/react",
-        "@ariakit/react",
-        "@emoji-mart/data",
-        "@faker-js/faker",
-        "@platejs/ai",
-        "@platejs/autoformat",
-        "@platejs/basic-nodes",
-        "@platejs/basic-styles",
-        "@platejs/callout",
-        "@platejs/caption",
-        "@platejs/code-block",
-        "@platejs/combobox",
-        "@platejs/comment",
-        "@platejs/date",
-        "@platejs/dnd",
-        "@platejs/docx",
-        "@platejs/emoji",
-        "@platejs/floating",
-        "@platejs/indent",
-        "@platejs/juice",
-        "@platejs/layout",
-        "@platejs/link",
-        "@platejs/list",
-        "@platejs/markdown",
-        "@platejs/math",
-        "@platejs/media",
-        "@platejs/mention",
-        "@platejs/resizable",
-        "@platejs/selection",
-        "@platejs/slash-command",
-        "@platejs/suggestion",
-        "@platejs/table",
-        "@platejs/toc",
-        "@platejs/toggle",
-        "@radix-ui/react-alert-dialog",
-        "@radix-ui/react-avatar",
-        "@radix-ui/react-checkbox",
-        "@radix-ui/react-context-menu",
-        "@radix-ui/react-dialog",
-        "@radix-ui/react-dropdown-menu",
-        "@radix-ui/react-popover",
-        "@radix-ui/react-separator",
-        "@radix-ui/react-slot",
-        "@radix-ui/react-toolbar",
-        "@radix-ui/react-tooltip",
-        "@udecode/cn",
-        "@uploadthing/react",
-        "ai",
-        "class-variance-authority",
-        "clsx",
-        "cmdk",
-        "date-fns",
-        "html2canvas-pro",
-        "lodash",
-        "lowlight",
-        "lucide-react",
-        "pdf-lib",
-        "platejs",
-        "react",
-        "react-day-picker",
-        "react-dnd",
-        "react-dnd-html5-backend",
-        "react-lite-youtube-embed",
-        "react-player",
-        "react-textarea-autosize",
-        "react-tweet",
-        "remark-gfm",
-        "remark-math",
-        "sonner",
-        "tailwind-merge",
-        "uploadthing",
-        "use-file-picker",
-        "zod"
-      ],
+      "description": "A simple signup form.",
       "registryDependencies": [
-        "alert-dialog",
-        "avatar",
         "button",
-        "calendar",
-        "checkbox",
-        "dialog",
-        "dropdown-menu",
+        "card",
         "input",
-        "popover",
-        "separator",
-        "tooltip"
+        "label"
       ],
       "files": [
         {
-          "path": "registry/new-york-v4/blocks/editor/index.tsx",
-          "type": "registry:block",
-          "target": "components/editor/index.tsx"
+          "path": "registry/new-york-v4/blocks/signup-01/page.tsx",
+          "type": "registry:page",
+          "target": "app/signup/page.tsx"
         },
         {
-          "path": "registry/new-york-v4/blocks/editor/components/editor/index.ts",
-          "type": "registry:component",
-          "target": "components/editor/components/editor/index.ts"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/components/editor/editor-kit.tsx",
-          "type": "registry:component",
-          "target": "components/editor/components/editor/editor-kit.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/components/editor/plugins/ai-kit.tsx",
-          "type": "registry:component",
-          "target": "components/editor/components/editor/plugins/ai-kit.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/components/editor/plugins/align-kit.tsx",
-          "type": "registry:component",
-          "target": "components/editor/components/editor/plugins/align-kit.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/components/editor/plugins/autoformat-kit.tsx",
-          "type": "registry:component",
-          "target": "components/editor/components/editor/plugins/autoformat-kit.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/components/editor/plugins/basic-blocks-kit.tsx",
-          "type": "registry:component",
-          "target": "components/editor/components/editor/plugins/basic-blocks-kit.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/components/editor/plugins/basic-marks-kit.tsx",
-          "type": "registry:component",
-          "target": "components/editor/components/editor/plugins/basic-marks-kit.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/components/editor/plugins/block-menu-kit.tsx",
-          "type": "registry:component",
-          "target": "components/editor/components/editor/plugins/block-menu-kit.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/components/editor/plugins/block-placeholder-kit.tsx",
-          "type": "registry:component",
-          "target": "components/editor/components/editor/plugins/block-placeholder-kit.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/components/editor/plugins/callout-kit.tsx",
-          "type": "registry:component",
-          "target": "components/editor/components/editor/plugins/callout-kit.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/components/editor/plugins/code-block-kit.tsx",
-          "type": "registry:component",
-          "target": "components/editor/components/editor/plugins/code-block-kit.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/components/editor/plugins/column-kit.tsx",
-          "type": "registry:component",
-          "target": "components/editor/components/editor/plugins/column-kit.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/components/editor/plugins/comment-kit.tsx",
-          "type": "registry:component",
-          "target": "components/editor/components/editor/plugins/comment-kit.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/components/editor/plugins/cursor-overlay-kit.tsx",
-          "type": "registry:component",
-          "target": "components/editor/components/editor/plugins/cursor-overlay-kit.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/components/editor/plugins/date-kit.tsx",
-          "type": "registry:component",
-          "target": "components/editor/components/editor/plugins/date-kit.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/components/editor/plugins/discussion-kit.tsx",
-          "type": "registry:component",
-          "target": "components/editor/components/editor/plugins/discussion-kit.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/components/editor/plugins/dnd-kit.tsx",
-          "type": "registry:component",
-          "target": "components/editor/components/editor/plugins/dnd-kit.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/components/editor/plugins/docx-kit.tsx",
-          "type": "registry:component",
-          "target": "components/editor/components/editor/plugins/docx-kit.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/components/editor/plugins/emoji-kit.tsx",
-          "type": "registry:component",
-          "target": "components/editor/components/editor/plugins/emoji-kit.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/components/editor/plugins/exit-break-kit.tsx",
-          "type": "registry:component",
-          "target": "components/editor/components/editor/plugins/exit-break-kit.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/components/editor/plugins/fixed-toolbar-kit.tsx",
-          "type": "registry:component",
-          "target": "components/editor/components/editor/plugins/fixed-toolbar-kit.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/components/editor/plugins/floating-toolbar-kit.tsx",
-          "type": "registry:component",
-          "target": "components/editor/components/editor/plugins/floating-toolbar-kit.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/components/editor/plugins/font-kit.tsx",
-          "type": "registry:component",
-          "target": "components/editor/components/editor/plugins/font-kit.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/components/editor/plugins/line-height-kit.tsx",
-          "type": "registry:component",
-          "target": "components/editor/components/editor/plugins/line-height-kit.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/components/editor/plugins/link-kit.tsx",
-          "type": "registry:component",
-          "target": "components/editor/components/editor/plugins/link-kit.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/components/editor/plugins/list-kit.tsx",
-          "type": "registry:component",
-          "target": "components/editor/components/editor/plugins/list-kit.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/components/editor/plugins/markdown-kit.tsx",
-          "type": "registry:component",
-          "target": "components/editor/components/editor/plugins/markdown-kit.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/components/editor/plugins/math-kit.tsx",
-          "type": "registry:component",
-          "target": "components/editor/components/editor/plugins/math-kit.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/components/editor/plugins/media-kit.tsx",
-          "type": "registry:component",
-          "target": "components/editor/components/editor/plugins/media-kit.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/components/editor/plugins/mention-kit.tsx",
-          "type": "registry:component",
-          "target": "components/editor/components/editor/plugins/mention-kit.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/components/editor/plugins/slash-kit.tsx",
-          "type": "registry:component",
-          "target": "components/editor/components/editor/plugins/slash-kit.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/components/editor/plugins/suggestion-kit.tsx",
-          "type": "registry:component",
-          "target": "components/editor/components/editor/plugins/suggestion-kit.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/components/editor/plugins/table-kit.tsx",
-          "type": "registry:component",
-          "target": "components/editor/components/editor/plugins/table-kit.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/components/editor/plugins/toc-kit.tsx",
-          "type": "registry:component",
-          "target": "components/editor/components/editor/plugins/toc-kit.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/components/editor/plugins/toggle-kit.tsx",
-          "type": "registry:component",
-          "target": "components/editor/components/editor/plugins/toggle-kit.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/ai-menu.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/ai-menu.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/ai-node.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/ai-node.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/blockquote-node.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/blockquote-node.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/heading-node.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/heading-node.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/hr-node.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/hr-node.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/paragraph-node.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/paragraph-node.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/code-node.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/code-node.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/highlight-node.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/highlight-node.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/kbd-node.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/kbd-node.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/block-context-menu.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/block-context-menu.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/components/editor/plugins/block-selection-kit.tsx",
-          "type": "registry:component",
-          "target": "components/editor/components/editor/plugins/block-selection-kit.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/callout-node.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/callout-node.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/code-block-node.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/code-block-node.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/column-node.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/column-node.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/comment-node.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/comment-node.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/cursor-overlay.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/cursor-overlay.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/date-node.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/date-node.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/block-discussion.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/block-discussion.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/comment.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/comment.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/block-draggable.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/block-draggable.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/emoji-node.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/emoji-node.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/fixed-toolbar.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/fixed-toolbar.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/fixed-toolbar-buttons.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/fixed-toolbar-buttons.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/floating-toolbar.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/floating-toolbar.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/floating-toolbar-buttons.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/floating-toolbar-buttons.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/link-node.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/link-node.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/link-toolbar.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/link-toolbar.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/components/editor/plugins/indent-kit.tsx",
-          "type": "registry:component",
-          "target": "components/editor/components/editor/plugins/indent-kit.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/block-list.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/block-list.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/equation-node.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/equation-node.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/media-audio-node.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/media-audio-node.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/media-embed-node.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/media-embed-node.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/media-file-node.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/media-file-node.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/media-image-node.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/media-image-node.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/media-placeholder-node.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/media-placeholder-node.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/media-preview-dialog.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/media-preview-dialog.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/media-upload-toast.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/media-upload-toast.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/media-video-node.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/media-video-node.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/mention-node.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/mention-node.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/slash-node.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/slash-node.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/block-suggestion.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/block-suggestion.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/suggestion-node.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/suggestion-node.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/table-node.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/table-node.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/toc-node.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/toc-node.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/toggle-node.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/toggle-node.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/components/editor/use-chat.ts",
-          "type": "registry:component",
-          "target": "components/editor/components/editor/use-chat.ts"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/command.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/command.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/ai-chat-editor.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/ai-chat-editor.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/hooks/use-is-touch-device.ts",
-          "type": "registry:hook",
-          "target": "components/editor/hooks/use-is-touch-device.ts"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/context-menu.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/context-menu.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/block-selection.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/block-selection.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/emoji-toolbar-button.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/emoji-toolbar-button.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/editor.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/editor.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/hooks/use-debounce.ts",
-          "type": "registry:hook",
-          "target": "components/editor/hooks/use-debounce.ts"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/inline-combobox.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/inline-combobox.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/toolbar.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/toolbar.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/ai-toolbar-button.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/ai-toolbar-button.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/align-toolbar-button.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/align-toolbar-button.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/comment-toolbar-button.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/comment-toolbar-button.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/export-toolbar-button.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/export-toolbar-button.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/font-color-toolbar-button.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/font-color-toolbar-button.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/font-size-toolbar-button.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/font-size-toolbar-button.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/history-toolbar-button.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/history-toolbar-button.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/import-toolbar-button.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/import-toolbar-button.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/indent-toolbar-button.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/indent-toolbar-button.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/insert-toolbar-button.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/insert-toolbar-button.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/line-height-toolbar-button.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/line-height-toolbar-button.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/link-toolbar-button.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/link-toolbar-button.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/list-toolbar-button.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/list-toolbar-button.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/mark-toolbar-button.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/mark-toolbar-button.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/media-toolbar-button.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/media-toolbar-button.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/mode-toolbar-button.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/mode-toolbar-button.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/more-toolbar-button.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/more-toolbar-button.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/table-toolbar-button.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/table-toolbar-button.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/toggle-toolbar-button.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/toggle-toolbar-button.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/turn-into-toolbar-button.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/turn-into-toolbar-button.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/equation-toolbar-button.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/equation-toolbar-button.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/suggestion-toolbar-button.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/suggestion-toolbar-button.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/caption.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/caption.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/media-toolbar.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/media-toolbar.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/resize-handle.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/resize-handle.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/hooks/use-upload-file.ts",
-          "type": "registry:hook",
-          "target": "components/editor/hooks/use-upload-file.ts"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/hooks/use-mounted.ts",
-          "type": "registry:hook",
-          "target": "components/editor/hooks/use-mounted.ts"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/components/editor/transforms.ts",
-          "type": "registry:component",
-          "target": "components/editor/components/editor/transforms.ts"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/table-icons.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/table-icons.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/components/editor/editor-base-kit.tsx",
-          "type": "registry:component",
-          "target": "components/editor/components/editor/editor-base-kit.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/editor-static.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/editor-static.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/components/editor/plugins/align-base-kit.tsx",
-          "type": "registry:component",
-          "target": "components/editor/components/editor/plugins/align-base-kit.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/components/editor/plugins/basic-blocks-base-kit.tsx",
-          "type": "registry:component",
-          "target": "components/editor/components/editor/plugins/basic-blocks-base-kit.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/components/editor/plugins/basic-marks-base-kit.tsx",
-          "type": "registry:component",
-          "target": "components/editor/components/editor/plugins/basic-marks-base-kit.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/components/editor/plugins/callout-base-kit.tsx",
-          "type": "registry:component",
-          "target": "components/editor/components/editor/plugins/callout-base-kit.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/components/editor/plugins/code-block-base-kit.tsx",
-          "type": "registry:component",
-          "target": "components/editor/components/editor/plugins/code-block-base-kit.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/components/editor/plugins/column-base-kit.tsx",
-          "type": "registry:component",
-          "target": "components/editor/components/editor/plugins/column-base-kit.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/components/editor/plugins/comment-base-kit.tsx",
-          "type": "registry:component",
-          "target": "components/editor/components/editor/plugins/comment-base-kit.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/components/editor/plugins/date-base-kit.tsx",
-          "type": "registry:component",
-          "target": "components/editor/components/editor/plugins/date-base-kit.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/components/editor/plugins/font-base-kit.tsx",
-          "type": "registry:component",
-          "target": "components/editor/components/editor/plugins/font-base-kit.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/components/editor/plugins/line-height-base-kit.tsx",
-          "type": "registry:component",
-          "target": "components/editor/components/editor/plugins/line-height-base-kit.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/components/editor/plugins/link-base-kit.tsx",
-          "type": "registry:component",
-          "target": "components/editor/components/editor/plugins/link-base-kit.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/components/editor/plugins/list-base-kit.tsx",
-          "type": "registry:component",
-          "target": "components/editor/components/editor/plugins/list-base-kit.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/components/editor/plugins/math-base-kit.tsx",
-          "type": "registry:component",
-          "target": "components/editor/components/editor/plugins/math-base-kit.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/components/editor/plugins/media-base-kit.tsx",
-          "type": "registry:component",
-          "target": "components/editor/components/editor/plugins/media-base-kit.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/components/editor/plugins/mention-base-kit.tsx",
-          "type": "registry:component",
-          "target": "components/editor/components/editor/plugins/mention-base-kit.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/components/editor/plugins/suggestion-base-kit.tsx",
-          "type": "registry:component",
-          "target": "components/editor/components/editor/plugins/suggestion-base-kit.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/components/editor/plugins/table-base-kit.tsx",
-          "type": "registry:component",
-          "target": "components/editor/components/editor/plugins/table-base-kit.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/components/editor/plugins/toc-base-kit.tsx",
-          "type": "registry:component",
-          "target": "components/editor/components/editor/plugins/toc-base-kit.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/components/editor/plugins/toggle-base-kit.tsx",
-          "type": "registry:component",
-          "target": "components/editor/components/editor/plugins/toggle-base-kit.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/blockquote-node-static.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/blockquote-node-static.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/heading-node-static.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/heading-node-static.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/hr-node-static.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/hr-node-static.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/paragraph-node-static.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/paragraph-node-static.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/code-node-static.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/code-node-static.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/highlight-node-static.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/highlight-node-static.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/kbd-node-static.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/kbd-node-static.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/callout-node-static.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/callout-node-static.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/code-block-node-static.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/code-block-node-static.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/column-node-static.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/column-node-static.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/comment-node-static.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/comment-node-static.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/date-node-static.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/date-node-static.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/link-node-static.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/link-node-static.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/components/editor/plugins/indent-base-kit.tsx",
-          "type": "registry:component",
-          "target": "components/editor/components/editor/plugins/indent-base-kit.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/block-list-static.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/block-list-static.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/equation-node-static.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/equation-node-static.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/media-audio-node-static.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/media-audio-node-static.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/media-file-node-static.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/media-file-node-static.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/media-image-node-static.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/media-image-node-static.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/media-video-node-static.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/media-video-node-static.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/mention-node-static.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/mention-node-static.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/suggestion-node-static.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/suggestion-node-static.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/table-node-static.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/table-node-static.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/toc-node-static.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/toc-node-static.tsx"
-        },
-        {
-          "path": "registry/new-york-v4/blocks/editor/ui/toggle-node-static.tsx",
-          "type": "registry:block",
-          "target": "components/editor/ui/toggle-node-static.tsx"
+          "path": "registry/new-york-v4/blocks/signup-01/components/signup-form.tsx",
+          "type": "registry:component"
         }
+      ],
+      "categories": [
+        "authentication",
+        "signup"
+      ]
+    },
+    {
+      "name": "signup-02",
+      "type": "registry:block",
+      "description": "A two column signup page with a cover image.",
+      "registryDependencies": [
+        "button",
+        "input",
+        "label",
+        "field"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/signup-02/page.tsx",
+          "type": "registry:page",
+          "target": "app/signup/page.tsx"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/signup-02/components/signup-form.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": [
+        "authentication",
+        "signup"
+      ]
+    },
+    {
+      "name": "signup-03",
+      "type": "registry:block",
+      "description": "A signup page with a muted background color.",
+      "registryDependencies": [
+        "button",
+        "card",
+        "input",
+        "label",
+        "field"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/signup-03/page.tsx",
+          "type": "registry:page",
+          "target": "app/signup/page.tsx"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/signup-03/components/signup-form.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": [
+        "authentication",
+        "signup"
+      ]
+    },
+    {
+      "name": "signup-04",
+      "type": "registry:block",
+      "description": "A signup page with form and image.",
+      "registryDependencies": [
+        "button",
+        "card",
+        "input",
+        "label",
+        "field"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/signup-04/page.tsx",
+          "type": "registry:page",
+          "target": "app/signup/page.tsx"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/signup-04/components/signup-form.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": [
+        "authentication",
+        "signup"
+      ]
+    },
+    {
+      "name": "signup-05",
+      "type": "registry:block",
+      "description": "A simple signup form with social providers.",
+      "registryDependencies": [
+        "button",
+        "input",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/signup-05/page.tsx",
+          "type": "registry:page",
+          "target": "app/signup/page.tsx"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/signup-05/components/signup-form.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": [
+        "authentication",
+        "signup"
+      ]
+    },
+    {
+      "name": "otp-01",
+      "type": "registry:block",
+      "description": "A simple OTP verification form.",
+      "registryDependencies": [
+        "button",
+        "card",
+        "input-otp",
+        "label",
+        "field"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/otp-01/page.tsx",
+          "type": "registry:page",
+          "target": "app/otp/page.tsx"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/otp-01/components/otp-form.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": [
+        "authentication",
+        "otp"
+      ]
+    },
+    {
+      "name": "otp-02",
+      "type": "registry:block",
+      "description": "A two column OTP page with a cover image.",
+      "registryDependencies": [
+        "button",
+        "input-otp",
+        "label",
+        "field"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/otp-02/page.tsx",
+          "type": "registry:page",
+          "target": "app/otp/page.tsx"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/otp-02/components/otp-form.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": [
+        "authentication",
+        "otp"
+      ]
+    },
+    {
+      "name": "otp-03",
+      "type": "registry:block",
+      "description": "An OTP page with a muted background color.",
+      "registryDependencies": [
+        "button",
+        "card",
+        "input-otp",
+        "label",
+        "field"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/otp-03/page.tsx",
+          "type": "registry:page",
+          "target": "app/otp/page.tsx"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/otp-03/components/otp-form.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": [
+        "authentication",
+        "otp"
+      ]
+    },
+    {
+      "name": "otp-04",
+      "type": "registry:block",
+      "description": "An OTP page with form and image.",
+      "registryDependencies": [
+        "button",
+        "card",
+        "input-otp",
+        "label",
+        "field"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/otp-04/page.tsx",
+          "type": "registry:page",
+          "target": "app/otp/page.tsx"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/otp-04/components/otp-form.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": [
+        "authentication",
+        "otp"
+      ]
+    },
+    {
+      "name": "otp-05",
+      "type": "registry:block",
+      "description": "A simple OTP form with social providers.",
+      "registryDependencies": [
+        "button",
+        "input-otp",
+        "label",
+        "field"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/otp-05/page.tsx",
+          "type": "registry:page",
+          "target": "app/otp/page.tsx"
+        },
+        {
+          "path": "registry/new-york-v4/blocks/otp-05/components/otp-form.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": [
+        "authentication",
+        "otp"
       ]
     },
     {
@@ -3908,16 +3959,6 @@
       ]
     },
     {
-      "name": "use-toast",
-      "type": "registry:hook",
-      "files": [
-        {
-          "path": "registry/new-york-v4/hooks/use-toast.ts",
-          "type": "registry:hook"
-        }
-      ]
-    },
-    {
       "name": "theme-stone",
       "type": "registry:theme",
       "cssVars": {
@@ -4505,6 +4546,19 @@
       ]
     },
     {
+      "name": "button-default",
+      "type": "registry:example",
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/button-default.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
       "name": "button-secondary",
       "type": "registry:example",
       "registryDependencies": [
@@ -4617,6 +4671,175 @@
       "files": [
         {
           "path": "registry/new-york-v4/examples/button-as-child.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "button-rounded",
+      "type": "registry:example",
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/button-rounded.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "button-size",
+      "type": "registry:example",
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/button-size.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "button-group-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "button-group"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/button-group-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "button-group-nested",
+      "type": "registry:example",
+      "registryDependencies": [
+        "button-group"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/button-group-nested.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "button-group-size",
+      "type": "registry:example",
+      "registryDependencies": [
+        "button-group"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/button-group-size.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "button-group-separator",
+      "type": "registry:example",
+      "registryDependencies": [
+        "button-group"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/button-group-separator.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "button-group-split",
+      "type": "registry:example",
+      "registryDependencies": [
+        "button-group"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/button-group-split.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "button-group-input",
+      "type": "registry:example",
+      "registryDependencies": [
+        "button-group"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/button-group-input.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "button-group-dropdown",
+      "type": "registry:example",
+      "registryDependencies": [
+        "button-group"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/button-group-dropdown.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "button-group-select",
+      "type": "registry:example",
+      "registryDependencies": [
+        "button-group"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/button-group-select.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "button-group-popover",
+      "type": "registry:example",
+      "registryDependencies": [
+        "button-group"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/button-group-popover.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "button-group-input-group",
+      "type": "registry:example",
+      "registryDependencies": [
+        "button-group"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/button-group-input-group.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "button-group-orientation",
+      "type": "registry:example",
+      "registryDependencies": [
+        "button-group"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/button-group-orientation.tsx",
           "type": "registry:example"
         }
       ]
@@ -5078,6 +5301,662 @@
       ]
     },
     {
+      "name": "empty-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "empty",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/empty-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "empty-icon",
+      "type": "registry:example",
+      "registryDependencies": [
+        "empty"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/empty-icon.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "empty-avatar",
+      "type": "registry:example",
+      "registryDependencies": [
+        "empty",
+        "button",
+        "avatar"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/empty-avatar.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "empty-avatar-group",
+      "type": "registry:example",
+      "registryDependencies": [
+        "empty",
+        "button",
+        "avatar"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/empty-avatar-group.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "empty-input-group",
+      "type": "registry:example",
+      "registryDependencies": [
+        "empty",
+        "button",
+        "input"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/empty-input-group.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "empty-outline",
+      "type": "registry:example",
+      "registryDependencies": [
+        "empty",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/empty-outline.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "empty-background",
+      "type": "registry:example",
+      "registryDependencies": [
+        "empty"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/empty-background.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "field-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "field"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/field-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "field-input",
+      "type": "registry:example",
+      "registryDependencies": [
+        "field"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/field-input.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "field-textarea",
+      "type": "registry:example",
+      "registryDependencies": [
+        "field"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/field-textarea.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "field-fieldset",
+      "type": "registry:example",
+      "registryDependencies": [
+        "field"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/field-fieldset.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "field-radio",
+      "type": "registry:example",
+      "registryDependencies": [
+        "field"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/field-radio.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "field-checkbox",
+      "type": "registry:example",
+      "registryDependencies": [
+        "field"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/field-checkbox.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "field-switch",
+      "type": "registry:example",
+      "registryDependencies": [
+        "field"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/field-switch.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "field-slider",
+      "type": "registry:example",
+      "registryDependencies": [
+        "field"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/field-slider.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "field-select",
+      "type": "registry:example",
+      "registryDependencies": [
+        "field"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/field-select.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "field-choice-card",
+      "type": "registry:example",
+      "registryDependencies": [
+        "field"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/field-choice-card.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "field-group",
+      "type": "registry:example",
+      "registryDependencies": [
+        "field"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/field-group.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "field-responsive",
+      "type": "registry:example",
+      "registryDependencies": [
+        "field"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/field-responsive.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "form-rhf-demo",
+      "type": "registry:example",
+      "dependencies": [
+        "react-hook-form",
+        "@hookform/resolvers",
+        "zod"
+      ],
+      "registryDependencies": [
+        "field",
+        "input",
+        "input-group",
+        "button",
+        "card"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/form-rhf-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "form-rhf-input",
+      "type": "registry:example",
+      "dependencies": [
+        "react-hook-form",
+        "@hookform/resolvers",
+        "zod"
+      ],
+      "registryDependencies": [
+        "field",
+        "input",
+        "button",
+        "card"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/form-rhf-input.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "form-rhf-select",
+      "type": "registry:example",
+      "dependencies": [
+        "react-hook-form",
+        "@hookform/resolvers",
+        "zod"
+      ],
+      "registryDependencies": [
+        "field",
+        "select",
+        "button",
+        "card"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/form-rhf-select.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "form-rhf-checkbox",
+      "type": "registry:example",
+      "dependencies": [
+        "react-hook-form",
+        "@hookform/resolvers",
+        "zod"
+      ],
+      "registryDependencies": [
+        "field",
+        "checkbox",
+        "button",
+        "card"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/form-rhf-checkbox.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "form-rhf-switch",
+      "type": "registry:example",
+      "dependencies": [
+        "react-hook-form",
+        "@hookform/resolvers",
+        "zod"
+      ],
+      "registryDependencies": [
+        "field",
+        "switch",
+        "button",
+        "card"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/form-rhf-switch.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "form-rhf-textarea",
+      "type": "registry:example",
+      "dependencies": [
+        "react-hook-form",
+        "@hookform/resolvers",
+        "zod"
+      ],
+      "registryDependencies": [
+        "field",
+        "textarea",
+        "button",
+        "card"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/form-rhf-textarea.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "form-rhf-radiogroup",
+      "type": "registry:example",
+      "dependencies": [
+        "react-hook-form",
+        "@hookform/resolvers",
+        "zod"
+      ],
+      "registryDependencies": [
+        "field",
+        "radio-group",
+        "button",
+        "card"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/form-rhf-radiogroup.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "form-rhf-array",
+      "type": "registry:example",
+      "dependencies": [
+        "react-hook-form",
+        "@hookform/resolvers",
+        "zod"
+      ],
+      "registryDependencies": [
+        "field",
+        "input",
+        "input-group",
+        "button",
+        "card"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/form-rhf-array.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "form-rhf-complex",
+      "type": "registry:example",
+      "dependencies": [
+        "react-hook-form",
+        "@hookform/resolvers",
+        "zod"
+      ],
+      "registryDependencies": [
+        "field",
+        "button",
+        "card",
+        "checkbox",
+        "radio-group",
+        "select",
+        "switch"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/form-rhf-complex.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "form-rhf-password",
+      "type": "registry:example",
+      "dependencies": [
+        "react-hook-form",
+        "@hookform/resolvers",
+        "zod"
+      ],
+      "registryDependencies": [
+        "field",
+        "input-group",
+        "progress",
+        "button",
+        "card"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/form-rhf-password.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "form-tanstack-demo",
+      "type": "registry:example",
+      "dependencies": [
+        "@tanstack/react-form",
+        "zod"
+      ],
+      "registryDependencies": [
+        "field",
+        "input",
+        "input-group",
+        "button",
+        "card"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/form-tanstack-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "form-tanstack-input",
+      "type": "registry:example",
+      "dependencies": [
+        "@tanstack/react-form",
+        "zod"
+      ],
+      "registryDependencies": [
+        "field",
+        "input",
+        "button",
+        "card"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/form-tanstack-input.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "form-tanstack-textarea",
+      "type": "registry:example",
+      "dependencies": [
+        "@tanstack/react-form",
+        "zod"
+      ],
+      "registryDependencies": [
+        "field",
+        "textarea",
+        "button",
+        "card"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/form-tanstack-textarea.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "form-tanstack-select",
+      "type": "registry:example",
+      "dependencies": [
+        "@tanstack/react-form",
+        "zod"
+      ],
+      "registryDependencies": [
+        "field",
+        "select",
+        "button",
+        "card"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/form-tanstack-select.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "form-tanstack-checkbox",
+      "type": "registry:example",
+      "dependencies": [
+        "@tanstack/react-form",
+        "zod"
+      ],
+      "registryDependencies": [
+        "field",
+        "checkbox",
+        "button",
+        "card"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/form-tanstack-checkbox.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "form-tanstack-switch",
+      "type": "registry:example",
+      "dependencies": [
+        "@tanstack/react-form",
+        "zod"
+      ],
+      "registryDependencies": [
+        "field",
+        "switch",
+        "button",
+        "card"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/form-tanstack-switch.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "form-tanstack-radiogroup",
+      "type": "registry:example",
+      "dependencies": [
+        "@tanstack/react-form",
+        "zod"
+      ],
+      "registryDependencies": [
+        "field",
+        "radio-group",
+        "button",
+        "card"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/form-tanstack-radiogroup.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "form-tanstack-array",
+      "type": "registry:example",
+      "dependencies": [
+        "@tanstack/react-form",
+        "zod"
+      ],
+      "registryDependencies": [
+        "field",
+        "input",
+        "input-group",
+        "button",
+        "card"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/form-tanstack-array.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "form-tanstack-complex",
+      "type": "registry:example",
+      "dependencies": [
+        "@tanstack/react-form",
+        "zod"
+      ],
+      "registryDependencies": [
+        "field",
+        "button",
+        "card",
+        "checkbox",
+        "radio-group",
+        "select",
+        "switch"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/form-tanstack-complex.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
       "name": "drawer-dialog",
       "type": "registry:example",
       "registryDependencies": [
@@ -5128,6 +6007,23 @@
       "files": [
         {
           "path": "registry/new-york-v4/examples/dropdown-menu-radio-group.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "dropdown-menu-dialog",
+      "type": "registry:example",
+      "registryDependencies": [
+        "dropdown-menu",
+        "dialog",
+        "button",
+        "input",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/dropdown-menu-dialog.tsx",
           "type": "registry:example"
         }
       ]
@@ -5244,6 +6140,160 @@
       ]
     },
     {
+      "name": "input-group-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "input-group"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/input-group-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "input-group-label",
+      "type": "registry:example",
+      "registryDependencies": [
+        "input-group",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/input-group-label.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "input-group-text",
+      "type": "registry:example",
+      "registryDependencies": [
+        "input-group"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/input-group-text.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "input-group-tooltip",
+      "type": "registry:example",
+      "registryDependencies": [
+        "input-group",
+        "tooltip"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/input-group-tooltip.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "input-group-button",
+      "type": "registry:example",
+      "registryDependencies": [
+        "input-group"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/input-group-button.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "input-group-button-group",
+      "type": "registry:example",
+      "registryDependencies": [
+        "input-group",
+        "button-group"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/input-group-button-group.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "input-group-dropdown",
+      "type": "registry:example",
+      "registryDependencies": [
+        "input-group",
+        "dropdown-menu",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/input-group-dropdown.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "input-group-spinner",
+      "type": "registry:example",
+      "registryDependencies": [
+        "input-group",
+        "spinner"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/input-group-spinner.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "input-group-textarea",
+      "type": "registry:example",
+      "registryDependencies": [
+        "input-group",
+        "textarea"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/input-group-textarea.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "input-group-icon",
+      "type": "registry:example",
+      "registryDependencies": [
+        "input-group"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/input-group-icon.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "input-group-custom",
+      "type": "registry:example",
+      "registryDependencies": [
+        "input-group",
+        "badge",
+        "progress",
+        "dropdown-menu",
+        "tooltip"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/input-group-custom.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
       "name": "input-otp-demo",
       "type": "registry:example",
       "registryDependencies": [
@@ -5310,6 +6360,207 @@
       ]
     },
     {
+      "name": "item-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "item"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/item-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "item-size",
+      "type": "registry:example",
+      "registryDependencies": [
+        "item"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/item-size.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "item-variant",
+      "type": "registry:example",
+      "registryDependencies": [
+        "item"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/item-variant.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "item-icon",
+      "type": "registry:example",
+      "registryDependencies": [
+        "item"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/item-icon.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "item-image",
+      "type": "registry:example",
+      "registryDependencies": [
+        "item"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/item-image.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "item-avatar",
+      "type": "registry:example",
+      "registryDependencies": [
+        "item"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/item-avatar.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "item-group",
+      "type": "registry:example",
+      "registryDependencies": [
+        "item"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/item-group.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "item-header",
+      "type": "registry:example",
+      "registryDependencies": [
+        "item"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/item-header.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "item-dropdown",
+      "type": "registry:example",
+      "registryDependencies": [
+        "item"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/item-dropdown.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "item-link",
+      "type": "registry:example",
+      "registryDependencies": [
+        "item"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/item-link.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "kbd-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "kbd"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/kbd-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "kbd-tooltip",
+      "type": "registry:example",
+      "registryDependencies": [
+        "kbd",
+        "tooltip",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/kbd-tooltip.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "kbd-input-group",
+      "type": "registry:example",
+      "registryDependencies": [
+        "kbd",
+        "input",
+        "button",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/kbd-input-group.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "kbd-button",
+      "type": "registry:example",
+      "registryDependencies": [
+        "kbd",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/kbd-button.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "kbd-group",
+      "type": "registry:example",
+      "registryDependencies": [
+        "kbd"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/kbd-group.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
       "name": "label-demo",
       "type": "registry:example",
       "registryDependencies": [
@@ -5344,6 +6595,58 @@
       "files": [
         {
           "path": "registry/new-york-v4/examples/navigation-menu-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "native-select-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "native-select"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/native-select-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "native-select-groups",
+      "type": "registry:example",
+      "registryDependencies": [
+        "native-select"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/native-select-groups.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "native-select-disabled",
+      "type": "registry:example",
+      "registryDependencies": [
+        "native-select"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/native-select-disabled.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "native-select-invalid",
+      "type": "registry:example",
+      "registryDependencies": [
+        "native-select"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/native-select-invalid.tsx",
           "type": "registry:example"
         }
       ]
@@ -5623,6 +6926,154 @@
       ]
     },
     {
+      "name": "sonner-types",
+      "type": "registry:example",
+      "registryDependencies": [
+        "sonner"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/sonner-types.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "spinner-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "spinner"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/spinner-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "spinner-basic",
+      "type": "registry:example",
+      "registryDependencies": [
+        "spinner",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/spinner-basic.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "spinner-button",
+      "type": "registry:example",
+      "registryDependencies": [
+        "spinner",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/spinner-button.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "spinner-badge",
+      "type": "registry:example",
+      "registryDependencies": [
+        "spinner",
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/spinner-badge.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "spinner-input-group",
+      "type": "registry:example",
+      "registryDependencies": [
+        "spinner",
+        "button",
+        "input"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/spinner-input-group.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "spinner-empty",
+      "type": "registry:example",
+      "registryDependencies": [
+        "spinner"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/spinner-empty.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "spinner-color",
+      "type": "registry:example",
+      "registryDependencies": [
+        "spinner"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/spinner-color.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "spinner-custom",
+      "type": "registry:example",
+      "registryDependencies": [
+        "spinner"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/spinner-custom.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "spinner-size",
+      "type": "registry:example",
+      "registryDependencies": [
+        "spinner"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/spinner-size.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "spinner-item",
+      "type": "registry:example",
+      "registryDependencies": [
+        "spinner"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/spinner-item.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
       "name": "switch-demo",
       "type": "registry:example",
       "registryDependencies": [
@@ -5831,6 +7282,19 @@
       "files": [
         {
           "path": "registry/new-york-v4/examples/toggle-group-single.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "toggle-group-spacing",
+      "type": "registry:example",
+      "registryDependencies": [
+        "toggle-group"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/toggle-group-spacing.tsx",
           "type": "registry:example"
         }
       ]
@@ -6157,16 +7621,6 @@
       "categories": [
         "calendar",
         "date"
-      ]
-    },
-    {
-      "name": "editor-ui-demo",
-      "type": "registry:example",
-      "files": [
-        {
-          "path": "registry/new-york-v4/examples/editor-ui-demo.tsx",
-          "type": "registry:example"
-        }
       ]
     },
     {

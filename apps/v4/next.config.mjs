@@ -3,42 +3,11 @@ import { createMDX } from "fumadocs-mdx/next"
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   devIndicators: false,
-  output: 'standalone',
   typescript: {
     ignoreBuildErrors: true,
   },
   outputFileTracingIncludes: {
     "/*": ["./registry/**/*"],
-  },
-  webpack: (config, { webpack }) => {
-    // Suppress critical dependency warnings and webpack compatibility issues
-    config.ignoreWarnings = [
-      {
-        module: /node_modules\/cosmiconfig/,
-        message: /Critical dependency/,
-      },
-      {
-        module: /node_modules\/tsconfig-paths/,
-        message: /Critical dependency/,
-      },
-      {
-        module: /node_modules\/tsconfig-paths/,
-        message: /require\.extensions is not supported by webpack/,
-      },
-    ]
-    
-    // Handle dynamic imports and Node.js modules properly
-    config.resolve.fallback = {
-      ...config.resolve.fallback,
-      fs: false,
-      path: false,
-      os: false,
-      crypto: false,
-      stream: false,
-      util: false,
-    }
-
-    return config
   },
   images: {
     remotePatterns: [
@@ -50,7 +19,14 @@ const nextConfig = {
         protocol: "https",
         hostname: "images.unsplash.com",
       },
+      {
+        protocol: "https",
+        hostname: "avatar.vercel.sh",
+      },
     ],
+  },
+  experimental: {
+    turbopackFileSystemCacheForDev: true,
   },
   redirects() {
     return [
@@ -68,16 +44,6 @@ const nextConfig = {
         source: "/figma",
         destination: "/docs/figma",
         permanent: true,
-      },
-      {
-        source: "/docs/forms",
-        destination: "/docs/components/form",
-        permanent: false,
-      },
-      {
-        source: "/docs/forms/react-hook-form",
-        destination: "/docs/components/form",
-        permanent: false,
       },
       {
         source: "/sidebar",
@@ -107,6 +73,11 @@ const nextConfig = {
       {
         source: "/mcp",
         destination: "/docs/mcp",
+        permanent: false,
+      },
+      {
+        source: "/directory",
+        destination: "/docs/directory",
         permanent: false,
       },
     ]
