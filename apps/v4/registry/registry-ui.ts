@@ -130,6 +130,17 @@ export const ui: Registry["items"] = [
     ],
   },
   {
+    name: "button-group",
+    type: "registry:ui",
+    files: [
+      {
+        path: "ui/button-group.tsx",
+        type: "registry:ui",
+      },
+    ],
+    registryDependencies: ["button", "separator"],
+  },
+  {
     name: "calendar",
     type: "registry:ui",
     files: [
@@ -310,6 +321,27 @@ export const ui: Registry["items"] = [
     ],
   },
   {
+    name: "empty",
+    type: "registry:ui",
+    files: [
+      {
+        path: "ui/empty.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
+    name: "field",
+    type: "registry:ui",
+    files: [
+      {
+        path: "ui/field.tsx",
+        type: "registry:ui",
+      },
+    ],
+    registryDependencies: ["label", "separator"],
+  },
+  {
     name: "form",
     type: "registry:ui",
     files: [
@@ -376,6 +408,38 @@ export const ui: Registry["items"] = [
     ],
   },
   {
+    name: "input-group",
+    type: "registry:ui",
+    files: [
+      {
+        path: "ui/input-group.tsx",
+        type: "registry:ui",
+      },
+    ],
+    registryDependencies: ["button", "input", "textarea"],
+  },
+  {
+    name: "item",
+    type: "registry:ui",
+    files: [
+      {
+        path: "ui/item.tsx",
+        type: "registry:ui",
+      },
+    ],
+    registryDependencies: ["separator"],
+  },
+  {
+    name: "kbd",
+    type: "registry:ui",
+    files: [
+      {
+        path: "ui/kbd.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
     name: "label",
     type: "registry:ui",
     files: [
@@ -419,6 +483,16 @@ export const ui: Registry["items"] = [
       "lucide-react",
       "react",
       "tailwind-merge",
+    ],
+  },
+  {
+    name: "native-select",
+    type: "registry:ui",
+    files: [
+      {
+        path: "ui/native-select.tsx",
+        type: "registry:ui",
+      },
     ],
   },
   {
@@ -652,6 +726,17 @@ export const ui: Registry["items"] = [
       },
     ],
     dependencies: ["next-themes", "sonner"],
+  },
+  {
+    name: "spinner",
+    type: "registry:ui",
+    files: [
+      {
+        path: "ui/spinner.tsx",
+        type: "registry:ui",
+      },
+    ],
+    dependencies: ["class-variance-authority"],
   },
   {
     name: "switch",

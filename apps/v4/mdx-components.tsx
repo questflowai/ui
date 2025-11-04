@@ -25,6 +25,7 @@ import {
 } from "@/registry/new-york-v4/ui/alert"
 import { AspectRatio } from "@/registry/new-york-v4/ui/aspect-ratio"
 import { Button } from "@/registry/new-york-v4/ui/button"
+import { Kbd, KbdGroup } from "@/registry/new-york-v4/ui/kbd"
 import {
   Tabs,
   TabsContent,
@@ -332,6 +333,8 @@ export const mdxComponents = {
     <div className={cn(className)} {...props} />
   ),
   Button,
+  Kbd,
+  KbdGroup,
   Callout,
   Accordion,
   AccordionContent,
