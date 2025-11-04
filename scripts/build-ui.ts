@@ -39,8 +39,8 @@ interface BuildManifest {
   cdnBaseUrl?: string
 }
 
-// Get version from www package.json (as requested)
-async function getVersionFromWww(): Promise<string> {
+// Get version from v4 package.json
+async function getVersionFromV4(): Promise<string> {
   try {
     const pkg = JSON.parse(
       await fs.readFile(
@@ -54,7 +54,7 @@ async function getVersionFromWww(): Promise<string> {
   }
 }
 
-// Get dependency versions from www package.json
+// Get dependency versions from v4 package.json
 async function getDependencyVersions(): Promise<Record<string, string>> {
   try {
     const pkg = JSON.parse(
@@ -509,7 +509,7 @@ async function ensureUiBrowserEsmTree(): Promise<{
   cssPublicPath?: string
   builtJs: string[]
 }> {
-  const uiVersion = await getVersionFromWww()
+  const uiVersion = await getVersionFromV4()
   const outDir = path.join(process.cwd(), "build", uiVersion)
   const publicPrefix = `/mc/${uiVersion}/`
 

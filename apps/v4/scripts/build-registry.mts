@@ -94,12 +94,12 @@ async function buildRegistryJsonFile() {
     JSON.stringify(fixedRegistry, null, 2)
   )
 
-  // 3. Copy the registry.json to the www/public/r/styles/new-york-v4 directory.
+  // 3. Copy the registry.json to the public/r/styles/new-york-v4 directory.
   await fs.cp(
     path.join(process.cwd(), "registry.json"),
     path.join(
       process.cwd(),
-      "../www/public/r/styles/new-york-v4/registry.json"
+      "public/r/styles/new-york-v4/registry.json"
     ),
     { recursive: true }
   )
@@ -109,11 +109,11 @@ async function buildRegistry() {
   return new Promise((resolve, reject) => {
     // Use local shadcn copy.
     const process = exec(
-      `node ../../packages/shadcn/dist/index.js build registry.json --output ../www/public/r/styles/new-york-v4`
+      `node ../../packages/shadcn/dist/index.js build registry.json --output public/r/styles/new-york-v4`
     )
 
     // exec(
-    //   `pnpm dlx shadcn build registry.json --output ../www/public/r/styles/new-york-v4`
+    //   `pnpm dlx shadcn build registry.json --output public/r/styles/new-york-v4`
     // )
 
     process.on("exit", (code) => {
@@ -138,18 +138,10 @@ async function syncRegistry() {
     // File might not exist yet, that's ok
   }
 
-  // 1. Call pnpm registry:build for www.
-  await exec("pnpm --filter=www registry:build")
+  // Note: Since www is removed, this function now only handles local registry
+  // The registry files are already in the correct location (public/r)
 
-  // 2. Copy the www/public/r directory to v4/public/r.
-  rimraf.sync(path.join(process.cwd(), "public/r"))
-  await fs.cp(
-    path.resolve(process.cwd(), "../www/public/r"),
-    path.resolve(process.cwd(), "public/r"),
-    { recursive: true }
-  )
-
-  // 3. Restore the registry content if we had it
+  // Restore the registry content if we had it
   if (registryContent) {
     await fs.writeFile(registryIndexPath, registryContent, "utf8")
   }

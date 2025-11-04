@@ -32,7 +32,7 @@ pnpm install
 ### Start the dev server
 
 ```bash
-pnpm www:dev
+pnpm v4:dev
 ```
 
 </Steps>
@@ -45,13 +45,13 @@ A block can be a single component (eg. a variation of a ui component) or a compl
 
 ### Create a new block
 
-Create a new folder in the `apps/www/registry/new-york/blocks` directory. Make sure the folder is named in kebab-case and under `new-york`.
+Create a new folder in the `apps/v4/registry/new-york-v4/blocks` directory. Make sure the folder is named in kebab-case and under `new-york-v4`.
 
 ```txt
 apps
-└── www
+└── v4
     └── registry
-        └── new-york
+        └── new-york-v4
             └── blocks
                 └── dashboard-01
 ```
@@ -96,7 +96,7 @@ To add your block to the registry, you need to add your block definition to `reg
 
 This follows the registry schema at [https://ui.shadcn.com/schema/registry-item.json](https://ui.shadcn.com/schema/registry-item.json).
 
-```tsx title="apps/www/registry/registry-blocks.tsx" showLineNumbers
+```tsx title="apps/v4/registry/registry-blocks.tsx" showLineNumbers
 export const blocks = [
   // ...
   {
@@ -196,7 +196,7 @@ pnpm registry:capture
 
 <Callout className="mt-6">
 
-**Note:** If you've run the capture script before, you might need to delete the existing screenshots (both light and dark) at `apps/www/public/r/styles/new-york` and run the script again.
+**Note:** If you've run the capture script before, you might need to delete the existing screenshots (both light and dark) at `apps/v4/public/r/styles/new-york-v4` and run the script again.
 
 </Callout>
 
@@ -214,9 +214,9 @@ The `categories` property is used to organize your block in the registry.
 
 ### Add a category
 
-If you need to add a new category, you can do so by adding it to the `registryCategories` array in `apps/www/registry/registry-categories.ts`.
+If you need to add a new category, you can do so by adding it to the `registryCategories` array in `apps/v4/registry/registry-categories.ts`.
 
-```tsx title="apps/www/registry/registry-categories.ts" showLineNumbers
+```tsx title="apps/v4/registry/registry-categories.ts" showLineNumbers
 export const registryCategories = [
   // ...
   {

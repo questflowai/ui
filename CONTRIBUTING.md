@@ -20,7 +20,7 @@ This repository is structured as follows:
 
 ```
 apps
-└── www
+└── v4
     ├── app
     ├── components
     ├── content
@@ -28,20 +28,23 @@ apps
         ├── default
         │   ├── example
         │   └── ui
-        └── new-york
-            ├── example
+        └── new-york-v4
+            ├── blocks
+            ├── examples
+            ├── hooks
+            ├── lib
             └── ui
 packages
-└── cli
+└── shadcn
 ```
 
 | Path                  | Description                              |
 | --------------------- | ---------------------------------------- |
-| `apps/www/app`        | The Next.js application for the website. |
-| `apps/www/components` | The React components for the website.    |
-| `apps/www/content`    | The content for the website.             |
-| `apps/www/registry`   | The registry for the components.         |
-| `packages/cli`        | The `shadcn-ui` package.                 |
+| `apps/v4/app`         | The Next.js application for the website. |
+| `apps/v4/components`  | The React components for the website.    |
+| `apps/v4/content`     | The content for the website.             |
+| `apps/v4/registry`    | The registry for the components.         |
+| `packages/shadcn`     | The `shadcn` CLI package.                |
 
 ## Development
 
@@ -82,13 +85,13 @@ You can use the `pnpm --filter=[WORKSPACE]` command to start the development pro
 1. To run the `ui.shadcn.com` website:
 
 ```bash
-pnpm --filter=www dev
+pnpm --filter=v4 dev
 ```
 
-2. To run the `shadcn-ui` package:
+2. To run the `shadcn` package:
 
 ```bash
-pnpm --filter=shadcn-ui dev
+pnpm --filter=shadcn dev
 ```
 
 ## Running the CLI Locally
@@ -129,27 +132,30 @@ This workflow ensures that you are running the most recent version of the regist
 
 ## Documentation
 
-The documentation for this project is located in the `www` workspace. You can run the documentation locally by running the following command:
+The documentation for this project is located in the `v4` workspace. You can run the documentation locally by running the following command:
 
 ```bash
-pnpm --filter=www dev
+pnpm --filter=v4 dev
 ```
 
-Documentation is written using [MDX](https://mdxjs.com). You can find the documentation files in the `apps/www/content/docs` directory.
+Documentation is written using [MDX](https://mdxjs.com). You can find the documentation files in the `apps/v4/content/docs` directory.
 
 ## Components
 
-We use a registry system for developing components. You can find the source code for the components under `apps/www/registry`. The components are organized by styles.
+We use a registry system for developing components. You can find the source code for the components under `apps/v4/registry`. The components are organized by styles.
 
 ```bash
 apps
-└── www
+└── v4
     └── registry
         ├── default
         │   ├── example
         │   └── ui
-        └── new-york
-            ├── example
+        └── new-york-v4
+            ├── blocks
+            ├── examples
+            ├── hooks
+            ├── lib
             └── ui
 ```
 
