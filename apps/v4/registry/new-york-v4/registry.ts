@@ -22,16 +22,6 @@ const NEW_YORK_V4_STYLE = {
   files: [],
 }
 
-// Shared between index and style for backward compatibility.
-const NEW_YORK_V4_STYLE = {
-  type: "registry:style",
-  dependencies: ["class-variance-authority", "lucide-react"],
-  devDependencies: ["tw-animate-css"],
-  registryDependencies: ["utils"],
-  cssVars: {},
-  files: [],
-}
-
 export const registry = {
   name: "shadcn/ui",
   homepage: "https://ui.shadcn.com",
