@@ -687,16 +687,6 @@ export const ui: Registry["items"] = [
     dependencies: ["@radix-ui/react-tabs", "clsx", "react", "tailwind-merge"],
   },
   {
-    name: "test-ui",
-    type: "registry:ui",
-    files: [
-      {
-        path: "ui/test-ui.tsx",
-        type: "registry:ui",
-      },
-    ],
-  },
-  {
     name: "textarea",
     type: "registry:ui",
     files: [
@@ -760,24 +750,6 @@ export const ui: Registry["items"] = [
       "clsx",
       "react",
       "tailwind-merge",
-    ],
-  },
-  {
-    name: "toast",
-    type: "registry:ui",
-    files: [
-      {
-        path: "ui/toast.tsx",
-        type: "registry:ui",
-      },
-    ],
-    dependencies: [
-      "@radix-ui/react-toast",
-      "clsx",
-      "react",
-      "tailwind-merge",
-      "class-variance-authority",
-      "lucide-react",
     ],
   },
   {

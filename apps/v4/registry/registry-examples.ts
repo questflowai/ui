@@ -1205,61 +1205,6 @@ export const examples: Registry["items"] = [
     ],
   },
   {
-    name: "toast-demo",
-    type: "registry:example",
-    registryDependencies: ["toast", "sonner"],
-    files: [
-      {
-        path: "examples/toast-demo.tsx",
-        type: "registry:example",
-      },
-    ],
-  },
-  {
-    name: "toast-destructive",
-    type: "registry:example",
-    registryDependencies: ["toast"],
-    files: [
-      {
-        path: "examples/toast-destructive.tsx",
-        type: "registry:example",
-      },
-    ],
-  },
-  {
-    name: "toast-simple",
-    type: "registry:example",
-    registryDependencies: ["toast"],
-    files: [
-      {
-        path: "examples/toast-simple.tsx",
-        type: "registry:example",
-      },
-    ],
-  },
-  {
-    name: "toast-with-action",
-    type: "registry:example",
-    registryDependencies: ["toast"],
-    files: [
-      {
-        path: "examples/toast-with-action.tsx",
-        type: "registry:example",
-      },
-    ],
-  },
-  {
-    name: "toast-with-title",
-    type: "registry:example",
-    registryDependencies: ["toast"],
-    files: [
-      {
-        path: "examples/toast-with-title.tsx",
-        type: "registry:example",
-      },
-    ],
-  },
-  {
     name: "toggle-group-demo",
     type: "registry:example",
     registryDependencies: ["toggle-group"],
@@ -1630,16 +1575,6 @@ export const examples: Registry["items"] = [
         "w-full bg-surface min-h-svh flex px-4 py-12 items-start md:py-20 justify-center min-w-0",
       mobile: "component",
     },
-  },
-  {
-    name: "test-ui-demo",
-    type: "registry:example",
-    files: [
-      {
-        path: "examples/test-ui-demo.tsx",
-        type: "registry:example",
-      },
-    ],
   },
   {
     name: "editor-ui-demo",
